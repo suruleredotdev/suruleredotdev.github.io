@@ -2,3 +2,11 @@ body {
   background-image: url(background.svg);
   background-size: cover;
 }
+
+.title {
+  font: sans-serif;
+}
+
+.title h1 sub {
+  font-size: small;
+}
