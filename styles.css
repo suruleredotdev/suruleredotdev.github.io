@@ -3,10 +3,6 @@ body {
   background-size: cover;
 }
 
-.title {
-  font: 'Raleway', sans-serif;
-}
-
 .title h1 sub {
   font-size: small;
 }
