@@ -1,6 +1,13 @@
+:root {
+  --bg-width: 100px;
+}
+
 body {
-  background-image: url(background.svg);
-  background-size: cover;
+  background-image: url(suruleredotdev_background.svg);
+  background-size: 100px;
+}
+
+#logo {
 }
 
 .title h1 sub {
