@@ -1,5 +1,7 @@
 :root {
   --bg-width: 100px;
+  --bg-color: #E5E5E5;
+  --txt-color: #808080;
 }
 
 body {
@@ -10,6 +12,7 @@ body {
 #logo {
 }
 
-.title h1 sub {
-  font-size: small;
+#tagline {
+  background-color: var(--bg-color);
+  color: var(--txt-color);
 }
