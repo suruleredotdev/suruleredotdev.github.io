@@ -13,7 +13,7 @@ can fulfill the unique needs that exist in the developing world.
 
 > BitPesa and Wala, both use blockchain to provide low-cost financial solutions that stimulate economic activity in the African 
 > countries where they currently operate. Despite the enormous social marginal benefit (the benefit minus the cost to society)
->these financial technology firms stand to produce, they face a lot of resistance from legacy systems and the aged politicians in 
+> these financial technology firms stand to produce, they face a lot of resistance from legacy systems and the aged politicians in 
 > power.
 
 Founded in 2013 by Elizabeth Rossiello, BitPesa developed with core competencies in international business to business transactions
