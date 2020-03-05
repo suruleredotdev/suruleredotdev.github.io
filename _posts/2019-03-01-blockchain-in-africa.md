@@ -1,9 +1,7 @@
 ---
 layout: post
-author: kolade
+author: Kolade Aderele
 ---
-
-# Blockchain in Africa
 
 Blockchain’s highly securitized, cryptographic, and decentralized nature, has the power to serve as a pathway to 
 accelerated growth in less developed nations by increasing customers’ access to and trust in financial institutions. 
