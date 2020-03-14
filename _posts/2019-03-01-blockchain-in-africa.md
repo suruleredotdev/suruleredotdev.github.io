@@ -1,6 +1,7 @@
 ---
 layout: post
 author: Kolade Aderele
+author_link: https://twitter.com/kolade_ka
 ---
 
 Blockchain’s highly securitized, cryptographic, and decentralized nature, has the power to serve as a pathway to 
@@ -21,9 +22,9 @@ market businesses.” Their services help make their customers’ products more 
 by making payments cheaper, faster and easier to process.
 
 With approximately 6,000 users, Bitpesa has generated an estimated $10,000,000 in trade volume per month in 4 of the 7 countries it
-currently operates. Together with a month over month 20% growth rate in trade volumes and a market size of over 500 million people,
+currently operates. [Together with a month over month 20% growth rate](https://www.cnn.com/videos/world/2018/03/23/marketplace-africa-elizabeth-rossiello-africa-bitpesa-bitcoin-b.cnn) in trade volumes and a market size of over 500 million people,
  the room to grow is promising. In addition, their “Transferzero” solution reduces the risks involved in doing business, because of
- its KYC and AML compliant screening/monitoring capabilities. Furthermore their BFX platform allows Bitpesa’s clients to offer
+ its [KYC and AML](https://www.investopedia.com/terms/a/aml.asp) compliant screening/monitoring capabilities. Furthermore their BFX platform allows Bitpesa’s clients to offer
  subscription based services, increasing the channels of revenue for users of their platform. When compared to legacy international
  transfer platforms in Kenya and Tanzania, the fee charged for each transaction is 4% less, and transactions are processed 
  instantly.
@@ -41,7 +42,7 @@ general purpose ERC20 token that facilitates quick and border-less micro-payment
 Dala’s decentralized financial system, is to create opportunities, remove barriers and enable prosperity, by providing financial 
 services to 3.5 billion underbanked individuals, 800 million of whom are in Africa.
 
-With the cost of a $200 remittance in Africa at about 9.4% (the highest in the world), the need for a fee free remittance service 
+With the cost of a [$200 remittance in Africa at about 9.4%](https://qz.com/africa/1272445/remittances-sending-cash-to-africa-is-most-expensive-says-world-bank/) (the highest in the world), the need for a fee free remittance service 
 app is high. In its first four years of operation, Wala has acquired over 100,000 merchants trading on its platform with over 6300 
 daily transactions. Wala’s noble approach to teaching financial literacy to the masses in less developed nations must be commended.
 Their strategic approach to incentivizing users to develop healthy financial habits, leads to an increase in usage of their app.

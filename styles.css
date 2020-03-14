@@ -1,8 +1,12 @@
 :root {
   --bg-width: 100px;
   --bg-color: #E5E5E5;
-  --txt-color: #808080;
+  --txt-color: #4d4d4d;
 }
+
+/*
+ * _layouts/default
+ */
 
 body {
   background-image: url(suruleredotdev_background.svg);
@@ -12,7 +16,25 @@ body {
 #logo {
 }
 
-#tagline {
+#content {
   background-color: var(--bg-color);
   color: var(--txt-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--txt-color);
+  border-bottom: 1px dashed var(--txt-color);
+}
+
+/*
+ * _layouts/post
+ */
+
+#content.post {
+  line-height: 1.6; /* recommend line-height */
+}
+
+#content.post blockquote {
+  border-left: 4px solid calc(0.8 * var(--txt-color));
 }

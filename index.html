@@ -2,17 +2,24 @@
 layout: default
 ---
 
+<div id="content" class="pa4 mt6-l mh7-l f2">
 <p>
   Research and experimentation on matters of culture, technology and human agency in Africa.
 </p>
 <p>
-  Reach out on twitter: <a class="link" href="twitter.com/suruleredotdev">@suruleredotdev</a>
+  Reach out on twitter: <a class="link" href="https://twitter.com/suruleredotdev">@suruleredotdev</a>
 </p>
+<br/>
+<br/>
 
-<ul class="list">
+<b>
+  Recent Posts
+</b>
+<ul class="list f3">
   {% for post in site.posts %}
     <li>
       <p><a class="link" href="{{ post.url }}">{{ post.title }}</a></p>
     </li>
   {% endfor %}
 </ul>
+</div>
