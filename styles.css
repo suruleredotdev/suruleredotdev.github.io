@@ -1,30 +1,61 @@
 :root {
-  --bg-width: 100px;
-  --bg-color: #E5E5E5;
-  --txt-color: #4d4d4d;
+  --bg-size: 100px;
+  --bg-color-light: #E5E5E5;
+  --bg-color-dark: #0A3D02;
+  --txt-color-light: #4D4D4D;
+  --txt-color-dark: #FFFFFF;
 }
 
 /*
  * _layouts/default
  */
 
-body {
+body.LIGHT {
   background-image: url(suruleredotdev_background.svg);
-  background-size: 100px;
+  background-size: var(--bg-size);
+  height: 100%;
 }
 
-#logo {
+body.DARK  {
+  background-image: url(suruleredotdev_green_bg_faint.svg);
+  background-size: var(--bg-size);
+  height: 100%;
 }
 
-#content {
-  background-color: var(--bg-color);
-  color: var(--txt-color);
+.LIGHT #logo > img {
 }
 
-a {
+.DARK #logo > img {
+}
+
+@media screen and (min-width: 60em) {
+  #content {
+    margin-left: calc(3 * var(--bg-size));
+    margin-right: calc(3 * var(--bg-size));
+    margin-top: calc(1 * var(--bg-size));
+  }
+}
+
+.LIGHT #content {
+  background-color: var(--bg-color-light);
+  color: var(--txt-color-light);
+}
+
+.DARK #content {
+  background-color: var(--bg-color-dark);
+  color: var(--txt-color-dark);
+}
+
+.LIGHT a {
   text-decoration: none;
-  color: var(--txt-color);
-  border-bottom: 1px dashed var(--txt-color);
+  color: var(--txt-color-light);
+  border-bottom: 1px dashed var(--txt-color-light);
+}
+
+.DARK a {
+  text-decoration: none;
+  color: var(--txt-color-dark);
+  border-bottom: 1px dashed var(--txt-color-dark);
 }
 
 /*
@@ -35,6 +66,31 @@ a {
   line-height: 1.6; /* recommend line-height */
 }
 
-#content.post blockquote {
-  border-left: 4px solid calc(0.8 * var(--txt-color));
+.LIGHT #content.post blockquote {
+  border-left: 4px solid calc(0.8 * var(--txt-color-light));
+}
+
+.DARK #content.post blockquote {
+  border-left: 4px solid calc(0.8 * var(--txt-color-dark));
+}
+
+.footer {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin-top: var(--bg-size);
+  width: 100%;
+  padding: 10px;
+  text-align: left;
+}
+
+.LIGHT #footer {
+  background-color: var(--bg-color-light);
+  color: var(--txt-color-light);
+}
+
+.DARK #footer {
+  background-color: var(--bg-color-dark);
+  color: var(--txt-color-dark);
 }
