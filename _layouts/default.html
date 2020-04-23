@@ -11,27 +11,66 @@
   <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
 
 	<title>suruleredotdev</title>
+
+  <script>
+    function setMode(mode) {
+      if(mode === 'dark') {
+        if (!document.querySelector('body').classList.contains('DARK')) document.querySelector('body').classList.add('DARK');
+        document.getElementById("logo-dark").style.display = "block";
+        document.getElementById("logo-light").style.display = "none";
+        document.querySelector('body').classList.remove('LIGHT');
+      } else if(mode === 'light') {
+        if (!document.querySelector('body').classList.contains('LIGHT')) document.querySelector('body').classList.add('LIGHT');
+        document.getElementById("logo-light").style.display = "block";
+        document.getElementById("logo-dark").style.display = "none";
+        document.querySelector('body').classList.remove('DARK');
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', function (e) {
+      var hours = (new Date()).getHours();
+      var timeOfDayMode = hours > 6 && hours < 20 ? "light" : "dark";
+      var mode = !!localStorage.getItem("mode") ? localStorage.getItem("mode") : timeOfDayMode;
+      setMode(mode);
+    });
+  </script>
 </head>
 
-<body class="sans-serif DARK">
+<body class="sans-serif DARK bg-animate">
   <a id="logo" href="/"> 
-    <img src="/suruleredotdev_green_bg_bold.svg"/>
-    <!-- <img src="/suruleredotdev_white_bg.svg"/> -->
+    <img id="logo-dark" src="/suruleredotdev_green_bg_bold.svg"/>
+    <img id="logo-light" src="/suruleredotdev_white_bg.svg" style="display: none;"/>
   </a>
 
   {{ content }}
   
-  <!--
-  <footer id="footer">
-    <span>
+  <footer id="footer" class="ph3 dn db-ns">
+    <div class="w-33 tl dib pv2">
       twitter: <a class="link" href="https://twitter.com/suruleredotdev">@suruleredotdev</a>
-    </span>
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    <span>
-      <input type=checkbox id="dark-mode"><label for="dark-mode"> dark mode</label>
-    </span>
+    </div>
+    <div class="w-33 tr dib pv2">
+    </div>
+    <div class="w-33 tr dib pv2 underline">
+      <span id="dark-mode" class="f6 link dim ph3 pv2">
+        toggle dark mode
+      </span>
+      <script>
+        function toggleVisibility(el) {
+          if (el.style.display === "none") {
+            el.style.display = "block";
+          } else {
+            el.style.display = "none";
+          }
+        }
+        document.getElementById("dark-mode").addEventListener("click", function (e) {
+          document.body.classList.toggle("DARK");
+          document.body.classList.toggle("LIGHT");
+          toggleVisibility(document.getElementById("logo-dark"));
+          toggleVisibility(document.getElementById("logo-light"));
+
+          localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark');
+        });
+      </script>
+    </div>
   </footer>
-  -->
 </body>
