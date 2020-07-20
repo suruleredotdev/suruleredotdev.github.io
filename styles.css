@@ -132,10 +132,18 @@ a.no-ul {
   color: var(--txt-color-dark);
 }
 
-.hide {
-  display: none;
+#twitter-link {
+
+}
+
+#share-block:hover > .hide {
+  display: block;
 }
 
 #settings-block:hover > .hide {
   display: block;
+}
+
+.hide {
+  display: none;
 }

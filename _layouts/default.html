@@ -50,12 +50,26 @@
   {{ content }}
   
   <footer id="footer" class="ph3 dn db-ns bg-transparent flex flex-row">
-    <div class="w-33 tl pv2 pointer">
-      TWITTER: <a class="link" href="https://twitter.com/suruleredotdev">@suruleredotdev</a>
+    <!-- note the 'mv2' here due to the 'absolute' so we can have this appear as a upward dropdown thing -->
+    <div class="w-10 tl mv2 pointer flex flex-row">
+      <span id="twitter-link" class="pv2">
+        <a class="link" href="https://twitter.com/suruleredotdev">@SURULEREDOTDEV</a>
+      </span>
+      {% if page.layout == "post" %}
+      <div id="share-block" class="w-10 tl pointer flex flex-column absolute pv2" style="bottom: 0; left: calc(2.6 * var(--bg-size));">
+        <span class="link dim pv2 hide">
+          <a target="_blank" class="no-ul" href="https://twitter.com/intent/tweet?text={{ page.title | append: " https://surulere.dev" | append: page.url | url_encode }}">TWITTER</a>
+        </span>
+        <span class="link dim pv2 hide">
+          <a target="_blank" class="no-ul">FACEBOOK</a>
+        </span>
+        <span class="link dim pv2 underline">
+          SHARE
+        </span>
+      </div>
+      {% endif %}
     </div>
-    <div class="w-33 tr pv2 pointer">
-    </div>
-    <!-- note the 'mv2' here due to the 'absolute' so we can have the -->
+    <!-- note the 'mv2' here due to the 'absolute' so we can have this appear as a upward dropdown thing -->
     <div id="settings-block" class="w-33 tr mv2 pointer flex flex-column absolute" style="bottom:0; right:0;">
       <span id="clear-local-storage" class="link dim ph3 pv2 hide">
         CLEAR LOCAL STORAGE
