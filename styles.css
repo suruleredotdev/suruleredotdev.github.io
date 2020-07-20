@@ -1,9 +1,15 @@
 :root {
-  --bg-size: 100px;
+  --bg-size: 50px;
   --bg-color-light: #E5E5E5;
   --bg-color-dark: #0E160C;
   --txt-color-light: #4D4D4D;
-  --txt-color-dark: #FFFFFF;
+  --txt-color-dark: #A3A8A2;
+  --accent-color: #2ca7ad;
+  --accent-color-dark: #2ca7ad;
+  --accent-color-light: #751a42;
+  --border-color: #3F493D;
+  --border-color-light: #3f493d2e;
+  --title-color: #3F493D;
 }
 
 /*
@@ -14,28 +20,45 @@ b, p, em > p, em {
   transition: color .15s ease-in;
 }
 
+body {
+  background-size: var(--bg-size);
+  color: #f4f4f4 /* near-white */;
+  height: 100%;
+}
+
+body.animate-bg {
+  animation: bg-slide 500ms linear;
+}
+
 body.LIGHT {
   background-image: url(suruleredotdev_background.svg);
-  background-size: var(--bg-size);
-  height: 100%;
 }
 
 body.DARK  {
   background-image: url(suruleredotdev_green_bg_faint.svg);
-  background-size: var(--bg-size);
-  height: 100%;
 }
 
-.LIGHT #logo > img {
+@-webkit-keyframes bg-slide {
+    from { background-position: 0 0; }
+    to { background-position: 100% 0; }
 }
 
-.DARK #logo > img {
+@-webkit-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 @media screen and (min-width: 60em) {
   #content {
-    margin-left: calc(3 * var(--bg-size));
-    margin-right: calc(3 * var(--bg-size));
+    margin-left: calc(4 * var(--bg-size));
+    margin-right: calc(4 * var(--bg-size));
+    margin-top: calc(1 * var(--bg-size));
+    animation: fadeIn ease 700ms;
+  }
+
+  #logo img {
+    width: calc(2 * var(--bg-size));
+    margin-left: calc(4 * var(--bg-size));
     margin-top: calc(1 * var(--bg-size));
   }
 }
@@ -43,11 +66,13 @@ body.DARK  {
 .LIGHT #content {
   background-color: var(--bg-color-light);
   color: var(--txt-color-light);
+  border: 0.5px solid var(--border-color-light);
 }
 
 .DARK #content {
   background-color: var(--bg-color-dark);
   color: var(--txt-color-dark);
+  border: 0.5px solid var(--border-color);
 }
 
 .LIGHT a {
@@ -64,6 +89,11 @@ body.DARK  {
 
 a.no-ul {
   border: 0px;
+}
+
+.title {
+  font-family: -apple-system, roboto, sans-serif;
+  color: var(--title-color);
 }
 
 /*
@@ -90,14 +120,22 @@ a.no-ul {
   margin-top: var(--bg-size);
   width: 100%;
   text-align: left;
+  background-color: transparent;
+  font-size: 10px;
 }
 
 .LIGHT #footer {
-  background-color: var(--bg-color-light);
   color: var(--txt-color-light);
 }
 
 .DARK #footer {
-  background-color: var(--bg-color-dark);
   color: var(--txt-color-dark);
+}
+
+.hide {
+  display: none;
+}
+
+#settings-block:hover > .hide {
+  display: block;
 }

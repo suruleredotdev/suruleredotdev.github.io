@@ -21,6 +21,12 @@ MoneyGram and Western Union. BitPesa’s mission is “to develop innovative fin
 market businesses.” Their services help make their customers’ products more accessible and competitive in international markets 
 by making payments cheaper, faster and easier to process.
 
+<div class=".ANNOTATION">
+This is an annotation concerning the current state of this engine. It is the first annotation on the page.
+
+We'll expand on this framework to support commenting soon.
+</div>
+
 With approximately 6,000 users, Bitpesa has generated an estimated $10,000,000 in trade volume per month in 4 of the 7 countries it
 currently operates. [Together with a month over month 20% growth rate](https://www.cnn.com/videos/world/2018/03/23/marketplace-africa-elizabeth-rossiello-africa-bitpesa-bitcoin-b.cnn) in trade volumes and a market size of over 500 million people,
  the room to grow is promising. In addition, their “Transferzero” solution reduces the risks involved in doing business, because of

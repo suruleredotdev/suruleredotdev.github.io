@@ -2,15 +2,19 @@
 layout: default
 ---
 
-<div id="content" class="post pa4 mt6-l mh7-l f5">
+{% include chart.html %}
+<!-- 
+RESUME: the annotations scripts and style is not loading :( 
+-->
+{% include annotations.html %}
+
+<div id="content" class="post pa5 mt6-l mh7-l f5">
   <a href="/">&larr;</a>
 
-  <h1 class="avenir">{{ page.title }}</h1>
-  <em class="avenir">{{ page.date | date_to_string }} - <a href="{{ page.author_link }}" class="link">{{ page.author }}</a></em>
+  <h1 class="title">{{ page.title }}</h1>
+  <em class="title">{{ page.date | date_to_string }} - <a href="{{ page.author_link }}" class="link">{{ page.author }}</a></em>
 
   {{ content }}
 
   <a href="/">&larr;</a>
 </div>
-
-{% include chart.html %}

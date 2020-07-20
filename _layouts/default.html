@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link rel="icon" href="/suruleredotdev.png">
+	<link rel="icon" href="/suruleredotdev_white_bg.svg">
   <link rel="stylesheet" href="/styles.css">
 
   <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
@@ -34,27 +34,39 @@
       setMode(mode);
     });
   </script>
+  <!--
+  <script src="/scripts/jquery-1.11.1.min.js"></script>
+  <script src="/scripts/turbolinks.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/scripts/site.js" type="text/javascript" charset="utf-8"></script>
+  -->
 </head>
 
-<body class="sans-serif DARK bg-animate">
+<body class="sans-serif DARK animate-bg">
   <a id="logo" href="/"> 
     <img id="logo-dark" src="/suruleredotdev_green_bg_bold.svg"/>
-    <img id="logo-light" src="/suruleredotdev_white_bg.svg" style="display: none;"/>
+    <img id="logo-light" src="/suruleredotdev_transparent_bg.svg" style="display: none;"/>
   </a>
 
   {{ content }}
   
-  <footer id="footer" class="ph3 dn db-ns">
-    <div class="w-33 tl dib pv2">
-      twitter: <a class="link" href="https://twitter.com/suruleredotdev">@suruleredotdev</a>
+  <footer id="footer" class="ph3 dn db-ns bg-transparent flex flex-row">
+    <div class="w-33 tl pv2 pointer">
+      TWITTER: <a class="link" href="https://twitter.com/suruleredotdev">@suruleredotdev</a>
     </div>
-    <div class="w-33 tr dib pv2">
+    <div class="w-33 tr pv2 pointer">
     </div>
-    <div class="w-33 tr dib pv2 underline">
-      <span id="dark-mode" class="f6 link dim ph3 pv2">
-        toggle dark mode
+    <!-- note the 'mv2' here due to the 'absolute' so we can have the -->
+    <div id="settings-block" class="w-33 tr mv2 pointer flex flex-column absolute" style="bottom:0; right:0;">
+      <span id="clear-local-storage" class="link dim ph3 pv2 hide">
+        CLEAR LOCAL STORAGE
+      </span>
+      <span id="dark-mode-toggle" class="link dim ph3 pv2 hide">
+        TOGGLE DARK MODE
       </span>
       <script>
+        document.getElementById("clear-local-storage").addEventListener("click", function (e) {
+          localStorage.clear();
+        });
         function toggleVisibility(el) {
           if (el.style.display === "none") {
             el.style.display = "block";
@@ -62,15 +74,18 @@
             el.style.display = "none";
           }
         }
-        document.getElementById("dark-mode").addEventListener("click", function (e) {
+        document.getElementById("dark-mode-toggle").addEventListener("click", function (e) {
           document.body.classList.toggle("DARK");
           document.body.classList.toggle("LIGHT");
           toggleVisibility(document.getElementById("logo-dark"));
           toggleVisibility(document.getElementById("logo-light"));
-
           localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark');
         });
       </script>
+
+      <span class="link ph3 pv2 underline">
+        SETTINGS 
+      </span>
     </div>
   </footer>
 </body>
