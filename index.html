@@ -17,11 +17,9 @@ layout: default
 <b class="title">
   ESSAYS
 </b>
-<ul class="list f4">
+<ul class="pl0 pl4-ns f4">
   {% for post in site.posts %}
-    <li>
-      <p><a class="link dim" href="{{ post.url }}">{{ post.title }}</a></p>
-    </li>
+    <p><a class="link dim" href="{{ post.url }}">{{ post.title }}</a></p>
   {% endfor %}
 </ul>
 </div>
