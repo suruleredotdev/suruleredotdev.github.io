@@ -1,0 +1,53 @@
+<!-- TODO: vendor these?
+  <script src="https://www.unpkg.com/lzma@2.2.1/index.js"></script>
+  <script src="https://www.unpkg.com/buffer@5.6.0/index.js"></script>
+-->
+
+<style>
+  .LIGHT .annotation {
+    background-color: var(--bg-color-light);
+    color: var(--txt-color-light);
+    border-top: 1px solid var(--border-color-light); 
+  }
+  .DARK .annotation {
+    background-color: var(--bg-color-dark);
+    color: var(--border-color);
+    border-top: 1px solid var(--border-color); 
+  }
+  .annotation {
+    position: relative;
+    display: block;
+    font-weight: light;
+    padding: 10px;
+    line-height: 15px;
+    width: calc(7.3 * var(--bg-size));
+    left: calc(18.3 * var(--bg-size));
+    height: 0;
+  }
+
+  /* only implementing this for desktop for now*/
+  @media screen and (max-width: 600px) {
+    .annotation {
+      display: none;
+    }
+  }
+</style>
+
+<script src="/itty.js"></script>
+
+<script>
+  function zip(...rows) {
+    return [...rows[0]].map(function (_,c) { return rows.map(row=>row[c]); });
+  }
+
+  window.addEventListener('DOMContentLoaded', function (e) {
+    let annotations = document.querySelectorAll(".annotation");
+    for (var i = 0; i < annotations.length; i++) {
+      let el = annotations[i];
+      el.addEventListener('click', function(event) {
+        // TODO
+      })
+    };
+  });
+
+</script>

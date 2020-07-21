@@ -10,22 +10,20 @@ Starting from the 2000s with GSM in Nigeria and M-Pesa in Kenya, the unprecedent
 adopted in Africa supports similar expectations for Blockchain based services. From healthcare to payments, blockchain technology 
 can fulfill the unique needs that exist in the developing world.
 
-> BitPesa and Wala, both use blockchain to provide low-cost financial solutions that stimulate economic activity in the African 
-> countries where they currently operate. Despite the enormous social marginal benefit (the benefit minus the cost to society)
-> these financial technology firms stand to produce, they face a lot of resistance from legacy systems and the aged politicians in 
-> power.
+<div class="annotation f6 pb0">
+  <div class="annotation-body pa0 pl3">
+    BitPesa and Wala both use blockchain to provide low-cost financial solutions that stimulate economic activity in the African 
+    countries where they currently operate. Despite the enormous social marginal benefit (the benefit minus the cost to society)
+    these financial technology firms stand to produce, they face a lot of resistance from legacy systems and the aged politicians in 
+    power.
+  </div>
+</div>
 
 Founded in 2013 by Elizabeth Rossiello, BitPesa developed with core competencies in international business to business transactions
 and bitcoin exchange services. It provides a cost and time effective alternative to traditional money transfer services like
 MoneyGram and Western Union. BitPesa’s mission is “to develop innovative financial technology solutions that empower frontier
 market businesses.” Their services help make their customers’ products more accessible and competitive in international markets 
 by making payments cheaper, faster and easier to process.
-
-<div class=".ANNOTATION">
-This is an annotation concerning the current state of this engine. It is the first annotation on the page.
-
-We'll expand on this framework to support commenting soon.
-</div>
 
 With approximately 6,000 users, Bitpesa has generated an estimated $10,000,000 in trade volume per month in 4 of the 7 countries it
 currently operates. [Together with a month over month 20% growth rate](https://www.cnn.com/videos/world/2018/03/23/marketplace-africa-elizabeth-rossiello-africa-bitpesa-bitcoin-b.cnn) in trade volumes and a market size of over 500 million people,

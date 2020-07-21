@@ -38,6 +38,14 @@ body.DARK {
   background-image: url(suruleredotdev_green_bg_faint.svg);
 }
 
+.LIGHT::selection {
+  background-color: #ffb7b7; /* WebKit/Blink Browsers */
+}
+
+.DARK::selection {
+  background-color: red; /* WebKit/Blink Browsers */
+}
+
 @-webkit-keyframes bg-slide {
     from { background-position: 0 0; }
     to { background-position: 100% 0; }
@@ -48,18 +56,35 @@ body.DARK {
   100% { opacity: 1; }
 }
 
-@media screen and (min-width: 60em) {
+@media screen and (min-width: 500px) {
   #content {
     margin-left: calc(4 * var(--bg-size));
-    margin-right: calc(4 * var(--bg-size));
+    margin-right: calc(10 * var(--bg-size));
     margin-top: calc(1 * var(--bg-size));
     animation: fadeIn ease 700ms;
+    padding: var(--bg-size);
   }
 
   #logo img {
     width: calc(2 * var(--bg-size));
     margin-left: calc(4 * var(--bg-size));
     margin-top: calc(1 * var(--bg-size));
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #content {
+    margin-left: calc(0.5 * var(--bg-size));
+    margin-right: calc(0.5 * var(--bg-size));
+    animation: fadeIn ease 700ms;
+    margin-bottom: calc(1 * var(--bg-size));
+  }
+
+  #logo img {
+    width: calc(1 * var(--bg-size));
+    margin-left: calc(0.5 * var(--bg-size));
+    margin-top: calc(1 * var(--bg-size));
+    margin-bottom: calc(1 * var(--bg-size));
   }
 }
 
@@ -96,6 +121,16 @@ a.no-ul {
   color: var(--title-color);
 }
 
+.LIGHT a.title {
+  border-bottom: 1px dashed var(--txt-color-dark);
+}
+.DARK a.title {
+  border-bottom: 1px dashed var(--title-color);
+}
+a.title {
+  color: var(--title-color);
+}
+
 /*
  * _layouts/post
  */
@@ -124,6 +159,12 @@ a.no-ul {
   font-size: 10px;
 }
 
+@media screen and (max-width: 500px) {
+  #footer {
+    font-size: 8px;
+  }
+}
+
 .LIGHT #footer {
   color: var(--txt-color-light);
 }
@@ -132,8 +173,8 @@ a.no-ul {
   color: var(--txt-color-dark);
 }
 
-#twitter-link {
-
+.hide {
+  display: none;
 }
 
 #share-block:hover > .hide {
@@ -142,8 +183,4 @@ a.no-ul {
 
 #settings-block:hover > .hide {
   display: block;
-}
-
-.hide {
-  display: none;
 }
