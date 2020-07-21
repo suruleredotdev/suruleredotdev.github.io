@@ -77,7 +77,7 @@ body.DARK {
     margin-left: calc(0.5 * var(--bg-size));
     margin-right: calc(0.5 * var(--bg-size));
     animation: fadeIn ease 700ms;
-    margin-bottom: calc(1 * var(--bg-size));
+    margin-bottom: calc(3 * var(--bg-size));
   }
 
   #logo img {
@@ -177,10 +177,10 @@ a.title {
   display: none;
 }
 
-#share-block:hover > .hide {
+#share-block:hover > .hide, #share-block:active > .hide {
   display: block;
 }
 
-#settings-block:hover > .hide {
+#settings-block:hover > .hide, #share-block:active > .hide  {
   display: block;
 }
