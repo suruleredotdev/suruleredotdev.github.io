@@ -65,7 +65,7 @@
           <a target="_blank" class="no-ul">FACEBOOK</a>
         </span>
         <span class="link dim pv2 underline">
-          SHARE
+          <a href="#" class="no-ul">SHARE</a>
         </span>
       </div>
       {% endif %}
@@ -81,6 +81,7 @@
       <script>
         document.getElementById("clear-local-storage").addEventListener("click", function (e) {
           localStorage.clear();
+          console.log("[suruleredotdev]: local storage cleared!");
         });
         function toggleVisibility(el) {
           if (el.style.display === "none") {
@@ -99,7 +100,7 @@
       </script>
 
       <span class="link ph3 pv2 underline">
-        SETTINGS 
+        <a href="#" class="no-ul">SETTINGS</a>
       </span>
     </div>
   </footer>
