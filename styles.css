@@ -16,6 +16,10 @@
  * _layouts/default
  */
 
+html {
+  scroll-behavior: smooth;
+}
+
 b, p, em > p, em {
   transition: color .15s ease-in;
 }
@@ -32,10 +36,12 @@ body.animate-bg {
 
 body.LIGHT {
   background-image: url(suruleredotdev_background.svg);
+  background-color: var(--bg-color-light);
 }
 
 body.DARK {
   background-image: url(suruleredotdev_green_bg_faint.svg);
+  background-color: var(--bg-color-dark);
 }
 
 .LIGHT::selection {
@@ -74,17 +80,17 @@ body.DARK {
 
 @media screen and (max-width: 500px) {
   #content {
-    margin-left: calc(0.5 * var(--bg-size));
-    margin-right: calc(0.5 * var(--bg-size));
+    margin-left: calc(0.2 * var(--bg-size));
+    margin-right: calc(0.2 * var(--bg-size));
     animation: fadeIn ease 700ms;
-    margin-bottom: calc(3 * var(--bg-size));
+    margin-bottom: calc(1 * var(--bg-size));
   }
 
   #logo img {
     width: calc(1 * var(--bg-size));
     margin-left: calc(0.5 * var(--bg-size));
-    margin-top: calc(1 * var(--bg-size));
-    margin-bottom: calc(1 * var(--bg-size));
+    margin-top: calc(0.5 * var(--bg-size));
+    margin-bottom: calc(0.5 * var(--bg-size));
   }
 }
 
@@ -161,7 +167,8 @@ a.title {
 
 @media screen and (max-width: 500px) {
   #footer {
-    font-size: 8px;
+    position: relative;
+    font-size: 10px;
   }
 }
 
