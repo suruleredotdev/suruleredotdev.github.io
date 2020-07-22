@@ -15,24 +15,35 @@
     border-top: 0.5px solid var(--border-color); 
   }
   .annotation {
-    position: relative;
     display: block;
     font-weight: light;
-    padding: 0;
     line-height: 15px;
-    width: calc(7.3 * var(--bg-size));
-    left: calc(18.3 * var(--bg-size));
-    height: 0;
   }
+
   .annotation-header, .annotation-body {
     position: relative;
     top: 10px;
   }
 
-  /* only implementing this for desktop for now*/
-  @media screen and (max-width: 600px) {
+  @media screen and (min-width: 1200px) {
     .annotation {
-      display: none;
+      position: relative;
+      width: calc(7.3 * var(--bg-size));
+      left: calc(18.3 * var(--bg-size));
+      height: 0;
+      padding: 0;
+    }
+  }
+
+  /* inline on smaller screens */
+  @media screen and (max-width: 1200px) {
+    .annotation {
+      position: relative;
+      width: 100%;
+      left: 0;
+      height: 100%;
+      padding-bottom: 20px;
+      padding-top: 10px;
     }
   }
 </style>

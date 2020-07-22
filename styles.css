@@ -62,13 +62,24 @@ body.DARK {
   100% { opacity: 1; }
 }
 
-@media screen and (min-width: 500px) {
+#content {
+    animation: fadeIn ease 700ms;
+    padding: var(--bg-size);
+}
+
+@media screen and (min-width: 1200px) {
   #content {
     margin-left: calc(4 * var(--bg-size));
     margin-right: calc(10 * var(--bg-size));
+    width: calc(19.3 * var(--bg-size));
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1200px) {
+  #content {
+    margin-left: calc(4 * var(--bg-size));
+    margin-right: calc(4 * var(--bg-size));
     margin-top: calc(1 * var(--bg-size));
-    animation: fadeIn ease 700ms;
-    padding: var(--bg-size);
   }
 
   #logo img {
@@ -78,7 +89,7 @@ body.DARK {
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   #content {
     margin-left: calc(0.2 * var(--bg-size));
     margin-right: calc(0.2 * var(--bg-size));
@@ -165,7 +176,7 @@ a.title {
   font-size: 10px;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 400px) {
   #footer {
     position: relative;
     font-size: 10px;
