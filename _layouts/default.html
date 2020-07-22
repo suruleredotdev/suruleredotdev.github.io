@@ -59,10 +59,16 @@
       {% if page.layout == "post" %}
       <div id="share-block" class="w-10 tl pointer flex flex-column absolute pv2" style="bottom: 0; left: calc(2.6 * var(--bg-size));">
         <span class="link dim pv2 hide">
-          <a target="_blank" class="no-ul" href="https://twitter.com/intent/tweet?text={{ page.title | append: " https://surulere.dev" | append: page.url | url_encode }}">TWITTER</a>
+          <a target="_blank" class="no-ul" 
+            href="https://twitter.com/intent/tweet?text={{ page.title | append: " https://surulere.dev" | append: page.url | url_encode }}">
+            TWITTER
+          </a>
         </span>
         <span class="link dim pv2 hide">
-          <a target="_blank" class="no-ul">FACEBOOK</a>
+          <a target="_blank" class="no-ul"
+            href="https://www.facebook.com/sharer/sharer.php?u={{ "https://surulere.dev" | append: page.url | url_encode }}">
+            FACEBOOK
+          </a>
         </span>
         <span class="link dim pv2 underline">
           <a href="#" class="no-ul">SHARE</a>
