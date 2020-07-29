@@ -72,6 +72,13 @@ body.DARK {
     margin-left: calc(4 * var(--bg-size));
     margin-right: calc(10 * var(--bg-size));
     width: calc(19.3 * var(--bg-size));
+    margin-top: calc(1 * var(--bg-size));
+  }
+
+  #logo img {
+    width: calc(2 * var(--bg-size));
+    margin-left: calc(4 * var(--bg-size));
+    margin-top: calc(1 * var(--bg-size));
   }
 }
 
