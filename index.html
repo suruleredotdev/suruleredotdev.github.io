@@ -1,13 +1,36 @@
 ---
 layout: default
 ---
+<script>
+  function toggle_section(e, id, altText) {
+    var el = document.getElementById(id);
+    el.style.display = (el.style.display === "none") ? "block" : "none";
+    e.target.setAttribute("onclick", "toggle_section(event, 'about-more', '"+e.target.innerText+"')");
+    e.target.innerText = altText;
+  }
+</script>
 
 <div id="content" class="pa3 pa5-ns mt6-l mh7-l f4 h-100">
 <b class="title">
   ABOUT
 </b>
 <p>
-  We're using this space to publish articles and analyses on topics of development, technology and the economy in Africa, with a focus on Nigeria.
+  We're using this space to publish critical thought on development theory, technology and economics.
+</p>
+
+<!--
+<div id="about-more" style="display: none;">
+  <p>
+    This project takes shape through essays, visualizations, and basic tools that help folks think critically about our ever-changing reality in 2020, through the materialities of economics, geopolitics and computing.
+  </p>
+  <p>
+    So far, this project is very loosely defined -- that is, outside of clean aesthetic. But it's essence is in speculatively combining many disciplines and expressing them through one-another.
+  </p>
+</div>
+-->
+
+<p>
+  <a onclick="toggle_section(event, 'about-more', '&uarr;')" class="dim pa0 b--transparent ma0 gray f6 cursor">&darr;</a>
 </p>
 
 <br/>
@@ -16,9 +39,16 @@ layout: default
 <b class="title">
   ESSAYS
 </b>
-<ul class="pl0 pl4-ns f4">
+<ul class="pl0 pl4-ns">
   {% for post in site.posts %}
-    <p><a class="link dim" href="{{ post.url }}">{{ post.title }}</a></p>
+    <p>
+      <a class="link dim" href="{{ post.url }}">{{ post.title }}</a>
+      <!--
+      <p class="f7">
+        {{ post.excerpt }}
+      </p>
+      -->
+    </p>
   {% endfor %}
 </ul>
 <br/>

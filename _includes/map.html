@@ -1,0 +1,34 @@
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+
+<script src='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet' />
+
+<style>
+  .MAP {
+    height: calc(12 * var(--bg-size));
+    width: calc(23 * var(--bg-size));
+    left: calc(-3 * var(--bg-size));
+    padding: calc(2 * var(--bg-size));
+  }
+
+  .LIGHT .MAP {
+    background-color: var(--bg-color-light);
+    color: var(--txt-color-light);
+    border: 1px solid var(--border-color-light); 
+  }
+  .DARK .MAP {
+    background-color: var(--bg-color-dark);
+    color: var(--border-color);
+    border: 0.5px solid var(--border-color); 
+  }
+
+  /* leaflet.css tweaks */
+  .leaflet-control-zoom-in, .leaflet-control-zoom-out {
+    background: transparent !important;
+    border-radius: 0 !important;
+    border: 1px solid var(--border-color-light); 
+    box-shadow: 0;
+  }
+  
+</style>
