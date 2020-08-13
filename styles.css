@@ -4,6 +4,7 @@
   --bg-color-dark: #0E160C;
   --txt-color-light: #4D4D4D;
   --txt-color-dark: #A3A8A2;
+  --txt-color-annotation-dark: #535e52fa;
   --accent-color: #2ca7ad;
   --accent-color-dark: #2ca7ad;
   --accent-color-light: #751a42;
@@ -35,12 +36,12 @@ body.animate-bg {
 }
 
 body.LIGHT {
-  background-image: url(suruleredotdev_background.svg);
+  background-image: url(assets/img/suruleredotdev_background.svg);
   background-color: var(--bg-color-light);
 }
 
 body.DARK {
-  background-image: url(suruleredotdev_green_bg_faint.svg);
+  background-image: url(assets/img/suruleredotdev_green_bg_faint.svg);
   background-color: var(--bg-color-dark);
 }
 

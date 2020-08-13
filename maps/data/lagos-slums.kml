@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>lagos-slums</name>
+	<gx:CascadingStyle kml:id="__managed_style_22A0DAE26C150FCC949E">
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/rpc/cc/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>3</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_10DF533255150FCC949E">
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/rpc/cc/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>2</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_0444E886FD150FCC949E">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_10DF533255150FCC949E</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_22A0DAE26C150FCC949E</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Placemark id="0EE07F0B7B150FCC949D">
+		<name>makoko</name>
+		<LookAt>
+			<longitude>3.390699604476597</longitude>
+			<latitude>6.496980066076835</latitude>
+			<altitude>0.5096281521769308</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>2045.227524561051</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0444E886FD150FCC949E</styleUrl>
+		<Point>
+			<coordinates>3.393150215263694,6.496380517820283,0.4043081240024136</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0C287DC08B150FD92AB1">
+		<name>makoko stilt houses</name>
+		<LookAt>
+			<longitude>3.398574551685467</longitude>
+			<latitude>6.494805026411322</latitude>
+			<altitude>-0.7577039792579709</altitude>
+			<heading>-3.330722262973276</heading>
+			<tilt>6.223887740329163</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>3691.854483006173</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0444E886FD150FCC949E</styleUrl>
+		<Polygon>
+			<outerBoundaryIs>
+				<LinearRing>
+					<coordinates>
+						3.396565333965527,6.499388596138776,-0.7552619389235715 3.396071236858498,6.498308276288381,-0.7500955524350317 3.395180876091464,6.498142901797556,-0.7476824041721974 3.393581174431306,6.498437797634089,-0.6564204404719187 3.392136169054651,6.499017284905492,-0.4963478503338092 3.39164757305789,6.499194521637618,-0.0752602291713933 3.391020178335176,6.499388167456726,-0.1750347221933679 3.390186487849949,6.499635573020405,1.266815238715195 3.389847257467644,6.499109283300674,1.722401052190787 3.389553041058508,6.498588334520944,1.7254460772098 3.389447329311213,6.497988763844371,1.725075645868079 3.389330075960624,6.49752702387896,1.723191348347863 3.388958923605714,6.497142561085106,1.721206455180035 3.388503137361387,6.496957664429188,1.718792810375613 3.38802186400486,6.496568031927116,1.7293504176666 3.387404500420326,6.496215964419437,2.053747136970692 3.386647237908169,6.495924408800967,2.094762634967806 3.385899574399445,6.495682571611565,-0.5574658118805198 3.386474865334435,6.495087120167837,-0.2873804988177953 3.38717371887693,6.494633404008894,1.714288756608622 3.387943289366224,6.494233991018932,0.04970935129192666 3.388798883244251,6.49368296884318,0.9660911763925495 3.389611243460027,6.49326618945614,-0.4099356161025947 3.390296052315989,6.492798260484586,-0.4517026177684036 3.391163096598839,6.493046712695602,-0.2908997528827906 3.391949342023386,6.49265172998574,-0.4694844793533903 3.392796184793134,6.491735999613575,-0.7562432005899233 3.392472805989999,6.490801980454518,-0.7583024017014994 3.393050838630491,6.489322063574614,-0.7574721594102729 3.394083738685258,6.488695010923508,-0.7533115716645555 3.396809123276046,6.490121346939974,-0.7589879502179142 3.397420329544942,6.492968249496178,-0.7521071824575898 3.397930999234737,6.495503953530723,-0.7589980649539629 3.397551624403587,6.498052459542161,-0.7539627753471534 3.396565333965527,6.499388596138776,-0.7552619389235715 
+					</coordinates>
+				</LinearRing>
+			</outerBoundaryIs>
+		</Polygon>
+	</Placemark>
+</Document>
+</kml>
