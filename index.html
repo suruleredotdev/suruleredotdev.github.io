@@ -11,12 +11,10 @@ layout: default
 </script>
 
 <div id="content" class="pa3 pa5-ns mt6-l mh7-l f4 h-100">
-<b class="title">
-  ABOUT
-</b>
-<p>
-  We're using this space to publish critical thought on development theory, technology and economics.
-</p>
+
+<div>
+    
+</div>
 
 <!--
 <div id="about-more" style="display: none;">
@@ -41,16 +39,18 @@ layout: default
 </b>
 <ul class="pl0 pl4-ns">
   {% for post in site.posts %}
-    {% if post.future != true %}
+    {% if post.draft != true %}
     <p>
       <a class="link dim" href="{{ post.url }}">{{ post.title }}</a>
       <small class="f7">&mdash; {{ post.date | date_to_string }}</small>
-      {% if post.tags %}
-        <br/>
-        {% for tag in post.tags %}
-        <a class="tag f7 dim no-ul" href="/blog/tag/#{{ tag | slugify }}"><em>{{ tag }}</em></a>
-        {% endfor %}
-      {% endif %}
+      <!--
+        {% if post.tags %}
+          <br/>
+          {% for tag in post.tags %}
+          <a class="tag f7 dim no-ul" href="/blog/tag/#{{ tag | slugify }}"><em>{{ tag }}</em></a>
+          {% endfor %}
+        {% endif %}
+      -->
     </p>
     {% endif %}
   {% endfor %}

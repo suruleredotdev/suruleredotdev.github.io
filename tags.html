@@ -1,0 +1,61 @@
+---
+layout: default
+title: Tags
+---
+<div id="content" class="pa3 pa5-ns mt6-l mh7-l f4 h-100">
+{% assign rawtags = "" %}
+{% for post in site.posts %}
+	{% assign ttags = post.tags | join:'|' | append:'|' %}
+	{% assign rawtags = rawtags | append:ttags %}
+{% endfor %}
+{% assign rawtags = rawtags | split:'|' | sort %}
+
+{% assign tags = "" %}
+{% for tag in rawtags %}
+	{% if tag != "" %}
+		{% if tags == "" %}
+			{% assign tags = tag | split:'|' %}
+		{% endif %}
+		{% unless tags contains tag %}
+			{% assign tags = tags | join:'|' | append:'|' | append:tag | split:'|' %}
+		{% endunless %}
+	{% endif %}
+{% endfor %}
+
+<b class="title">
+	TAGS
+</b>
+
+<p>
+{% for tag in tags %}
+	<a href="#{{ tag | slugify }}"> {{ tag }} </a>
+	&nbsp;
+{% endfor %}
+</p>
+
+{% for tag in tags %}
+<div>
+	<b class="title" id="{{ tag | slugify }}">
+		{{ tag }}
+	</b>
+	<ul class="pl0 pl4-ns">
+		{% for post in site.posts %}
+		{% if post.tags contains tag %}
+		<p>
+			<a class="link dim" href="{{ post.url }}">{{ post.title }}</a>
+			<small class="f7">&mdash; {{ post.date | date_to_string }}</small>
+			<br/>
+			{% if post.tags.length > 0 %}
+				<span class="f7">></span>
+			{% endif %}
+			{% for tag in post.tags %}
+				<a class="tag f7 no-underline dim" href="/blog/tag/#{{ tag | slugify }}">{{ tag }}</a>
+			{% endfor %}
+		</p>
+		{% endif %}
+		{% endfor %}
+    </ul>
+</div>
+{% endfor %}
+
+</div>

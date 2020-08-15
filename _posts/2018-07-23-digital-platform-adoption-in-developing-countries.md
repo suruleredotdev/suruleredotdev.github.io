@@ -4,8 +4,8 @@ author: Korede Aderele
 author_link: https://twitter.com/korede_ta
 ---
 
-_This post was originally written shortly after my 2018 internship at Coinbase, and served to explain how the company might start shifting it's
-focus to better support the adoption of Cryptocurrencies in Developing countries_
+_This post was originally written shortly after my 2018 internship at Coinbase, and served to suggest 
+some way companies could adopt local strategies to better support the adoption of Cryptocurrencies in Developing countries_
 
 The big question around the adoption of digital services in developing countries is: how do we get people with supposedly limited exposure to any
 technology to actively adopt novel digital platforms? In answering this question, I think certain assumptions about this user base must be reexamined.

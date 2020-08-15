@@ -1,4 +1,5 @@
 url: https://surulere.dev
+future: true
 frame_class: "frame mw6 pa2 h-100"
 defaults:
   - scope:

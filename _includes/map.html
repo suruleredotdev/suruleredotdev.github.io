@@ -1,15 +1,25 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
 
+<script>
+  /* not even mine */
+  const mapboxAccessToken = 'pk.eyJ1Ijoia29yZWRlc21hcHMiLCJhIjoiY2tkbmhpdTBiMGMwZTJ6cHlpN2ppbG5jMyJ9.d7dW9A4fq2_qz0EKv3ofqA';
+</script>
 <script src='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js'></script>
 <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet' />
+<script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'></script>
 
 <style>
+  .MAP-container {
+    display: flex;
+    flex-direction: row;
+    width: calc(23 * var(--bg-size)) !important;
+    left: calc(-5 * var(--bg-size));
+  }
+
   .MAP {
     height: calc(12 * var(--bg-size));
-    width: calc(23 * var(--bg-size));
-    left: calc(-3 * var(--bg-size));
-    padding: calc(2 * var(--bg-size));
+    width: 70%;
   }
 
   .LIGHT .MAP {
@@ -19,16 +29,62 @@
   }
   .DARK .MAP {
     background-color: var(--bg-color-dark);
-    color: var(--border-color);
-    border: 0.5px solid var(--border-color); 
+    color: rgba(var(--txt-color-dark), 0.8);
+    border: 0.5px solid var(--border-color);
   }
 
   /* leaflet.css tweaks */
   .leaflet-control-zoom-in, .leaflet-control-zoom-out {
-    background: transparent !important;
     border-radius: 0 !important;
     border: 1px solid var(--border-color-light); 
     box-shadow: 0;
   }
-  
+
+  .map-annotation {
+    border-width: 0.5px;
+    width: 30%;
+    border-width: 0.5px; border-left-width: 0px;
+    border-style: solid; 
+    height: calc(12 * var(--bg-size));
+    overflow-y: scroll;
+  }
+
+  .DARK .map-annotation {
+    background-color: var(--bg-color-dark);
+    color: var(--txt-color-annotation-dark);
+    border-color: var(--border-color);
+  }
+
+  .DARK .map-annotation > .annotation-body {
+    background-color: var(--bg-color-dark);
+  }
+
+  .LIGHT .map-annotation {
+    background-color: var(--bg-color-light);
+    color: var(--txt-color-light);
+    border-color: var(--border-color-light);
+  }
+  .LIGHT .map-annotation > .annotation-body {
+    background-color: var(--bg-color-light);
+  }
+
+  @media screen and (min-width: 1200px) {
+    .map-annotation {
+      position: relative;
+      width: calc(7.3 * var(--bg-size));
+      left: calc(0 * var(--bg-size)) !important;
+    }
+  }
+
+  /* inline on smaller screens */
+  @media screen and (max-width: 1200px) {
+    .map-annotation {
+      position: relative;
+      width: 100% !important;
+      left: 0 !important;
+      height: 100% !important;
+      padding-bottom: 20px;
+      padding-top: 10px;
+    }
+  }
 </style>

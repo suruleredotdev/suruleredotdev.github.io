@@ -19,11 +19,13 @@
         document.getElementById("logo-dark").style.display = "block";
         document.getElementById("logo-light").style.display = "none";
         document.querySelector('body').classList.remove('LIGHT');
+        if (!!codemirror) codemirror.setOption("theme", "material");
       } else if(mode === 'light') {
         if (!document.querySelector('body').classList.contains('LIGHT')) document.querySelector('body').classList.add('LIGHT');
         document.getElementById("logo-light").style.display = "block";
         document.getElementById("logo-dark").style.display = "none";
         document.querySelector('body').classList.remove('DARK');
+        if (!!codemirror)  codemirror.setOption("theme", "neo");
       }
     }
 
@@ -78,7 +80,7 @@
     </div>
     <!-- note the 'mv2' here due to the 'absolute' so we can have this appear as a upward dropdown thing -->
     <div id="settings-block" class="w-33-ns tr mv2 pointer flex flex-column absolute" style="bottom:0; right:0;">
-      <span id="clear-local-storage" class="link dim ph3 pv2 hide">
+    <span id="clear-local-storage" class="link dim ph3 pv2 hide">
         CLEAR LOCAL STORAGE
       </span>
       <span id="dark-mode-toggle" class="link dim ph3 pv2 hide">
@@ -101,7 +103,10 @@
           document.body.classList.toggle("LIGHT");
           toggleVisibility(document.getElementById("logo-dark"));
           toggleVisibility(document.getElementById("logo-light"));
-          localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark');
+          localStorage.setItem('mode', document.body.classList.contains("DARK") === 'dark' ? 'light' : 'dark');
+          console.log("toggling dark mode");
+          setMode((localStorage.getItem('mode')));
+          // codemirror.setOption("theme", (localStorage.getItem('mode') || 'dark') === 'dark' ? 'material' : 'neo');
         });
       </script>
 

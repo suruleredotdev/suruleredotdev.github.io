@@ -7,12 +7,16 @@
   .LIGHT .annotation {
     background-color: var(--bg-color-light);
     color: var(--txt-color-light);
-    border-top: 1px solid var(--border-color-light); 
+    border-color: var(--border-color-light);
+    border-top-width: 0.5px;
+    border-top-style: solid; 
   }
   .DARK .annotation {
     background-color: var(--bg-color-dark);
-    color: var(--border-color);
-    border-top: 0.5px solid var(--border-color); 
+    color: rgba(var(--txt-color-dark), 0.8);
+    border-color: var(--border-color);
+    border-top-width: 0.5px;
+    border-top-style: solid; 
   }
   .annotation {
     display: block;
