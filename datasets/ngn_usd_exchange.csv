@@ -1,4 +1,4 @@
-date,currency,year,month,buying_rate,central_rate,selling_rate
+date,currency,year,month,price,central_rate,selling_rate
 "8/14/2020","US DOLLAR","2020","August","379","379.5","380"
 "8/13/2020","US DOLLAR","2020","August","379","379.5","380"
 "8/12/2020","US DOLLAR","2020","August","379","379.5","380"
