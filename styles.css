@@ -13,6 +13,30 @@
   --title-color: #3F493D;
 }
 
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-color: #E5E5E5;
+    --txt-color: #4D4D4D;
+    --txt-color-annotation: #535e52fa;
+    --accent-color: #751a42;
+    --border-color: #3f493d2e;
+    --title-color: #4D4D4;
+    --border-width: 1px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #0E160C;
+    --txt-color: #A3A8A2;
+    --txt-color-annotation: #535e52fa;
+    --accent-color: #2ca7ad;
+    --border-color: #3F493D;
+    --title-color: #3F493D;
+    --border-width: 0.5px;
+    }
+}
+
 /*
  * _layouts/default
  */
@@ -35,6 +59,7 @@ body.animate-bg {
   animation: bg-slide 500ms linear;
 }
 
+/* DARK MODE */
 body.LIGHT {
   background-image: url(assets/img/suruleredotdev_background.svg);
   background-color: var(--bg-color-light);
@@ -45,19 +70,12 @@ body.DARK {
   background-color: var(--bg-color-dark);
 }
 
-.LIGHT::selection {
-  background-color: #ffb7b7; /* WebKit/Blink Browsers */
-}
-
-.DARK::selection {
-  background-color: red; /* WebKit/Blink Browsers */
-}
-
 @-webkit-keyframes bg-slide {
     from { background-position: 0 0; }
     to { background-position: 100% 0; }
 }
 
+/* FADE-IN ANIMATIONS */
 @-webkit-keyframes fadeIn {
   0% { opacity: 0; }
   100% { opacity: 1; }
@@ -76,6 +94,13 @@ body.DARK {
     margin-top: calc(1 * var(--bg-size));
   }
 
+  #content.map {
+    margin-left: calc(2 * var(--bg-size));
+    margin-right: calc(4 * var(--bg-size));
+    width: calc(25.3 * var(--bg-size));
+    margin-top: calc(1 * var(--bg-size));
+  }
+
   #logo img {
     width: calc(2 * var(--bg-size));
     margin-left: calc(4 * var(--bg-size));
@@ -90,6 +115,13 @@ body.DARK {
     margin-top: calc(1 * var(--bg-size));
   }
 
+  #content.map {
+    margin-left: calc(2 * var(--bg-size));
+    margin-right: calc(4 * var(--bg-size));
+    width: calc(17.3 * var(--bg-size));
+    margin-top: calc(1 * var(--bg-size));
+  }
+
   #logo img {
     width: calc(2 * var(--bg-size));
     margin-left: calc(4 * var(--bg-size));
@@ -101,6 +133,14 @@ body.DARK {
   #content {
     margin-left: calc(0.2 * var(--bg-size));
     margin-right: calc(0.2 * var(--bg-size));
+    animation: fadeIn ease 700ms;
+    margin-bottom: calc(1 * var(--bg-size));
+  }
+
+  #content.map {
+    margin-left: calc(0.2 * var(--bg-size));
+    margin-right: calc(0.2 * var(--bg-size));
+    height: calc(17 * var(--bg-size));
     animation: fadeIn ease 700ms;
     margin-bottom: calc(1 * var(--bg-size));
   }

@@ -41,8 +41,7 @@ Cryptocurrencies have already been of interest in Nigeria, since at least 2017.
 During Nigeria’s foreign-exchange crisis, cryptocurrencies provided traders and consumers with an alternative market to access foreign currencies, when the central bank’s supplies were too scarce and the black market prices too steep.
 The hope with these inherently stable cryptocurrencies, is that their stability will allow them to be used for more purposes and appeal to the masses of everyday Nigerians.
 
-
-<div id="btc_eth_symbols" class="CHART ph6" data-file="/btc_eth_symbols.csv"></div>
+<div id="btc_eth_symbols" class="CHART ph6" data-file="/datasets/btc_eth_symbols.csv"></div>
 <p class="tc f7 o-50">Bitcoin and Ethereum Price Fluctuations</p>
 
 ## Dollar Ti Won, Make We Buy Eth
@@ -50,15 +49,14 @@ The hope with these inherently stable cryptocurrencies, is that their stability 
 There’s something a little counterintuitive about the logic of establishing a Naira stablecoin: the Naira isn’t exactly a stable fiat currency.
 As mentioned, The Naira has been notoriously volatile in response to global oil prices.
 Amongst other factors, as a member of OPEC, Nigeria is subject to agreements about how much it can sell it’s crude for, regardless of its production capacity.
-In 2016, oil prices dropped by XX[c][d][e][f][g]%, and Saudi Arabia decided to ramp up production to increase the global supply, thereby dropping export prices and reducing the revenue of less dominant Nigeria where the economy is highly dependent on crude oil exports.[h][i]
 
-[graph of naira instability over the last 4 years, charted against Oil prices, with labels highlighting inflection points like saudi arabia’s ramping up of production, CBN’s decision to devalue, and the gradual stabilization of the currency after a while.]
+<div id="ngn_usd_exchange" class="CHART ph6" data-file="/datasets/ngn_usd_exchange.csv"></div>
+<p class="tc f7 o-50">Naira to Dollar (USD) exchange rate</p>
 
-
-In response to crude price fluctuations in 2016, Nigerians rushed to convert their rapidly devaluing Naira into USD [j]so they could preserve their savings and make crucial overseas transactions.
+In response to crude price fluctuations in 2016, Nigerians rushed to convert their rapidly devaluing Naira into USD so they could preserve their savings and make crucial overseas transactions.
 The CBN reacted to this increased demand by setting significant restrictions on it’s forex reserves, stating that it would give priority to only the most essential requests, such as tuition payments and manufacturing equipment purchases.
 This process was unsurprisingly very disorganized and corrupt, with preferential treatment given to people with government connections.
-It was at this point that some Nigerians started to look into converting their liquidity into cryptocurrencies, because they provided a higher value, albeit more volatile alternative to the Naira.[k]
+It was at this point that some Nigerians started to look into converting their liquidity into cryptocurrencies, because they provided a higher value, albeit more volatile alternative to the Naira.
 
 
 Central Governments decentralize the value of their currencies in order to make their exports more competitive in the foreign market.
@@ -66,7 +64,7 @@ Hence stimulating demand for their goods exports over substitute exports produce
 The devaluation also makes imports much more expensive.
 In 2019, the government in an attempt to strengthen production in the country not only devalued the currency but also banned the importation of some goods.
 These banned imports were cheaper than goods produced within the country.
-This increased poverty rate because of the inflation that occurred as a result of the devaluation of the currency as well as the banned imports.[l][m]
+This increased poverty rate because of the inflation that occurred as a result of the devaluation of the currency as well as the banned imports.
 
 While the Naira might not always be reliable itself, the interoperability of Stablecoins means that we can still get a lot of flexibility out of a Naira stablecoin.
 The initial appeal of stablecoins will be as an intermediary currency, with identical value to the Naira, for interacting with crypto assets.
@@ -95,7 +93,7 @@ BitSika have gradually onboarded developers to build applications on their platf
 
 
 Both BuyCoins and BitSika followed Coinbase’s lead and set up independent “trusts” for managing the value of these new currencies.
-Coinbase partnered with Circle Payments to start a minting consortium called Centre, while BuyCoins teamed up with Alpha Training Lab to establish TokenMint.[n]
+Coinbase partnered with Circle Payments to start a minting consortium called Centre, while BuyCoins teamed up with Alpha Training Lab to establish TokenMint.
 
 
 The incentive for BitSika and BuyCoins to develop their own stablecoins is so they can easily integrate a Naira equivalent currency into their products, and build pools of Naira liquidity when they issue currencies through their apps.
@@ -103,7 +101,6 @@ To kickstart this, BuyCoins quickly started to offer their users attractive inte
 
 
 From the perspective of Blockchain die-hards, the hope for stablecoins is that they will provide an on-ramp from fiat to full cryptocurrencies, moving control over the economic system from centralized governments to the decentralized network of people who use said currencies.
-[o]
 
 
 Perhaps having multiple stablecoins pegged to the Naira will create a better more competitive landscape for services built around either currency.
@@ -118,12 +115,17 @@ But tools that provide real utility, like Dapps providing access to loans or oth
 This is a big issue in the crypto space in general, and the sophistication of blockchain technology can only be justified if there’s considerable gain in value or convenience with their use.
 In the ICO-boom of 2017, many companies staked their valuations on the eventual utility of the tokens they’re based on and we’re yet to see much of that value being realized.
 
-
-
-
-
 Existing startups could benefit from integrating with these coins to reduce internal processing costs that come from integrating with archaic financial infrastructure that currently exists, and  should focus on leveraging NGNT or ABCD’s programmability to build new systems, or reinforce their existing ones since they no longer have to be encumbered by slow processing times with banks.
 But the organizations that champion these coins are left with the challenge of encouraging developers to come to build on their platform instead of their competitor’s – they’ll have to significantly ramp up their Developer Relations practices and compete to gain the most mindshare.
+
+Blockchain consultancies like [Consensys](https://consensys.net/) have done a really good job developing software solutions 
+to making running blockchain easier, and offering good developer relations and support. 
+But many scaling challenges remain and the underlying technology hasn't quite justified itself for 
+all the usecases it's being posited for.
+Alongside this, they are mainly focused on institutional customers and big companies and private 
+blockchains, which is contradictory to the ethos of blockchain as a decentralizing force – 
+it doesn't matter if the data is decentralized if control over it is not. 
+These are issues that could be solved with better incentive and organization design and, there is also an opportunity to bring in a wide variety of systems knowledge, ranging from economic to ecological points-of-view, that could help ecosystems to converge on more robust models and adapt to new network conditions better.
 
 <div class="annotation f6 pb0">
   <div class="annotation-body pl3">
@@ -134,20 +136,21 @@ But the organizations that champion these coins are left with the challenge of e
   </div>
 </div>
 
-The next hurdle for this technology is marketing to consumers.
+The final hurdle for this technology is marketing to consumers.
 There’s two main routes for this: marketing based on the benefits of the platform (i.e.
 cryptographically-secure, transparent), or marketing the benefits of the product itself.
 The former route generally helps with increasing public confidence in all the products built on the platform, but it’s likely to only appeal to people who value the technical aspects.
 The latter route of marketing depends on the uniqueness of the product, and will probably involve pitting the product directly against its competitors in the Fiat world.
 “XX on the blockchain” hasn’t always been a winning strategy, so startups with such propositions will have to be very aggressive about finding product-market fit.
 
+In this regards as well, blockchain products could do a better job at helping customers participate on the blockchain network itself. Blockchains also support miners and other address holders (i.e. regular users) having the ability to vote for modifications to how the Blockchain works, this is known as on-chain governance. It would be interesting to see services that allow users to participate in these new financial network through more than just buying and selling tokens.
+
 
 ## Conclusion
 
-
 Stablecoins could be one-step in restoring the public’s trust in Nigeria’s financial system.
 It’s the best of both worlds because it combines the relative stability of fiat currencies with the security of cryptocurrencies.
-The verdict is still out there on  whether stable coins tied to the Naira would be successful but it is promising.
+The verdict is still out there on whether stable coins tied to the Naira would be successful but it is promising.
 With early competition between ABCD and NGNT leading to attractive interest rates that benefit the people.
 One should also be cautious of increased regulation by corrupt politicians as well as price wars that might render the value of the stablecoins lower than that of the Fiat-Currencies.
 Would it be better to tie the value of a stablecoin to that of the Naira as well as a well trusted commodity such as Gold?  
@@ -170,4 +173,3 @@ Would it be better to tie the value of a stablecoin to that of the Naira as well
 7. https://oec.world/en/profile/country/nga/
 
 8. https://www.stearsng.com/article/explainer-what-is-inflation
-
