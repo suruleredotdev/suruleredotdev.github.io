@@ -41,8 +41,10 @@ Cryptocurrencies have already been of interest in Nigeria, since at least 2017.
 During Nigeria’s foreign-exchange crisis, cryptocurrencies provided traders and consumers with an alternative market to access foreign currencies, when the central bank’s supplies were too scarce and the black market prices too steep.
 The hope with these inherently stable cryptocurrencies, is that their stability will allow them to be used for more purposes and appeal to the masses of everyday Nigerians.
 
+<!--
 <div id="btc_eth_symbols" class="CHART ph6" data-file="/datasets/btc_eth_symbols.csv"></div>
 <p class="tc f7 o-50">Bitcoin and Ethereum Price Fluctuations</p>
+-->
 
 ## Dollar Ti Won, Make We Buy Eth
 
@@ -50,8 +52,10 @@ There’s something a little counterintuitive about the logic of establishing a 
 As mentioned, The Naira has been notoriously volatile in response to global oil prices.
 Amongst other factors, as a member of OPEC, Nigeria is subject to agreements about how much it can sell it’s crude for, regardless of its production capacity.
 
+<!--
 <div id="ngn_usd_exchange" class="CHART ph6" data-file="/datasets/ngn_usd_exchange.csv"></div>
 <p class="tc f7 o-50">Naira to Dollar (USD) exchange rate</p>
+-->
 
 In response to crude price fluctuations in 2016, Nigerians rushed to convert their rapidly devaluing Naira into USD so they could preserve their savings and make crucial overseas transactions.
 The CBN reacted to this increased demand by setting significant restrictions on it’s forex reserves, stating that it would give priority to only the most essential requests, such as tuition payments and manufacturing equipment purchases.
