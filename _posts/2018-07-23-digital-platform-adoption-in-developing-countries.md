@@ -1,7 +1,7 @@
 ---
 layout: post
 author: Korede Aderele
-author_link: https://twitter.com/korede_ta
+author_link: https://agbero.dev
 ---
 
 _This post was originally written shortly after my 2018 internship at Coinbase, and served to suggest 
