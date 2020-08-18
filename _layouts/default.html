@@ -14,33 +14,33 @@
 
   <script>
     function setMode(mode) {
+      window.localStorage.setItem('mode', mode)
       if(mode === 'dark') {
         if (!document.querySelector('body').classList.contains('DARK')) document.querySelector('body').classList.add('DARK');
         document.getElementById("logo-dark").style.display = "block";
         document.getElementById("logo-light").style.display = "none";
         document.querySelector('body').classList.remove('LIGHT');
-        if (!!codemirror) codemirror.setOption("theme", "material");
+        if (typeof codemirror !== 'undefined') codemirror.setOption("theme", "material");
       } else if(mode === 'light') {
         if (!document.querySelector('body').classList.contains('LIGHT')) document.querySelector('body').classList.add('LIGHT');
         document.getElementById("logo-light").style.display = "block";
         document.getElementById("logo-dark").style.display = "none";
         document.querySelector('body').classList.remove('DARK');
-        if (!!codemirror)  codemirror.setOption("theme", "neo");
+        if (typeof codemirror !== 'undefined')  codemirror.setOption("theme", "neo");
       }
     }
 
-    window.addEventListener('DOMContentLoaded', function (e) {
+    function getMode() {
       var hours = (new Date()).getHours();
       var timeOfDayMode = hours > 6 && hours < 20 ? "light" : "dark";
-      var mode = !!localStorage.getItem("mode") ? localStorage.getItem("mode") : timeOfDayMode;
-      setMode(mode);
+      let localStorageMode = window.localStorage.getItem("mode");
+      return (!!localStorageMode) ? localStorageMode : timeOfDayMode;
+    }
+
+    window.addEventListener('DOMContentLoaded', function (e) {
+      setMode(getMode());
     });
   </script>
-  <!--
-  <script src="/scripts/jquery-1.11.1.min.js"></script>
-  <script src="/scripts/turbolinks.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/scripts/site.js" type="text/javascript" charset="utf-8"></script>
-  -->
 </head>
 
 <body class="sans-serif DARK animate-bg">
@@ -78,7 +78,7 @@
       </div>
       {% endif %}
     </div>
-    <!-- note the 'mv2' here due to the 'absolute' so we can have this appear as a upward dropdown thing -->
+    <!-- note the 'mv2' here due to the 'absolute' so we can have this appear as a upward dropdown -->
     <div id="settings-block" class="w-33-ns tr mv2 pointer flex flex-column absolute" style="bottom:0; right:0;">
     <span id="clear-local-storage" class="link dim ph3 pv2 hide">
         CLEAR LOCAL STORAGE
@@ -88,7 +88,7 @@
       </span>
       <script>
         document.getElementById("clear-local-storage").addEventListener("click", function (e) {
-          localStorage.clear();
+          window.localStorage.clear();
           console.log("[suruleredotdev]: local storage cleared!");
         });
         function toggleVisibility(el) {
@@ -98,15 +98,9 @@
             el.style.display = "none";
           }
         }
+
         document.getElementById("dark-mode-toggle").addEventListener("click", function (e) {
-          document.body.classList.toggle("DARK");
-          document.body.classList.toggle("LIGHT");
-          toggleVisibility(document.getElementById("logo-dark"));
-          toggleVisibility(document.getElementById("logo-light"));
-          localStorage.setItem('mode', document.body.classList.contains("DARK") === 'dark' ? 'light' : 'dark');
-          console.log("toggling dark mode");
-          setMode((localStorage.getItem('mode')));
-          // codemirror.setOption("theme", (localStorage.getItem('mode') || 'dark') === 'dark' ? 'material' : 'neo');
+          setMode((getMode() === 'dark') ? 'light' : 'dark');
         });
       </script>
 

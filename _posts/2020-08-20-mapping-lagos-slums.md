@@ -13,8 +13,8 @@ Lagos slums include, Makoko – the infamous floating slum and Otodo Gbame - whi
 <blockquote 
   class="quoteback"
   darkmode="" 
-  data-title="Slum%20Dwellers%20In%20Africa's%20Biggest%20Megacity%20Are%20Now%20Living%20In%20Canoes"
-  data-author="@NPR" cite="https://www.npr.org/sections/goatsandsoda/2017/05/15/528461093/slum-dwellers-in-africas-biggest-megacity-are-now-living-in-canoes">
+  data-author="Slum Dwellers In Africa's Biggest Megacity Are Now Living In Canoes"
+  data-title="@NPR" cite="https://www.npr.org/sections/goatsandsoda/2017/05/15/528461093/slum-dwellers-in-africas-biggest-megacity-are-now-living-in-canoes">
   These communities are perhaps the most visible manifestation of the profound income inequality in Lagos. While the oil and finance industries have buoyed a few thousand Lagosians into stratospheric wealth (marked by gleaming black Escalades and boutique markets selling French oysters), one-fifth of the city's 21 million residents are either living in or at risk of poverty, according to a <a href="https://www.documentcloud.org/documents/3719246-NGA.html" target="_blank" rel="noopener">2016 Oxford University study</a>.
   <footer>
   @NPR
@@ -32,7 +32,7 @@ The map below highlights these settlements within the urban matrix of Lagos.
 <!--
   This block of code below contains the map and the text carousel beside it. Scrolling to each new section of the carousel 
 --->
-<div class="MAP-container flex flex-row">
+<div class="MAP-container flex flex-column-m flex-column-l flex-row">
   <div id="lagos-slums-map" class="MAP"></div>
 
   <div class="map-annotation f6 pb0 flex flex-column" onscroll="mapScroll(event)">
@@ -58,7 +58,7 @@ The map below highlights these settlements within the urban matrix of Lagos.
         Makoko, like many slums, has a pretty diverse population &mdash; it's home to Togolese, Ghanaians by individuals from 
         many differents of Nigeria and West Africa. It was initially settled by the 
         by the Egun fishing tribe from Badagry and later by the Ilaje who 
-        came from further inland of 
+        came from further inland in Yorubaland.
         </p>
       </div>
     </div>
@@ -150,10 +150,9 @@ GIS consultant and my first few "internships" were at his office in Onikan messi
 <script mapscript>
   let map = L.map('lagos-slums-map').setView([6.498820462853738, 3.3958632487106137], 15);
 
-  L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
-    maxZoom: 20,
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 18,
     subdomains: ['mt0','mt1','mt2','mt3'],
-    attribution: '<a href="https://github.com/cyclosm/cyclosm-cartocss-style/releases" title="CyclOSM - Open Bicycle render">CyclOSM</a> | Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(map);
 
   omnivore.kml("/maps/data/lagos-slums.kml").addTo(map);

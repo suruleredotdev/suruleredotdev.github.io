@@ -1,0 +1,7122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document id="Nigeria" xsi:schemaLocation="http://www.opengis.net/kml/2.2 http://schemas.opengis.net/kml/2.2.0/ogckml22.xsd http://www.google.com/kml/ext/2.2 http://code.google.com/apis/kml/schema/kml22gx.xsd">
+	<name>Nigeria</name>
+	<Snippet maxLines="0"></Snippet>
+	<Style id="IconStyle011">
+		<IconStyle>
+			<scale>0.625</scale>
+			<Icon>
+				<href>Layer0_Symbol_2e35f0.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00000000</color>
+			<scale>0</scale>
+		</LabelStyle>
+		<PolyStyle>
+			<color>ff000000</color>
+			<outline>0</outline>
+		</PolyStyle>
+	</Style>
+	<Style id="IconStyle00">
+		<IconStyle>
+			<scale>0.625</scale>
+			<Icon>
+				<href>Layer0_Symbol_2e3728.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00000000</color>
+			<scale>0</scale>
+		</LabelStyle>
+		<PolyStyle>
+			<color>ff000000</color>
+			<outline>0</outline>
+		</PolyStyle>
+	</Style>
+	<Style id="IconStyle01">
+		<IconStyle>
+			<scale>0.625</scale>
+			<Icon>
+				<href>Layer0_Symbol_104fd8d0.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00000000</color>
+			<scale>0</scale>
+		</LabelStyle>
+		<PolyStyle>
+			<color>ff000000</color>
+			<outline>0</outline>
+		</PolyStyle>
+	</Style>
+	<Style id="IconStyle026">
+		<IconStyle>
+			<scale>0.625</scale>
+			<Icon>
+				<href>Layer0_Symbol_2e3ad0.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00000000</color>
+			<scale>0</scale>
+		</LabelStyle>
+		<PolyStyle>
+			<color>ff000000</color>
+			<outline>0</outline>
+		</PolyStyle>
+	</Style>
+	<Style id="IconStyle04">
+		<IconStyle>
+			<scale>0.625</scale>
+			<Icon>
+				<href>Layer0_Symbol_104fd798.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00000000</color>
+			<scale>0</scale>
+		</LabelStyle>
+		<PolyStyle>
+			<color>ff000000</color>
+			<outline>0</outline>
+		</PolyStyle>
+	</Style>
+	<Folder id="FeatureLayer0">
+		<name>Nigeria</name>
+		<Snippet maxLines="0"></Snippet>
+		<description>Global heat flow data are maintained by the International Heat Flow Commission (IHFC) of the International Association of Seismology and Physics of the Earth&apos;s Interior (IASPEI).</description>
+		<Placemark id="ID_00000">
+			<name>L17 L18</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>L17 L18</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Data_Numbe</td>
+
+<td>NIG001</td>
+
+</tr>
+
+<tr>
+
+<td>Codes</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Site_Name</td>
+
+<td>L17 L18</td>
+
+</tr>
+
+<tr>
+
+<td>Latitude</td>
+
+<td>10.75</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Longitude</td>
+
+<td>8.75</td>
+
+</tr>
+
+<tr>
+
+<td>Elevation</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>minD</td>
+
+<td>70</td>
+
+</tr>
+
+<tr>
+
+<td>maxD</td>
+
+<td>160</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Temps</td>
+
+<td>2</td>
+
+</tr>
+
+<tr>
+
+<td>Gradient</td>
+
+<td>26</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Cond_</td>
+
+<td>17</td>
+
+</tr>
+
+<tr>
+
+<td>Conductivi</td>
+
+<td>1.49</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No_Heat_Pr</td>
+
+<td>5</td>
+
+</tr>
+
+<tr>
+
+<td>Heat_Prod_</td>
+
+<td>2.64</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Heat_Flow</td>
+
+<td>38</td>
+
+</tr>
+
+<tr>
+
+<td>No__sites</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Year_of_Pu</td>
+
+<td>1979</td>
+
+</tr>
+
+<tr>
+
+<td>Reference</td>
+
+<td>Verheijen&amp;Ajakaiye1979</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Comments</td>
+
+<td>Chapman&amp;Pollack1974</td>
+
+</tr>
+
+<tr>
+
+<td>Comments2</td>
+
+<td>borehole</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#IconStyle00</styleUrl>
+			<Point>
+				<coordinates>8.750000000000057,10.75000000000006,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="ID_00001">
+			<name>ANAMBRA3</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>ANAMBRA3</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Data_Numbe</td>
+
+<td>Nigeria</td>
+
+</tr>
+
+<tr>
+
+<td>Codes</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Site_Name</td>
+
+<td>ANAMBRA3</td>
+
+</tr>
+
+<tr>
+
+<td>Latitude</td>
+
+<td>6.6833</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Longitude</td>
+
+<td>6.85</td>
+
+</tr>
+
+<tr>
+
+<td>Elevation</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>minD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>maxD</td>
+
+<td>2427</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Temps</td>
+
+<td>2</td>
+
+</tr>
+
+<tr>
+
+<td>Gradient</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Cond_</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Conductivi</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No_Heat_Pr</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>Heat_Prod_</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Heat_Flow</td>
+
+<td>70</td>
+
+</tr>
+
+<tr>
+
+<td>No__sites</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Year_of_Pu</td>
+
+<td>1987</td>
+
+</tr>
+
+<tr>
+
+<td>Reference</td>
+
+<td>Chukwueke1987</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Comments</td>
+
+<td>Chukwueke1987</td>
+
+</tr>
+
+<tr>
+
+<td>Comments2</td>
+
+<td>borehole</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#IconStyle01</styleUrl>
+			<Point>
+				<coordinates>6.850000000000023,6.683300000000031,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="ID_00002">
+			<name>OML-11</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>OML-11</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>2</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Data_Numbe</td>
+
+<td>Nigeria</td>
+
+</tr>
+
+<tr>
+
+<td>Codes</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Site_Name</td>
+
+<td>OML-11</td>
+
+</tr>
+
+<tr>
+
+<td>Latitude</td>
+
+<td>4.5324</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Longitude</td>
+
+<td>7.5478</td>
+
+</tr>
+
+<tr>
+
+<td>Elevation</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>minD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>maxD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Temps</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Gradient</td>
+
+<td>20</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Cond_</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Conductivi</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No_Heat_Pr</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>Heat_Prod_</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Heat_Flow</td>
+
+<td>64</td>
+
+</tr>
+
+<tr>
+
+<td>No__sites</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Year_of_Pu</td>
+
+<td>1992</td>
+
+</tr>
+
+<tr>
+
+<td>Reference</td>
+
+<td>Chukwueke_etal1992</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Comments</td>
+
+<td>Chukwueke_etal1992</td>
+
+</tr>
+
+<tr>
+
+<td>Comments2</td>
+
+<td>BHT</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#IconStyle01</styleUrl>
+			<Point>
+				<coordinates>7.547800000000052,4.532400000000052,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="ID_00003">
+			<name>GUE-5</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>GUE-5</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>3</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Data_Numbe</td>
+
+<td>Nigeria</td>
+
+</tr>
+
+<tr>
+
+<td>Codes</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Site_Name</td>
+
+<td>GUE-5</td>
+
+</tr>
+
+<tr>
+
+<td>Latitude</td>
+
+<td>4.6771</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Longitude</td>
+
+<td>7.2789</td>
+
+</tr>
+
+<tr>
+
+<td>Elevation</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>minD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>maxD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Temps</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Gradient</td>
+
+<td>20</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Cond_</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Conductivi</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No_Heat_Pr</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>Heat_Prod_</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Heat_Flow</td>
+
+<td>64</td>
+
+</tr>
+
+<tr>
+
+<td>No__sites</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Year_of_Pu</td>
+
+<td>1992</td>
+
+</tr>
+
+<tr>
+
+<td>Reference</td>
+
+<td>Chukwueke_etal1992</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Comments</td>
+
+<td>Chukwueke_etal1992</td>
+
+</tr>
+
+<tr>
+
+<td>Comments2</td>
+
+<td>BHT</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#IconStyle01</styleUrl>
+			<Point>
+				<coordinates>7.278900000000022,4.677100000000053,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="ID_00004">
+			<name>OML-18</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>OML-18</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>4</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Data_Numbe</td>
+
+<td>Nigeria</td>
+
+</tr>
+
+<tr>
+
+<td>Codes</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Site_Name</td>
+
+<td>OML-18</td>
+
+</tr>
+
+<tr>
+
+<td>Latitude</td>
+
+<td>4.5614</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Longitude</td>
+
+<td>7.062</td>
+
+</tr>
+
+<tr>
+
+<td>Elevation</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>minD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>maxD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Temps</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Gradient</td>
+
+<td>20</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Cond_</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Conductivi</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No_Heat_Pr</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>Heat_Prod_</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Heat_Flow</td>
+
+<td>60</td>
+
+</tr>
+
+<tr>
+
+<td>No__sites</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Year_of_Pu</td>
+
+<td>1992</td>
+
+</tr>
+
+<tr>
+
+<td>Reference</td>
+
+<td>Chukwueke_etal1992</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Comments</td>
+
+<td>Chukwueke_etal1992</td>
+
+</tr>
+
+<tr>
+
+<td>Comments2</td>
+
+<td>BHT</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#IconStyle04</styleUrl>
+			<Point>
+				<coordinates>7.062000000000069,4.561400000000049,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="ID_00005">
+			<name>OML-28</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>OML-28</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>5</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Data_Numbe</td>
+
+<td>Nigeria</td>
+
+</tr>
+
+<tr>
+
+<td>Codes</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Site_Name</td>
+
+<td>OML-28</td>
+
+</tr>
+
+<tr>
+
+<td>Latitude</td>
+
+<td>4.952</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Longitude</td>
+
+<td>6.4265</td>
+
+</tr>
+
+<tr>
+
+<td>Elevation</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>minD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>maxD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Temps</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Gradient</td>
+
+<td>20</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Cond_</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Conductivi</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No_Heat_Pr</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>Heat_Prod_</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Heat_Flow</td>
+
+<td>57</td>
+
+</tr>
+
+<tr>
+
+<td>No__sites</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Year_of_Pu</td>
+
+<td>1992</td>
+
+</tr>
+
+<tr>
+
+<td>Reference</td>
+
+<td>Chukwueke_etal1992</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Comments</td>
+
+<td>Chukwueke_etal1992</td>
+
+</tr>
+
+<tr>
+
+<td>Comments2</td>
+
+<td>BHT</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#IconStyle04</styleUrl>
+			<Point>
+				<coordinates>6.426500000000033,4.952000000000055,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="ID_00006">
+			<name>JATUMI2</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>JATUMI2</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>6</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Data_Numbe</td>
+
+<td>Nigeria</td>
+
+</tr>
+
+<tr>
+
+<td>Codes</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Site_Name</td>
+
+<td>JATUMI2</td>
+
+</tr>
+
+<tr>
+
+<td>Latitude</td>
+
+<td>5.75</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Longitude</td>
+
+<td>5.5333</td>
+
+</tr>
+
+<tr>
+
+<td>Elevation</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>minD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>maxD</td>
+
+<td>3300</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Temps</td>
+
+<td>2</td>
+
+</tr>
+
+<tr>
+
+<td>Gradient</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Cond_</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Conductivi</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No_Heat_Pr</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>Heat_Prod_</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Heat_Flow</td>
+
+<td>57</td>
+
+</tr>
+
+<tr>
+
+<td>No__sites</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Year_of_Pu</td>
+
+<td>1987</td>
+
+</tr>
+
+<tr>
+
+<td>Reference</td>
+
+<td>Chukwueke1987</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Comments</td>
+
+<td>Chukwueke1987</td>
+
+</tr>
+
+<tr>
+
+<td>Comments2</td>
+
+<td>borehole</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#IconStyle04</styleUrl>
+			<Point>
+				<coordinates>5.533300000000054,5.750000000000057,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="ID_00007">
+			<name>ANAMBRA2</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>ANAMBRA2</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>7</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Data_Numbe</td>
+
+<td>Nigeria</td>
+
+</tr>
+
+<tr>
+
+<td>Codes</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Site_Name</td>
+
+<td>ANAMBRA2</td>
+
+</tr>
+
+<tr>
+
+<td>Latitude</td>
+
+<td>6.6333</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Longitude</td>
+
+<td>6.8667</td>
+
+</tr>
+
+<tr>
+
+<td>Elevation</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>minD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>maxD</td>
+
+<td>2175</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Temps</td>
+
+<td>3</td>
+
+</tr>
+
+<tr>
+
+<td>Gradient</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Cond_</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Conductivi</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No_Heat_Pr</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>Heat_Prod_</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Heat_Flow</td>
+
+<td>57</td>
+
+</tr>
+
+<tr>
+
+<td>No__sites</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Year_of_Pu</td>
+
+<td>1987</td>
+
+</tr>
+
+<tr>
+
+<td>Reference</td>
+
+<td>Chukwueke1987</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Comments</td>
+
+<td>Verheijen&amp;Ajakaiye1979</td>
+
+</tr>
+
+<tr>
+
+<td>Comments2</td>
+
+<td>borehole</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#IconStyle04</styleUrl>
+			<Point>
+				<coordinates>6.866700000000037,6.633300000000077,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="ID_00008">
+			<name>L18</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>L18</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>8</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Data_Numbe</td>
+
+<td>Nigeria</td>
+
+</tr>
+
+<tr>
+
+<td>Codes</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Site_Name</td>
+
+<td>L18</td>
+
+</tr>
+
+<tr>
+
+<td>Latitude</td>
+
+<td>10.7167</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Longitude</td>
+
+<td>8.7167</td>
+
+</tr>
+
+<tr>
+
+<td>Elevation</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>minD</td>
+
+<td>110</td>
+
+</tr>
+
+<tr>
+
+<td>maxD</td>
+
+<td>250</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Temps</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Gradient</td>
+
+<td>17</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Cond_</td>
+
+<td>6</td>
+
+</tr>
+
+<tr>
+
+<td>Conductivi</td>
+
+<td>3.26</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No_Heat_Pr</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>Heat_Prod_</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Heat_Flow</td>
+
+<td>54</td>
+
+</tr>
+
+<tr>
+
+<td>No__sites</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Year_of_Pu</td>
+
+<td>1990</td>
+
+</tr>
+
+<tr>
+
+<td>Reference</td>
+
+<td>Chukwueke1990</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Comments</td>
+
+<td>Chukwueke1987</td>
+
+</tr>
+
+<tr>
+
+<td>Comments2</td>
+
+<td>borehole</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#IconStyle04</styleUrl>
+			<Point>
+				<coordinates>8.71670000000006,10.71670000000006,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="ID_00009">
+			<name>L22</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>L22</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>9</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Data_Numbe</td>
+
+<td>Nigeria</td>
+
+</tr>
+
+<tr>
+
+<td>Codes</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Site_Name</td>
+
+<td>L22</td>
+
+</tr>
+
+<tr>
+
+<td>Latitude</td>
+
+<td>10.6983</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Longitude</td>
+
+<td>8.7717</td>
+
+</tr>
+
+<tr>
+
+<td>Elevation</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>minD</td>
+
+<td>110</td>
+
+</tr>
+
+<tr>
+
+<td>maxD</td>
+
+<td>250</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Temps</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Gradient</td>
+
+<td>17</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Cond_</td>
+
+<td>6</td>
+
+</tr>
+
+<tr>
+
+<td>Conductivi</td>
+
+<td>3.11</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No_Heat_Pr</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>Heat_Prod_</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Heat_Flow</td>
+
+<td>53</td>
+
+</tr>
+
+<tr>
+
+<td>No__sites</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Year_of_Pu</td>
+
+<td>1990</td>
+
+</tr>
+
+<tr>
+
+<td>Reference</td>
+
+<td>Chukwueke1990</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Comments</td>
+
+<td>Chukwueke1990</td>
+
+</tr>
+
+<tr>
+
+<td>Comments2</td>
+
+<td>borehole</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#IconStyle04</styleUrl>
+			<Point>
+				<coordinates>8.771700000000067,10.69830000000007,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="ID_00010">
+			<name>NPW-1</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>NPW-1</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>10</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Data_Numbe</td>
+
+<td>Nigeria</td>
+
+</tr>
+
+<tr>
+
+<td>Codes</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Site_Name</td>
+
+<td>NPW-1</td>
+
+</tr>
+
+<tr>
+
+<td>Latitude</td>
+
+<td>5.8743</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Longitude</td>
+
+<td>5.3236</td>
+
+</tr>
+
+<tr>
+
+<td>Elevation</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>minD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>maxD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Temps</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Gradient</td>
+
+<td>20</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Cond_</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Conductivi</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No_Heat_Pr</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>Heat_Prod_</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Heat_Flow</td>
+
+<td>52</td>
+
+</tr>
+
+<tr>
+
+<td>No__sites</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Year_of_Pu</td>
+
+<td>1992</td>
+
+</tr>
+
+<tr>
+
+<td>Reference</td>
+
+<td>Chukwueke_etal1992</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Comments</td>
+
+<td>Chukwueke_etal1992</td>
+
+</tr>
+
+<tr>
+
+<td>Comments2</td>
+
+<td>BHT</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#IconStyle04</styleUrl>
+			<Point>
+				<coordinates>5.323600000000056,5.874300000000062,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="ID_00011">
+			<name>NPW-2</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>NPW-2</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>11</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Data_Numbe</td>
+
+<td>Nigeria</td>
+
+</tr>
+
+<tr>
+
+<td>Codes</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Site_Name</td>
+
+<td>NPW-2</td>
+
+</tr>
+
+<tr>
+
+<td>Latitude</td>
+
+<td>6.0406</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Longitude</td>
+
+<td>5.5772</td>
+
+</tr>
+
+<tr>
+
+<td>Elevation</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>minD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>maxD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Temps</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Gradient</td>
+
+<td>20</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Cond_</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Conductivi</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No_Heat_Pr</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>Heat_Prod_</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Heat_Flow</td>
+
+<td>49</td>
+
+</tr>
+
+<tr>
+
+<td>No__sites</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Year_of_Pu</td>
+
+<td>1992</td>
+
+</tr>
+
+<tr>
+
+<td>Reference</td>
+
+<td>Chukwueke_etal1992</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Comments</td>
+
+<td>Chukwueke_etal1992</td>
+
+</tr>
+
+<tr>
+
+<td>Comments2</td>
+
+<td>BHT</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#IconStyle011</styleUrl>
+			<Point>
+				<coordinates>5.577200000000062,6.040600000000039,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="ID_00012">
+			<name>OML-29</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>OML-29</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>12</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Data_Numbe</td>
+
+<td>Nigeria</td>
+
+</tr>
+
+<tr>
+
+<td>Codes</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Site_Name</td>
+
+<td>OML-29</td>
+
+</tr>
+
+<tr>
+
+<td>Latitude</td>
+
+<td>4.4529</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Longitude</td>
+
+<td>6.4051</td>
+
+</tr>
+
+<tr>
+
+<td>Elevation</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>minD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>maxD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Temps</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Gradient</td>
+
+<td>20</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Cond_</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Conductivi</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No_Heat_Pr</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>Heat_Prod_</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Heat_Flow</td>
+
+<td>48</td>
+
+</tr>
+
+<tr>
+
+<td>No__sites</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Year_of_Pu</td>
+
+<td>1992</td>
+
+</tr>
+
+<tr>
+
+<td>Reference</td>
+
+<td>Chukwueke_etal1992</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Comments</td>
+
+<td>Chukwueke_etal1992</td>
+
+</tr>
+
+<tr>
+
+<td>Comments2</td>
+
+<td>BHT</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#IconStyle011</styleUrl>
+			<Point>
+				<coordinates>6.405100000000061,4.452900000000057,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="ID_00013">
+			<name>L20</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>L20</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>13</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Data_Numbe</td>
+
+<td>Nigeria</td>
+
+</tr>
+
+<tr>
+
+<td>Codes</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Site_Name</td>
+
+<td>L20</td>
+
+</tr>
+
+<tr>
+
+<td>Latitude</td>
+
+<td>10.725</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Longitude</td>
+
+<td>8.695</td>
+
+</tr>
+
+<tr>
+
+<td>Elevation</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>minD</td>
+
+<td>110</td>
+
+</tr>
+
+<tr>
+
+<td>maxD</td>
+
+<td>250</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Temps</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Gradient</td>
+
+<td>15</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Cond_</td>
+
+<td>4</td>
+
+</tr>
+
+<tr>
+
+<td>Conductivi</td>
+
+<td>3.03</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No_Heat_Pr</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>Heat_Prod_</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Heat_Flow</td>
+
+<td>46</td>
+
+</tr>
+
+<tr>
+
+<td>No__sites</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Year_of_Pu</td>
+
+<td>1990</td>
+
+</tr>
+
+<tr>
+
+<td>Reference</td>
+
+<td>Chukwueke1990</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Comments</td>
+
+<td>Chukwueke1990</td>
+
+</tr>
+
+<tr>
+
+<td>Comments2</td>
+
+<td>borehole</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#IconStyle011</styleUrl>
+			<Point>
+				<coordinates>8.69500000000005,10.72500000000002,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="ID_00014">
+			<name>OML-30</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>OML-30</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>14</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Data_Numbe</td>
+
+<td>Nigeria</td>
+
+</tr>
+
+<tr>
+
+<td>Codes</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Site_Name</td>
+
+<td>OML-30</td>
+
+</tr>
+
+<tr>
+
+<td>Latitude</td>
+
+<td>5.509</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Longitude</td>
+
+<td>5.9193</td>
+
+</tr>
+
+<tr>
+
+<td>Elevation</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>minD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>maxD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Temps</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Gradient</td>
+
+<td>20</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Cond_</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Conductivi</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No_Heat_Pr</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>Heat_Prod_</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Heat_Flow</td>
+
+<td>45</td>
+
+</tr>
+
+<tr>
+
+<td>No__sites</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Year_of_Pu</td>
+
+<td>1992</td>
+
+</tr>
+
+<tr>
+
+<td>Reference</td>
+
+<td>Chukwueke_etal1992</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Comments</td>
+
+<td>Chukwueke_etal1992</td>
+
+</tr>
+
+<tr>
+
+<td>Comments2</td>
+
+<td>BHT</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#IconStyle011</styleUrl>
+			<Point>
+				<coordinates>5.919300000000021,5.509000000000071,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="ID_00015">
+			<name>NPW-3</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>NPW-3</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>15</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Data_Numbe</td>
+
+<td>Nigeria</td>
+
+</tr>
+
+<tr>
+
+<td>Codes</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Site_Name</td>
+
+<td>NPW-3</td>
+
+</tr>
+
+<tr>
+
+<td>Latitude</td>
+
+<td>6.0876</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Longitude</td>
+
+<td>5.5252</td>
+
+</tr>
+
+<tr>
+
+<td>Elevation</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>minD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>maxD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Temps</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Gradient</td>
+
+<td>20</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Cond_</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Conductivi</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No_Heat_Pr</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>Heat_Prod_</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Heat_Flow</td>
+
+<td>45</td>
+
+</tr>
+
+<tr>
+
+<td>No__sites</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Year_of_Pu</td>
+
+<td>1992</td>
+
+</tr>
+
+<tr>
+
+<td>Reference</td>
+
+<td>Chukwueke_etal1992</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Comments</td>
+
+<td>Chukwueke_etal1992</td>
+
+</tr>
+
+<tr>
+
+<td>Comments2</td>
+
+<td>BHT</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#IconStyle011</styleUrl>
+			<Point>
+				<coordinates>5.525200000000041,6.087600000000066,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="ID_00016">
+			<name>GUE-1</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>GUE-1</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>16</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Data_Numbe</td>
+
+<td>Nigeria</td>
+
+</tr>
+
+<tr>
+
+<td>Codes</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Site_Name</td>
+
+<td>GUE-1</td>
+
+</tr>
+
+<tr>
+
+<td>Latitude</td>
+
+<td>4.8543</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Longitude</td>
+
+<td>6.396</td>
+
+</tr>
+
+<tr>
+
+<td>Elevation</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>minD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>maxD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Temps</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Gradient</td>
+
+<td>20</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Cond_</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Conductivi</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No_Heat_Pr</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>Heat_Prod_</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Heat_Flow</td>
+
+<td>45</td>
+
+</tr>
+
+<tr>
+
+<td>No__sites</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Year_of_Pu</td>
+
+<td>1992</td>
+
+</tr>
+
+<tr>
+
+<td>Reference</td>
+
+<td>Chukwueke_etal1992</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Comments</td>
+
+<td>Chukwueke_etal1992</td>
+
+</tr>
+
+<tr>
+
+<td>Comments2</td>
+
+<td>BHT</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#IconStyle011</styleUrl>
+			<Point>
+				<coordinates>6.396000000000073,4.854300000000023,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="ID_00017">
+			<name>JI-1</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>JI-1</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>17</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Data_Numbe</td>
+
+<td>Nigeria</td>
+
+</tr>
+
+<tr>
+
+<td>Codes</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Site_Name</td>
+
+<td>JI-1</td>
+
+</tr>
+
+<tr>
+
+<td>Latitude</td>
+
+<td>6.3695</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Longitude</td>
+
+<td>6.6878</td>
+
+</tr>
+
+<tr>
+
+<td>Elevation</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>minD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>maxD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Temps</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Gradient</td>
+
+<td>77</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Cond_</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Conductivi</td>
+
+<td>1.95</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No_Heat_Pr</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>Heat_Prod_</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Heat_Flow</td>
+
+<td>41</td>
+
+</tr>
+
+<tr>
+
+<td>No__sites</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Year_of_Pu</td>
+
+<td>1999</td>
+
+</tr>
+
+<tr>
+
+<td>Reference</td>
+
+<td>Onuoha&amp;Ekine1999</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Comments</td>
+
+<td>Onuoha&amp;Ekine1999</td>
+
+</tr>
+
+<tr>
+
+<td>Comments2</td>
+
+<td>BHT</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#IconStyle011</styleUrl>
+			<Point>
+				<coordinates>6.687800000000038,6.369500000000074,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="ID_00018">
+			<name>IH-1</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>IH-1</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>18</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Data_Numbe</td>
+
+<td>Nigeria</td>
+
+</tr>
+
+<tr>
+
+<td>Codes</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Site_Name</td>
+
+<td>IH-1</td>
+
+</tr>
+
+<tr>
+
+<td>Latitude</td>
+
+<td>6.8053</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Longitude</td>
+
+<td>7.559</td>
+
+</tr>
+
+<tr>
+
+<td>Elevation</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>minD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>maxD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Temps</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Gradient</td>
+
+<td>57</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Cond_</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Conductivi</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No_Heat_Pr</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>Heat_Prod_</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Heat_Flow</td>
+
+<td>38</td>
+
+</tr>
+
+<tr>
+
+<td>No__sites</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Year_of_Pu</td>
+
+<td>1999</td>
+
+</tr>
+
+<tr>
+
+<td>Reference</td>
+
+<td>Onuoha&amp;Ekine1999</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Comments</td>
+
+<td>Onuoha&amp;Ekine1999</td>
+
+</tr>
+
+<tr>
+
+<td>Comments2</td>
+
+<td>BHT</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#IconStyle00</styleUrl>
+			<Point>
+				<coordinates>7.559000000000027,6.805300000000045,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="ID_00019">
+			<name>AD</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>AD</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>19</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Data_Numbe</td>
+
+<td>Nigeria</td>
+
+</tr>
+
+<tr>
+
+<td>Codes</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Site_Name</td>
+
+<td>AD</td>
+
+</tr>
+
+<tr>
+
+<td>Latitude</td>
+
+<td>6.8161</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Longitude</td>
+
+<td>6.5265</td>
+
+</tr>
+
+<tr>
+
+<td>Elevation</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>minD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>maxD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Temps</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Gradient</td>
+
+<td>60</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Cond_</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Conductivi</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No_Heat_Pr</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>Heat_Prod_</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Heat_Flow</td>
+
+<td>37</td>
+
+</tr>
+
+<tr>
+
+<td>No__sites</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Year_of_Pu</td>
+
+<td>1999</td>
+
+</tr>
+
+<tr>
+
+<td>Reference</td>
+
+<td>Onuoha&amp;Ekine1999</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Comments</td>
+
+<td>Onuoha&amp;Ekine1999</td>
+
+</tr>
+
+<tr>
+
+<td>Comments2</td>
+
+<td>BHT</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#IconStyle00</styleUrl>
+			<gx:balloonVisibility>1</gx:balloonVisibility>
+			<Point>
+				<coordinates>6.526500000000057,6.816100000000063,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="ID_00020">
+			<name>ANR-2</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>ANR-2</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>20</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Data_Numbe</td>
+
+<td>Nigeria</td>
+
+</tr>
+
+<tr>
+
+<td>Codes</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Site_Name</td>
+
+<td>ANR-2</td>
+
+</tr>
+
+<tr>
+
+<td>Latitude</td>
+
+<td>6.6667</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Longitude</td>
+
+<td>6.8799</td>
+
+</tr>
+
+<tr>
+
+<td>Elevation</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>minD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>maxD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Temps</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Gradient</td>
+
+<td>60</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Cond_</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Conductivi</td>
+
+<td>1.83</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No_Heat_Pr</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>Heat_Prod_</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Heat_Flow</td>
+
+<td>35</td>
+
+</tr>
+
+<tr>
+
+<td>No__sites</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Year_of_Pu</td>
+
+<td>1999</td>
+
+</tr>
+
+<tr>
+
+<td>Reference</td>
+
+<td>Onuoha&amp;Ekine1999</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Comments</td>
+
+<td>Onuoha&amp;Ekine1999</td>
+
+</tr>
+
+<tr>
+
+<td>Comments2</td>
+
+<td>BHT</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#IconStyle00</styleUrl>
+			<Point>
+				<coordinates>6.879900000000021,6.66670000000005,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="ID_00021">
+			<name>AID</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>AID</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>21</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Data_Numbe</td>
+
+<td>Nigeria</td>
+
+</tr>
+
+<tr>
+
+<td>Codes</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Site_Name</td>
+
+<td>AID</td>
+
+</tr>
+
+<tr>
+
+<td>Latitude</td>
+
+<td>6.8453</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Longitude</td>
+
+<td>7.675</td>
+
+</tr>
+
+<tr>
+
+<td>Elevation</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>minD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>maxD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Temps</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Gradient</td>
+
+<td>54</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Cond_</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Conductivi</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No_Heat_Pr</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>Heat_Prod_</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Heat_Flow</td>
+
+<td>35</td>
+
+</tr>
+
+<tr>
+
+<td>No__sites</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Year_of_Pu</td>
+
+<td>1999</td>
+
+</tr>
+
+<tr>
+
+<td>Reference</td>
+
+<td>Onuoha&amp;Ekine1999</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Comments</td>
+
+<td>Onuoha&amp;Ekine1999</td>
+
+</tr>
+
+<tr>
+
+<td>Comments2</td>
+
+<td>BHT</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#IconStyle00</styleUrl>
+			<Point>
+				<coordinates>7.675000000000068,6.845300000000066,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="ID_00022">
+			<name>NZ-1</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>NZ-1</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>22</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Data_Numbe</td>
+
+<td>Nigeria</td>
+
+</tr>
+
+<tr>
+
+<td>Codes</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Site_Name</td>
+
+<td>NZ-1</td>
+
+</tr>
+
+<tr>
+
+<td>Latitude</td>
+
+<td>6.4465</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Longitude</td>
+
+<td>6.7536</td>
+
+</tr>
+
+<tr>
+
+<td>Elevation</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>minD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>maxD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Temps</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Gradient</td>
+
+<td>63</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Cond_</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Conductivi</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No_Heat_Pr</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>Heat_Prod_</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Heat_Flow</td>
+
+<td>34</td>
+
+</tr>
+
+<tr>
+
+<td>No__sites</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Year_of_Pu</td>
+
+<td>1999</td>
+
+</tr>
+
+<tr>
+
+<td>Reference</td>
+
+<td>Onuoha&amp;Ekine1999</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Comments</td>
+
+<td>Onuoha&amp;Ekine1999</td>
+
+</tr>
+
+<tr>
+
+<td>Comments2</td>
+
+<td>BHT</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#IconStyle00</styleUrl>
+			<Point>
+				<coordinates>6.753600000000062,6.446500000000071,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="ID_00023">
+			<name>OKP-1</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>OKP-1</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>23</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Data_Numbe</td>
+
+<td>Nigeria</td>
+
+</tr>
+
+<tr>
+
+<td>Codes</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Site_Name</td>
+
+<td>OKP-1</td>
+
+</tr>
+
+<tr>
+
+<td>Latitude</td>
+
+<td>6.4635</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Longitude</td>
+
+<td>6.7731</td>
+
+</tr>
+
+<tr>
+
+<td>Elevation</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>minD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>maxD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Temps</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Gradient</td>
+
+<td>62</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Cond_</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Conductivi</td>
+
+<td>1.89</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No_Heat_Pr</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>Heat_Prod_</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Heat_Flow</td>
+
+<td>33</td>
+
+</tr>
+
+<tr>
+
+<td>No__sites</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Year_of_Pu</td>
+
+<td>1999</td>
+
+</tr>
+
+<tr>
+
+<td>Reference</td>
+
+<td>Onuoha&amp;Ekine1999</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Comments</td>
+
+<td>Onuoha&amp;Ekine1999</td>
+
+</tr>
+
+<tr>
+
+<td>Comments2</td>
+
+<td>BHT</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#IconStyle00</styleUrl>
+			<Point>
+				<coordinates>6.773100000000056,6.463500000000067,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="ID_00024">
+			<name>AK-1</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>AK-1</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>24</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Data_Numbe</td>
+
+<td>Nigeria</td>
+
+</tr>
+
+<tr>
+
+<td>Codes</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Site_Name</td>
+
+<td>AK-1</td>
+
+</tr>
+
+<tr>
+
+<td>Latitude</td>
+
+<td>6.2541</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Longitude</td>
+
+<td>7.1963</td>
+
+</tr>
+
+<tr>
+
+<td>Elevation</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>minD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>maxD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Temps</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Gradient</td>
+
+<td>50</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Cond_</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Conductivi</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No_Heat_Pr</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>Heat_Prod_</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Heat_Flow</td>
+
+<td>33</td>
+
+</tr>
+
+<tr>
+
+<td>No__sites</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Year_of_Pu</td>
+
+<td>1999</td>
+
+</tr>
+
+<tr>
+
+<td>Reference</td>
+
+<td>Onuoha&amp;Ekine1999</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Comments</td>
+
+<td>Onuoha&amp;Ekine1999</td>
+
+</tr>
+
+<tr>
+
+<td>Comments2</td>
+
+<td>BHT</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#IconStyle00</styleUrl>
+			<Point>
+				<coordinates>7.196300000000065,6.254100000000051,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="ID_00025">
+			<name>ODR-1</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>ODR-1</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>25</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Data_Numbe</td>
+
+<td>Nigeria</td>
+
+</tr>
+
+<tr>
+
+<td>Codes</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Site_Name</td>
+
+<td>ODR-1</td>
+
+</tr>
+
+<tr>
+
+<td>Latitude</td>
+
+<td>6.5913</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Longitude</td>
+
+<td>6.7566</td>
+
+</tr>
+
+<tr>
+
+<td>Elevation</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>minD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>maxD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Temps</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Gradient</td>
+
+<td>57</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Cond_</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Conductivi</td>
+
+<td>1.83</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No_Heat_Pr</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>Heat_Prod_</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Heat_Flow</td>
+
+<td>31</td>
+
+</tr>
+
+<tr>
+
+<td>No__sites</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Year_of_Pu</td>
+
+<td>1999</td>
+
+</tr>
+
+<tr>
+
+<td>Reference</td>
+
+<td>Onuoha&amp;Ekine1999</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Comments</td>
+
+<td>Onuoha&amp;Ekine1999</td>
+
+</tr>
+
+<tr>
+
+<td>Comments2</td>
+
+<td>BHT</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#IconStyle00</styleUrl>
+			<Point>
+				<coordinates>6.756600000000048,6.591300000000047,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="ID_00026">
+			<name>LO-1</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>LO-1</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>26</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Data_Numbe</td>
+
+<td>Nigeria</td>
+
+</tr>
+
+<tr>
+
+<td>Codes</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Site_Name</td>
+
+<td>LO-1</td>
+
+</tr>
+
+<tr>
+
+<td>Latitude</td>
+
+<td>6.4404</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Longitude</td>
+
+<td>7.0196</td>
+
+</tr>
+
+<tr>
+
+<td>Elevation</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>minD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>maxD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Temps</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Gradient</td>
+
+<td>53</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Cond_</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Conductivi</td>
+
+<td>1.79</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No_Heat_Pr</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>Heat_Prod_</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Heat_Flow</td>
+
+<td>30</td>
+
+</tr>
+
+<tr>
+
+<td>No__sites</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Year_of_Pu</td>
+
+<td>1999</td>
+
+</tr>
+
+<tr>
+
+<td>Reference</td>
+
+<td>Onuoha&amp;Ekine1999</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Comments</td>
+
+<td>Onuoha&amp;Ekine1999</td>
+
+</tr>
+
+<tr>
+
+<td>Comments2</td>
+
+<td>BHT</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#IconStyle026</styleUrl>
+			<Point>
+				<coordinates>7.019600000000024,6.440400000000067,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="ID_00027">
+			<name>ANR-1</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>ANR-1</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>27</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Data_Numbe</td>
+
+<td>Nigeria</td>
+
+</tr>
+
+<tr>
+
+<td>Codes</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Site_Name</td>
+
+<td>ANR-1</td>
+
+</tr>
+
+<tr>
+
+<td>Latitude</td>
+
+<td>6.6913</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Longitude</td>
+
+<td>6.8717</td>
+
+</tr>
+
+<tr>
+
+<td>Elevation</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>minD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>maxD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Temps</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Gradient</td>
+
+<td>49</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Cond_</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Conductivi</td>
+
+<td>1.69</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No_Heat_Pr</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>Heat_Prod_</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Heat_Flow</td>
+
+<td>28</td>
+
+</tr>
+
+<tr>
+
+<td>No__sites</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Year_of_Pu</td>
+
+<td>1999</td>
+
+</tr>
+
+<tr>
+
+<td>Reference</td>
+
+<td>Onuoha&amp;Ekine1999</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Comments</td>
+
+<td>Onuoha&amp;Ekine1999</td>
+
+</tr>
+
+<tr>
+
+<td>Comments2</td>
+
+<td>BHT</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#IconStyle026</styleUrl>
+			<Point>
+				<coordinates>6.871700000000033,6.69130000000007,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="ID_00028">
+			<name>ANR-3</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>ANR-3</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>28</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Data_Numbe</td>
+
+<td>Nigeria</td>
+
+</tr>
+
+<tr>
+
+<td>Codes</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Site_Name</td>
+
+<td>ANR-3</td>
+
+</tr>
+
+<tr>
+
+<td>Latitude</td>
+
+<td>6.6298</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Longitude</td>
+
+<td>6.8881</td>
+
+</tr>
+
+<tr>
+
+<td>Elevation</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>minD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>maxD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Temps</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Gradient</td>
+
+<td>50</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Cond_</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Conductivi</td>
+
+<td>1.74</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No_Heat_Pr</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>Heat_Prod_</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Heat_Flow</td>
+
+<td>28</td>
+
+</tr>
+
+<tr>
+
+<td>No__sites</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Year_of_Pu</td>
+
+<td>1999</td>
+
+</tr>
+
+<tr>
+
+<td>Reference</td>
+
+<td>Onuoha&amp;Ekine1999</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Comments</td>
+
+<td>Onuoha&amp;Ekine1999</td>
+
+</tr>
+
+<tr>
+
+<td>Comments2</td>
+
+<td>BHT</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#IconStyle026</styleUrl>
+			<Point>
+				<coordinates>6.888100000000065,6.629800000000046,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="ID_00029">
+			<name>AJR-1</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>AJR-1</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>29</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Data_Numbe</td>
+
+<td>Nigeria</td>
+
+</tr>
+
+<tr>
+
+<td>Codes</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Site_Name</td>
+
+<td>AJR-1</td>
+
+</tr>
+
+<tr>
+
+<td>Latitude</td>
+
+<td>6.3234</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Longitude</td>
+
+<td>6.8111</td>
+
+</tr>
+
+<tr>
+
+<td>Elevation</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>minD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>maxD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Temps</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Gradient</td>
+
+<td>52</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Cond_</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Conductivi</td>
+
+<td>1.86</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No_Heat_Pr</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>Heat_Prod_</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Heat_Flow</td>
+
+<td>27</td>
+
+</tr>
+
+<tr>
+
+<td>No__sites</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Year_of_Pu</td>
+
+<td>1999</td>
+
+</tr>
+
+<tr>
+
+<td>Reference</td>
+
+<td>Onuoha&amp;Ekine1999</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Comments</td>
+
+<td>Onuoha&amp;Ekine1999</td>
+
+</tr>
+
+<tr>
+
+<td>Comments2</td>
+
+<td>BHT</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#IconStyle026</styleUrl>
+			<Point>
+				<coordinates>6.811100000000068,6.323400000000049,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="ID_00030">
+			<name>IGB-1</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>IGB-1</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>30</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Data_Numbe</td>
+
+<td>Nigeria</td>
+
+</tr>
+
+<tr>
+
+<td>Codes</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Site_Name</td>
+
+<td>IGB-1</td>
+
+</tr>
+
+<tr>
+
+<td>Latitude</td>
+
+<td>6.308</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Longitude</td>
+
+<td>7.0052</td>
+
+</tr>
+
+<tr>
+
+<td>Elevation</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>minD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>maxD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Temps</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Gradient</td>
+
+<td>46</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Cond_</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Conductivi</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No_Heat_Pr</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>Heat_Prod_</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Heat_Flow</td>
+
+<td>26</td>
+
+</tr>
+
+<tr>
+
+<td>No__sites</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Year_of_Pu</td>
+
+<td>1999</td>
+
+</tr>
+
+<tr>
+
+<td>Reference</td>
+
+<td>Onuoha&amp;Ekine1999</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Comments</td>
+
+<td>Onuoha&amp;Ekine1999</td>
+
+</tr>
+
+<tr>
+
+<td>Comments2</td>
+
+<td>BHT</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#IconStyle026</styleUrl>
+			<Point>
+				<coordinates>7.005200000000059,6.30800000000005,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="ID_00031">
+			<name>AM-2</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>AM-2</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>31</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Data_Numbe</td>
+
+<td>Nigeria</td>
+
+</tr>
+
+<tr>
+
+<td>Codes</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Site_Name</td>
+
+<td>AM-2</td>
+
+</tr>
+
+<tr>
+
+<td>Latitude</td>
+
+<td>6.4696</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Longitude</td>
+
+<td>7.3083</td>
+
+</tr>
+
+<tr>
+
+<td>Elevation</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>minD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>maxD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Temps</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Gradient</td>
+
+<td>42</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Cond_</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Conductivi</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No_Heat_Pr</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>Heat_Prod_</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Heat_Flow</td>
+
+<td>25</td>
+
+</tr>
+
+<tr>
+
+<td>No__sites</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Year_of_Pu</td>
+
+<td>1999</td>
+
+</tr>
+
+<tr>
+
+<td>Reference</td>
+
+<td>Onuoha&amp;Ekine1999</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Comments</td>
+
+<td>Onuoha&amp;Ekine1999</td>
+
+</tr>
+
+<tr>
+
+<td>Comments2</td>
+
+<td>BHT</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#IconStyle026</styleUrl>
+			<Point>
+				<coordinates>7.308300000000031,6.469600000000071,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="ID_00032">
+			<name>ALD-1</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>ALD-1</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>32</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Data_Numbe</td>
+
+<td>Nigeria</td>
+
+</tr>
+
+<tr>
+
+<td>Codes</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Site_Name</td>
+
+<td>ALD-1</td>
+
+</tr>
+
+<tr>
+
+<td>Latitude</td>
+
+<td>7.0116</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Longitude</td>
+
+<td>6.8327</td>
+
+</tr>
+
+<tr>
+
+<td>Elevation</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>minD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>maxD</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Temps</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Gradient</td>
+
+<td>50</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No__Cond_</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Conductivi</td>
+
+<td>1.99</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>No_Heat_Pr</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>Heat_Prod_</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Heat_Flow</td>
+
+<td>25</td>
+
+</tr>
+
+<tr>
+
+<td>No__sites</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Year_of_Pu</td>
+
+<td>1999</td>
+
+</tr>
+
+<tr>
+
+<td>Reference</td>
+
+<td>Onuoha&amp;Ekine1999</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Comments</td>
+
+<td>Lesquer_etal1988; Lesquer_etal1989</td>
+
+</tr>
+
+<tr>
+
+<td>Comments2</td>
+
+<td>&lt;null&gt;</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#IconStyle026</styleUrl>
+			<Point>
+				<coordinates>6.832700000000045,7.011600000000044,0</coordinates>
+			</Point>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>
