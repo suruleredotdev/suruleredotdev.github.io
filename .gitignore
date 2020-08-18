@@ -4,5 +4,6 @@ _site/
 Gemfile
 Gemfile.lock
 vendor/
-.mypy_cache/3.6/
+.mypy_cache/
 Pipfile*
+__pycache__
