@@ -105,16 +105,18 @@ if (window.location !== window.parent.location) {
         if (!!initVal) {
            this.el.value = initVal ;
         }
+        // default event handlers
+        this.update = function(val) {
+            console.log(`I.onchange: ${id} changed to '${val}' – onchange unset`);
+        };
         //  attempt to get inital value from query params
         let query = (new URL(window.location)).searchParams;
         let param = query.get(this.el.id.replace(new RegExp('-settings'), ''));
         if (!!param) {
             this.el.value = param;
+            let setting = this;
+            setTimeout(function() { setting.update(param); }, 500);
         }
-        // default event handlers
-        this.update = function(val) {
-            console.log(`I.onchange: ${id} changed to '${val}' – onchange unset`);
-        };
     }
     I.prototype.get = function() {
         return valueOrDefault(this.el);
@@ -131,7 +133,6 @@ if (window.location !== window.parent.location) {
         query.set(this.el.id.replace(new RegExp('-setting$'), ''), this.el.value);
         // update URL query params without reloading page
         if (history.pushState) {
-            console.log(query, query.toString());
             var newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + query.toString();
             window.history.pushState({ path: newUrl }, '', newUrl);
         }
@@ -180,8 +181,15 @@ if (window.location !== window.parent.location) {
             map.addLayer(tileLayer);
         }
         attribution.update = function(val) { 
-            map.attributionControl.removeAttribution(value);
-            map.attributionControl.addAttribution(value);
+            map.attributionControl.removeAttribution(val);
+            map.attributionControl.addAttribution(val);
+        }
+        mapData.update = function (val) {
+            let datasets = val.split(',');
+            for (var i = 0; i < datasets.length; i++) {
+                let ext = datasets[i].split('.').pop();
+                omnivore[ext](datasets[i]).addTo(map);
+            }
         }
 
         /*
@@ -292,18 +300,16 @@ if (window.location !== window.parent.location) {
                 <input 
                     id="import-data-setting"
                     name="import-data"
-                    placeholder= "KML, GEOJSON – comma separated"
+                    placeholder= "comma separated list of KML or GeoJSON files"
                     onmouseup="event.target.select()"
                     type="text"
-                    list="map-datasets"
                     class="setting bg-transparent w-70 pa0 dib"
-                    oninput="mapData.set(event.target.value)"
-                    multiple/>
-                <datalist id="map-datasets">
+                    oninput="mapData.set(event.target.value)"/>
+                <!--<datalist id="map-datasets">
                     {% for map in site.data.maps %}
                         <option value="{{ map.url }}">{{ map.name }} </option>
                     {% endfor %}
-                </datalist>
+                </datalist>-->
             </div>
 
         </div>
