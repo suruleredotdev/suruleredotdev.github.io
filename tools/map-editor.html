@@ -1,0 +1,324 @@
+---
+layout: default
+---
+
+{% include map.html %}
+
+<style>
+    /* special animations on page load */
+    @-webkit-keyframes moveLeft {
+        0% {
+            margin-left: calc(4 * var(--bg-size));
+        }
+        100% {
+            margin-left: calc(2 * var(--bg-size));
+        }
+    }
+
+    @-webkit-keyframes growToFillFrame {
+        0% {
+            margin-left: calc(4 * var(--bg-size));
+        }
+        100% {
+            margin-left: calc(2 * var(--bg-size));
+        }
+    }
+
+    @-webkit-keyframes scaleDown {
+        0% { width: calc(2 * var(--bg-size)); }
+        100% { width: var(--bg-size); }
+    }
+
+    @media screen and (min-width: 600px) {
+        #logo img {
+            animation: scaleDown ease 500ms;
+            width: var(--bg-size);
+            margin-left: calc(2 * var(--bg-size));
+        }
+    }
+
+    .MAP {
+        height: calc(12 * var(--bg-size));
+        width: calc(18 * var(--bg-size)) !important;
+    }
+    .MAP-container {
+        width: calc(18* var(--bg-size)) !important;
+    }
+
+    @media screen and (min-width: 1200px) {
+        .MAP {
+            width: 100%;
+        }
+    }
+
+    input:focus                   { opacity: 1; outline: none;}
+    input.title[value="Untitled"] { opacity: 0.5; }
+    /*
+    input.title                         { opacity: 1; }
+    input.title[value="Untitled"]       { opacity: 0.5; }
+    */
+
+    input.setting {
+        border-top-style: hidden;
+        border-right-style: hidden;
+        border-left-style: hidden;
+    }
+    .LIGHT input.setting  { border-bottom: 1px dashed var(--txt-color-dark); }
+    .DARK  input.setting  {border-bottom: 1px dashed var(--title-color);  }  
+
+    #map-settings {
+        width: calc(9 * var(--bg-size)) !important;
+    }
+    .map-setting {
+        height: calc(0.75 * var(--bg-size));
+    }
+    .map-setting > label, .map-setting > input {
+        min-height: calc(0.75 * var(--bg-size));
+    }
+    .map-setting > label { padding-top: calc(0.2 * var(--bg-size)); }
+
+    .map-settings-subgroup {
+        border-left: 1px solid #AAAAAA;
+        padding-left: 10px;
+    }
+</style>
+
+<script iframe-script>
+if (window.location !== window.parent.location) {	  
+    // The page is in an iframe	
+    // TODO: only show map frame and controls if 
+}
+</script>
+
+<script map-script>
+    function valueOrDefault(input) {
+        return (!!input.value) ? input.value : input.placeholder;
+    }
+
+    // proxy for reactive values from <input>s in DOM 
+    // state is stored in the elements themselves (this.el), with get and set hooks and an change listener
+
+    // DO NOT CHANGE
+    // TODO: expand this to support trees of state
+    function I(id, initVal = null, syncToUrl = true) {
+        this.el = document.getElementById(id); // the actual state is stored first in the DOM elements
+        if (!!initVal) {
+           this.el.value = initVal ;
+        }
+        //  attempt to get inital value from query params
+        let query = (new URL(window.location)).searchParams;
+        let param = query.get(this.el.id.replace(new RegExp('-settings'), ''));
+        if (!!param) {
+            this.el.value = param;
+        }
+        // default event handlers
+        this.update = function(val) {
+            console.log(`I.onchange: ${id} changed to '${val}' – onchange unset`);
+        };
+    }
+    I.prototype.get = function() {
+        return valueOrDefault(this.el);
+    }
+    I.prototype.set = function(valOrFn, update = true /* trigger change update */) {
+        this.el.value = 
+            (valOrFn && {}.toString.call(valOrFn) === '[object Function]') 
+            ? valOrFn(this.el.value) 
+            : valOrFn;
+        if (update) {
+            this.update(this.el.value);
+        }
+        let query = (new URL(window.location)).searchParams;
+        query.set(this.el.id.replace(new RegExp('-setting$'), ''), this.el.value);
+        // update URL query params without reloading page
+        if (history.pushState) {
+            console.log(query, query.toString());
+            var newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + query.toString();
+            window.history.pushState({ path: newUrl }, '', newUrl);
+        }
+    }
+
+    let mapTitle,
+        attribution,
+        tileLayerUrl,
+        tileLayer,
+        coord = [6.498820462853738, 3.3958632487106137],
+        zoom = 5,
+        mapData,
+        map;
+
+    window.addEventListener('DOMContentLoaded', function (event) {
+        // DEFAULT VALUES
+        mapTitle = new I("map-title");
+        attribution = new I("attribution-setting")
+        tileLayerUrl = new I("tile-layer-setting");
+        zoom = new I("zoom-setting");
+        coord = [new I("coord-lon-setting"), new I("coord-lat-setting")];
+        mapData = new I("import-data-setting");
+
+        map = L.map('map').setView([coord[0].get(), coord[1].get()], 9);
+        map.on('moveend', function(e) {
+            zoom.set(map.getZoom(), false);
+            let center = map.getCenter();
+            coord[0].set(center.lat, false);
+            coord[1].set(center.lng, false);
+        });
+
+        tileLayer = L.tileLayer(tileLayerUrl.get(), {
+            zoom: zoom.get(),
+            maxZoom: 19,
+            subdomains: ['mt0','mt1','mt2','mt3'],
+            attribution: attribution.get()
+        }).addTo(map);
+        
+        zoom.update = function(val) { map.setView([coord[0].get(), coord[1].get()], val); }
+        coord[0].update = function(val) { map.setView([val, coord[1].get()], zoom.get()); }
+        coord[1].update = function(val) { map.setView([coord[0].get(), val], zoom.get()); }
+        tileLayerUrl.update = function(val) { 
+            // TODO: make this multi-select and track multiple layers
+            map.removeLayer(tileLayer);
+            tileLayer = L.tileLayer(val);
+            map.addLayer(tileLayer);
+        }
+        attribution.update = function(val) { 
+            map.attributionControl.removeAttribution(value);
+            map.attributionControl.addAttribution(value);
+        }
+
+        /*
+        * synchronize map settings with query params
+        */ 
+        let settingsFields = document.querySelectorAll(".setting");
+        for (var i = 0; i < settingsFields.length; i++) {
+            let el = settingsFields[i];
+            // initialize all settings fields from approriate query params, if present
+            el.addEventListener('load', function(e) {
+            })
+        };
+    });
+</script>
+
+<div id="content" class="map post pa3 pa5-ns mt6-l mh7-l f5">
+    <div class="flex flex-row ma0 pb2 b">
+        <div class="b f7 o-40 flex flex-column fw5 ba pa1 dib" style="width: fit-content">
+            <span class="dib" style="width: fit-content">MAP </span>
+            <span class="dib" style="width: fit-content">EDITOR</span>
+        </div>
+
+        <input 
+            id="map-title"
+            name="map-title"
+            class="title ph3 ma0 f2 bg-transparent b--transparent"
+            oninput="mapTitle.set(event.target.value)" 
+            onmousedown="event.target.value = 'Untitled'"
+            onmouseup="event.target.select()"
+            placeholder="Untitled"/>
+    </div>
+
+    <div class="flex flex-row-l flex-column">
+        <div class="MAP-container flex flex-row">
+            <div id="map" class="MAP"></div>
+            
+        </div>
+
+        <div id="map-settings" class="map-settings flex flex-column pa3 ma1 pt0 f7">
+            <div class="f7 o-40 fw5 bb pa1 pt2" style="width: fit-content">
+                <span style="width: fit-content">SETTINGS</span>
+            </div>
+            <br/>
+
+            <div class="map-setting flex flex-row h1 ma1">
+                <label for="tile-layer-setting" class="fw5 w-30 dib">TILE LAYER:</label> 
+                <input 
+                    id="tile-layer-setting"
+                    name="tile-layer"
+                    placeholder= "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    onmousedown="if (!event.target.value) tileLayerUrl.set(event.target.placeholder)"
+                    onmouseup="event.target.select()"
+                    oninput="tileLayerUrl.set(event.target.value)"
+                    type="text"
+                    class="setting bg-transparent w-70 pa0 dib"/>
+                <br/>
+
+            </div>
+            <div class="map-settings-subgroup ml2">
+                <div class="map-setting flex flex-row h1 ma1">
+                    <label for="attribution-setting" class="fw5 w-30 dib">ATTRIBUTION:</label> 
+                    <input 
+                        id="attribution-setting"
+                        name="attribution"
+                        placeholder="&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
+                        onmousedown="if (!event.target.value) attribution.set(event.target.placeholder)"
+                        onmouseup="event.target.select()"
+                        oninput="attribution.set(event.target.value)"
+                        class="setting bg-transparent w-70 pa0 dib"/>
+                </div>
+            </div>
+            <div class="map-setting-group flex flex-row flex-nowrap">
+                <div class="map-setting flex flex-row h1 ma1 mr4 w-60 dib">
+                    <label for="coord-setting" class="fw5 w-50 dib">COORDS:</label> 
+                    <input 
+                        id="coord-lon-setting" 
+                        name="coord-lon"
+                        placeholder="LON"
+                        value="6.498820462853738"
+                        onmouseup="event.target.select()"
+                        oninput="coord[0].set(event.target.value)"
+                        class="setting bg-transparent w-20 pa0 mr1 db"/>
+                    <span class="pt3">,</span>
+                    <input 
+                        id="coord-lat-setting" 
+                        name="coord-lat"
+                        placeholder="LAT"
+                        value="3.3958632487106137"
+                        onmouseup="event.target.select()"
+                        oninput="coord[1].set(event.target.value)"
+                        class="setting bg-transparent w-20 ml2 pa0 db"/>
+                    <br/>
+                </div>
+                <div class="map-setting flex flex-row h1 ma1 w-40 dib">
+                    <label for="zoom-setting" class="fw5 w-50 dib">ZOOM:</label> 
+                    <input 
+                        id="zoom-setting" 
+                        name="zoom"
+                        placeholder="5"
+                        onmousedown="if (!event.target.value) zoom.set(event.target.placeholder)"
+                        onmouseup="event.target.select()"
+                        oninput="zoom.set(event.target.value)"
+                        class="setting bg-transparent w-20 pa0 mr1 db"/>
+                </div>
+            </div>
+            <div class="map-setting flex flex-row h1 ma1">
+                <label for="import-data-setting" class="fw5 w-30 dib">IMPORT DATA:</label> 
+                <input 
+                    id="import-data-setting"
+                    name="import-data"
+                    placeholder= "KML, GEOJSON – comma separated"
+                    onmouseup="event.target.select()"
+                    type="text"
+                    list="map-datasets"
+                    class="setting bg-transparent w-70 pa0 dib"
+                    oninput="mapData.set(event.target.value)"
+                    multiple/>
+                <datalist id="map-datasets">
+                    {% for map in site.data.maps %}
+                        <option value="{{ map.url }}">{{ map.name }} </option>
+                    {% endfor %}
+                </datalist>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/codemirror.min.js" integrity="sha512-H5RyE1jRbGn8d0dsSstZi0SSs23X6Hkkf5hLneEIFyCfP/cBwJ/jFJESBuFBiUyzbGZGa06tnrvw1SboRKdwcA==" crossorigin="anonymous"></script>
+<!--- CODEMIRROR imports -->
+    <!-- lib -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/codemirror.min.css" integrity="sha512-/BlxZbYLtYGExexketXsTi47eHp+r2kTeq2OHecQPZlfbc7WFXVrwbVW9HOYjI6c9Ti+P60ASmVLxittZ0EBGw==" crossorigin="anonymous" />
+    <!-- javascript mode -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/mode/javascript/javascript.min.js" integrity="sha512-9miXlEjnHTF+nVGdc2IGOLGTFW2wWkWbd1/7Ltlre+dM53ZSCUQ/PNN+jtsmYqr3ndiD5RW6XQJUm/Hz8JvyOQ==" crossorigin="anonymous"></script>
+    <!-- dark theme -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/material.min.css" integrity="sha512-t93jzyjNejvKJ0LbK+VuLVp89Y8olz3sMmGPhKXYsTjSLuu3a3dVaZljCK6g04ShmsANEM8xe/OB+IaBE2LRBA==" crossorigin="anonymous" />
+    <!-- light theme -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/neo.min.css" integrity="sha512-n6DpN0Uo6L9yIU4MeX5hhnCX6NejvEBxXQ2GNmBl8febWyt1Fdh7C4EiDQvBeGtFOaOIBxZAf/VQZjjUvs04ng==" crossorigin="anonymous" />
+    <!-- light theme (alternate) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/paraiso-light.min.css" integrity="sha512-xb7HM7Q7s3Lm0LSzMGAOkUYJR/7tDmIYf3nEpJ85LECOEehenge0dbpIJqW8mrxMLCcQzwU7N6y/R7TzGCu7iA==" crossorigin="anonymous" />

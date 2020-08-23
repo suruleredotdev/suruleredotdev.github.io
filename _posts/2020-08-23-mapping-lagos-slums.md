@@ -35,45 +35,45 @@ The map below highlights these settlements within the urban matrix of Lagos.
 <div class="MAP-container flex flex-column-m flex-column-l flex-row">
   <div id="lagos-slums-map" class="MAP"></div>
 
-  <div class="map-annotation f6 pb0 flex flex-column" onscroll="mapScroll(event)">
-    <div class="annotation-section">
+  <div class="map-annotation f6 pb0 flex flex-column">
+    <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
+    <div class="annotation-slide" id="annotation-slide-1">
       <h3 class="annotation-header b mt0 pl3">Makoko</h3>
       <div class="annotation-body pl3">
         <p>
         Makoko can be most clearly seen while driving the 3rd Mainland Bridge from Ikeja, just beyond high-rise residences at the University of Lagos. 
         </p>
-
         <p>
-        It is a cluster of houses on stilts in the shallow waters of the Lagoon near Ebute Metta, 
-        with canals large enough for boats to pass and residents, many of whom occupy 
-        themselves as fishers in the Lagos Lagoon.
+          It is a cluster of houses on stilts in the shallow waters of the Lagoon near Ebute Metta, 
+          with canals large enough for boats to pass and residents, many of whom occupy 
+          themselves as fishers in the Lagos Lagoon.
         </p>
-
         <p>
-        In July 2012, The Lagos-state government ordered that stilt houses that were built beyond the string of 
-        powerlines be torn down to prevent the slum from expanding further out into the Lagoon, while apparently only giving residents 72 hours of notice. 3000 people lost their homes to this exercise.
+          In July 2012, The Lagos-state government ordered that stilt houses that were built beyond the string of 
+          powerlines be torn down to prevent the slum from expanding further out into the Lagoon, while apparently only giving residents 72 hours of notice. 3000 people lost their homes to this exercise.
         </p>
-
         <p>
-        Makoko, like many slums, has a pretty diverse population &mdash; it's home to Togolese, Ghanaians by individuals from 
-        many differents of Nigeria and West Africa. It was initially settled by the 
-        by the Egun fishing tribe from Badagry and later by the Ilaje who 
-        came from further inland in Yorubaland.
+          Makoko, like many slums, has a pretty diverse population &mdash; it's home to Togolese, Ghanaians by individuals from 
+          many differents of Nigeria and West Africa. It was initially settled by the 
+          by the Egun fishing tribe from Badagry and later by the Ilaje who 
+          came from further inland in Yorubaland.
         </p>
       </div>
     </div>
-
-    <div class="annotation-section">
+    <div class="annotation-slide dn" id="annotation-slide-1">
       <h3 class="annotation-header b mt0 pl3">Otodo Gbame</h3>
       <div class="annotation-body pl3">
         <p>
           Otodo Gbame is another indigenous community located on the Lekki Peninsula.
         </p>
-
         <p>
           After several years of smaller demolition and police raids, the residents of 
         </p>
       </div>
+    </div>
+    <div class="flex flex-row f7 pl3">
+      <div onclick="advanceSlides(-1)" class="pa1 dim">&larr; </div>
+      <div onclick="advanceSlides(+1)" class="pa1 dim">&rarr; </div>
     </div>
   </div>
 </div>
@@ -112,22 +112,17 @@ transporation and cultural infrastructure.
 </blockquote>
 <script note="" src="https://cdn.jsdelivr.net/gh/Blogger-Peer-Review/quotebacks@1/quoteback.js"></script>
 
-Indeed, slums can be looked at as an opportunity to innovatively support large underserved communities in cities like Lagos. As urban populations grow in the developing world, cities have become centers of 
+More recently, the Lagos State Urban Renewal Agency (LASURA) announced plans ot identify slums in the state 
+and the Federal Ministry of Housing, headed by ex-Lagos State governor Babatunde Fashola
 
-<br/>
+<div class="horizontal-divide bb mh4 mv4 o-30"></div>
 
-<div class="horizontal-divide bb mh4">
-</div>
 
-This article is the first in a series of posts where we'll try to shed light on various geopolitical issues in urban areas across the continent. 
-I've been getting my hands dirty with GIS tools to build familiarity 
-so I can make the maps more visually engaging and interactive, which has a weird full-circle-feel to it -- my Dad's an architect and 
-GIS consultant and my first few "internships" were at his office in Onikan messing around with AutoCAD.
+This article is the first in a series of posts where we'll try to shed light on various geopolitical issues in urban areas across the continent. We've been getting our hands dirty with GIS tools to build familiarity 
+so we can make the maps more visually engaging and interactive, and scouring the internet for databases and 
+archives of enlightening geographical data. We're also more than open to recommendations for projects to undertake in this regards.
 
-### Sources
-
-1. https://www.npr.org/sections/goatsandsoda/2017/05/15/528461093/slum-dwellers-in-africas-biggest-megacity-are-now-living-in-canoes
-
+<!--
 ### Learn More
 
 <div class="dt">
@@ -144,18 +139,18 @@ GIS consultant and my first few "internships" were at his office in Onikan messi
 
   </div>
 </div>
+-->
 
 <!---------------------------------------------------------------------> 
 
 <script mapscript>
   let map = L.map('lagos-slums-map').setView([6.498820462853738, 3.3958632487106137], 15);
 
-  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 18,
-    subdomains: ['mt0','mt1','mt2','mt3'],
   }).addTo(map);
 
-  omnivore.kml("/maps/data/lagos-slums.kml").addTo(map);
+  omnivore.kml("/datasets/maps/lagos-slums.kml").addTo(map);
 
   function panOnClick(latlng) {
     map.panTo(latlng);

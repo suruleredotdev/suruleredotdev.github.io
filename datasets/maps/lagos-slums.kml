@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+	<Placemark id="1.2.1">
+		<name>Ajegunle</name>
+		<address>Lagos, Nigeria</address>
+		<snippet>Lagos, Nigeria</snippet>
+		<description><![CDATA[<!DOCTYPE html><html><head></head><body><script type="text/javascript">window.location.href="https://www.google.com/earth/rpc/entity?lat=6.443916250000001&lng=3.3575763999999997&fid=0x103b8bcc76eaf46b:0xe296700d8fa9e6f2&hl=en&gl=us&client=earth-client&cv=7.3.3.7786&useragent=GoogleEarth/7.3.3.7786(Macintosh;Mac OS X (10.15.0);en;kml:2.2;client:Pro;type:default)";</script></body></html>]]></description>
+		<styleUrl>#geocode</styleUrl>
+		<ExtendedData>
+			<Data name="placepageUri">
+				<value>https://www.google.com/earth/rpc/entity?lat=6.443916250000001&amp;lng=3.3575763999999997&amp;fid=0x103b8bcc76eaf46b:0xe296700d8fa9e6f2&amp;hl=en&amp;gl=us&amp;client=earth-client&amp;cv=7.3.3.7786&amp;useragent=GoogleEarth/7.3.3.7786(Macintosh;Mac OS X (10.15.0);en;kml:2.2;client:Pro;type:default)</value>
+			</Data>
+		</ExtendedData>
+		<gx:balloonVisibility>1</gx:balloonVisibility>
+		<MultiGeometry>
+			<Point>
+				<coordinates>3.3552653,6.443368599999999,0</coordinates>
+			</Point>
+			<LinearRing>
+				<coordinates>
+					3.346569833500757,6.436847000125567,0 3.346569833500757,6.449890199874431,0 3.363960766499241,6.449890199874431,0 3.363960766499241,6.436847000125567,0 3.346569833500757,6.436847000125567,0 
+				</coordinates>
+			</LinearRing>
+		</MultiGeometry>
+	</Placemark>
+	<Placemark id="1.2.2">
+		<name>Amukoko</name>
+		<address>Apapa, Lagos, Nigeria</address>
+		<snippet>Apapa, Lagos, Nigeria</snippet>
+		<description><![CDATA[<!DOCTYPE html><html><head></head><body><script type="text/javascript">window.location.href="https://www.google.com/earth/rpc/entity?lat=6.4719871&lng=3.3387657500000003&fid=0x103b8957fd1865b9:0x593efb85d2c21a42&hl=en&gl=us&client=earth-client&cv=7.3.3.7786&useragent=GoogleEarth/7.3.3.7786(Macintosh;Mac OS X (10.15.0);en;kml:2.2;client:Pro;type:default)";</script></body></html>]]></description>
+		<styleUrl>#geocode</styleUrl>
+		<ExtendedData>
+			<Data name="placepageUri">
+				<value>https://www.google.com/earth/rpc/entity?lat=6.4719871&amp;lng=3.3387657500000003&amp;fid=0x103b8957fd1865b9:0x593efb85d2c21a42&amp;hl=en&amp;gl=us&amp;client=earth-client&amp;cv=7.3.3.7786&amp;useragent=GoogleEarth/7.3.3.7786(Macintosh;Mac OS X (10.15.0);en;kml:2.2;client:Pro;type:default)</value>
+			</Data>
+		</ExtendedData>
+		<MultiGeometry>
+			<Point>
+				<coordinates>3.3426697,6.4700526,0</coordinates>
+			</Point>
+			<LinearRing>
+				<coordinates>
+					3.325279721074661,6.457010115805995,0 3.325279721074661,6.483095084194003,0 3.360059678925338,6.483095084194003,0 3.360059678925338,6.457010115805995,0 3.325279721074661,6.457010115805995,0 
+				</coordinates>
+			</LinearRing>
+		</MultiGeometry>
+	</Placemark>
+	<Placemark id="1.2.3">
+		<name>Badia</name>
+		<address>Ajeromi-Ifelodun, Lagos, Nigeria</address>
+		<snippet>Ajeromi-Ifelodun, Lagos, Nigeria</snippet>
+		<description><![CDATA[<!DOCTYPE html><html><head></head><body><script type="text/javascript">window.location.href="https://www.google.com/earth/rpc/entity?lat=6.46157175&lng=3.35743235&fid=0x103b8bea91489adb:0xf811f6d37448fe0c&hl=en&gl=us&client=earth-client&cv=7.3.3.7786&useragent=GoogleEarth/7.3.3.7786(Macintosh;Mac OS X (10.15.0);en;kml:2.2;client:Pro;type:default)";</script></body></html>]]></description>
+		<styleUrl>#geocode</styleUrl>
+		<ExtendedData>
+			<Data name="placepageUri">
+				<value>https://www.google.com/earth/rpc/entity?lat=6.46157175&amp;lng=3.35743235&amp;fid=0x103b8bea91489adb:0xf811f6d37448fe0c&amp;hl=en&amp;gl=us&amp;client=earth-client&amp;cv=7.3.3.7786&amp;useragent=GoogleEarth/7.3.3.7786(Macintosh;Mac OS X (10.15.0);en;kml:2.2;client:Pro;type:default)</value>
+			</Data>
+		</ExtendedData>
+		<MultiGeometry>
+			<Point>
+				<coordinates>3.356525,6.4633104,0</coordinates>
+			</Point>
+			<LinearRing>
+				<coordinates>
+					3.347829829592424,6.456789022194318,0 3.347829829592424,6.469831777805682,0 3.365220170407576,6.469831777805682,0 3.365220170407576,6.456789022194318,0 3.347829829592424,6.456789022194318,0 
+				</coordinates>
+			</LinearRing>
+		</MultiGeometry>
+	</Placemark>
+	<Placemark id="1.2.4">
+		<name>Bariga</name>
+		<address>Oworonshoki, Nigeria</address>
+		<snippet>Oworonshoki, Nigeria</snippet>
+		<description><![CDATA[<!DOCTYPE html><html><head></head><body><script type="text/javascript">window.location.href="https://www.google.com/earth/rpc/entity?lat=6.5393124&lng=3.38659185&fid=0x103b8d066ea84e95:0xce26bf31be062ccb&hl=en&gl=us&client=earth-client&cv=7.3.3.7786&useragent=GoogleEarth/7.3.3.7786(Macintosh;Mac OS X (10.15.0);en;kml:2.2;client:Pro;type:default)";</script></body></html>]]></description>
+		<styleUrl>#geocode</styleUrl>
+		<ExtendedData>
+			<Data name="placepageUri">
+				<value>https://www.google.com/earth/rpc/entity?lat=6.5393124&amp;lng=3.38659185&amp;fid=0x103b8d066ea84e95:0xce26bf31be062ccb&amp;hl=en&amp;gl=us&amp;client=earth-client&amp;cv=7.3.3.7786&amp;useragent=GoogleEarth/7.3.3.7786(Macintosh;Mac OS X (10.15.0);en;kml:2.2;client:Pro;type:default)</value>
+			</Data>
+		</ExtendedData>
+		<MultiGeometry>
+			<Point>
+				<coordinates>3.3849441,6.5391037,0</coordinates>
+			</Point>
+			<LinearRing>
+				<coordinates>
+					3.36755645690891,6.526062967681683,0 3.36755645690891,6.552144432318316,0 3.40233174309109,6.552144432318316,0 3.40233174309109,6.526062967681683,0 3.36755645690891,6.526062967681683,0 
+				</coordinates>
+			</LinearRing>
+		</MultiGeometry>
+	</Placemark>
+	<Placemark id="1.2.5">
+		<name>Makoko</name>
+		<address>Lagos Mainland, Lagos, Nigeria</address>
+		<snippet>Lagos Mainland, Lagos, Nigeria</snippet>
+		<description><![CDATA[<!DOCTYPE html><html><head></head><body><script type="text/javascript">window.location.href="https://www.google.com/earth/rpc/entity?lat=6.5001571&lng=3.3874712000000002&fid=0x103b8c8da642e481:0x42d33769d3ebadba&hl=en&gl=us&client=earth-client&cv=7.3.3.7786&useragent=GoogleEarth/7.3.3.7786(Macintosh;Mac OS X (10.15.0);en;kml:2.2;client:Pro;type:default)";</script></body></html>]]></description>
+		<styleUrl>#geocode</styleUrl>
+		<ExtendedData>
+			<Data name="placepageUri">
+				<value>https://www.google.com/earth/rpc/entity?lat=6.5001571&amp;lng=3.3874712000000002&amp;fid=0x103b8c8da642e481:0x42d33769d3ebadba&amp;hl=en&amp;gl=us&amp;client=earth-client&amp;cv=7.3.3.7786&amp;useragent=GoogleEarth/7.3.3.7786(Macintosh;Mac OS X (10.15.0);en;kml:2.2;client:Pro;type:default)</value>
+			</Data>
+		</ExtendedData>
+		<MultiGeometry>
+			<Point>
+				<coordinates>3.3880288,6.4990277,0</coordinates>
+			</Point>
+			<LinearRing>
+				<coordinates>
+					3.379334298540261,6.492506823905195,0 3.379334298540261,6.505548576094805,0 3.396723301459739,6.505548576094805,0 3.396723301459739,6.492506823905195,0 3.379334298540261,6.492506823905195,0 
+				</coordinates>
+			</LinearRing>
+		</MultiGeometry>
+	</Placemark>
+	<Placemark id="1.2.6">
+		<name>Ijeshatedo</name>
+		<address>Surulere, Lagos, Nigeria</address>
+		<snippet>Surulere, Lagos, Nigeria</snippet>
+		<description><![CDATA[<!DOCTYPE html><html><head></head><body><script type="text/javascript">window.location.href="https://www.google.com/earth/rpc/entity?lat=6.4941023&lng=3.3297593500000002&fid=0x103b8ea538ab3bb3:0xd6472663aa290b65&hl=en&gl=us&client=earth-client&cv=7.3.3.7786&useragent=GoogleEarth/7.3.3.7786(Macintosh;Mac OS X (10.15.0);en;kml:2.2;client:Pro;type:default)";</script></body></html>]]></description>
+		<styleUrl>#geocode</styleUrl>
+		<ExtendedData>
+			<Data name="placepageUri">
+				<value>https://www.google.com/earth/rpc/entity?lat=6.4941023&amp;lng=3.3297593500000002&amp;fid=0x103b8ea538ab3bb3:0xd6472663aa290b65&amp;hl=en&amp;gl=us&amp;client=earth-client&amp;cv=7.3.3.7786&amp;useragent=GoogleEarth/7.3.3.7786(Macintosh;Mac OS X (10.15.0);en;kml:2.2;client:Pro;type:default)</value>
+			</Data>
+		</ExtendedData>
+		<MultiGeometry>
+			<Point>
+				<coordinates>3.3275593,6.4941029,0</coordinates>
+			</Point>
+			<LinearRing>
+				<coordinates>
+					3.310170088719719,6.48106099153979,0 3.310170088719719,6.507144808460211,0 3.34494851128028,6.507144808460211,0 3.34494851128028,6.48106099153979,0 3.310170088719719,6.48106099153979,0 
+				</coordinates>
+			</LinearRing>
+		</MultiGeometry>
+	</Placemark>
+	<Placemark id="1.2.7">
+		<name>Iwaya</name>
+		<address>Lagos Mainland, Oworonshoki, Nigeria</address>
+		<snippet>Lagos Mainland, Oworonshoki, Nigeria</snippet>
+		<description><![CDATA[<!DOCTYPE html><html><head></head><body><script type="text/javascript">window.location.href="https://www.google.com/earth/rpc/entity?lat=6.505424999999999&lng=3.3884893&fid=0x103b8ceda869e9ab:0x482bc47901ce6eea&hl=en&gl=us&client=earth-client&cv=7.3.3.7786&useragent=GoogleEarth/7.3.3.7786(Macintosh;Mac OS X (10.15.0);en;kml:2.2;client:Pro;type:default)";</script></body></html>]]></description>
+		<styleUrl>#geocode</styleUrl>
+		<ExtendedData>
+			<Data name="placepageUri">
+				<value>https://www.google.com/earth/rpc/entity?lat=6.505424999999999&amp;lng=3.3884893&amp;fid=0x103b8ceda869e9ab:0x482bc47901ce6eea&amp;hl=en&amp;gl=us&amp;client=earth-client&amp;cv=7.3.3.7786&amp;useragent=GoogleEarth/7.3.3.7786(Macintosh;Mac OS X (10.15.0);en;kml:2.2;client:Pro;type:default)</value>
+			</Data>
+		</ExtendedData>
+		<MultiGeometry>
+			<Point>
+				<coordinates>3.391810599999999,6.5056575,0</coordinates>
+			</Point>
+			<LinearRing>
+				<coordinates>
+					3.383116186271124,6.499136689703344,0 3.383116186271124,6.512178310296656,0 3.400505013728876,6.512178310296656,0 3.400505013728876,6.499136689703344,0 3.383116186271124,6.499136689703344,0 
+				</coordinates>
+			</LinearRing>
+		</MultiGeometry>
+	</Placemark>
+	<Placemark id="1.2.8">
+		<name>Mushin</name>
+		<address>Surulere, Lagos, Nigeria</address>
+		<snippet>Surulere, Lagos, Nigeria</snippet>
+		<description><![CDATA[<!DOCTYPE html><html><head></head><body><script type="text/javascript">window.location.href="https://www.google.com/earth/rpc/entity?lat=6.5276781999999995&lng=3.3441012999999997&fid=0x103b8dd47927b4a3:0x11b53610ea680813&hl=en&gl=us&client=earth-client&cv=7.3.3.7786&useragent=GoogleEarth/7.3.3.7786(Macintosh;Mac OS X (10.15.0);en;kml:2.2;client:Pro;type:default)";</script></body></html>]]></description>
+		<styleUrl>#geocode</styleUrl>
+		<ExtendedData>
+			<Data name="placepageUri">
+				<value>https://www.google.com/earth/rpc/entity?lat=6.5276781999999995&amp;lng=3.3441012999999997&amp;fid=0x103b8dd47927b4a3:0x11b53610ea680813&amp;hl=en&amp;gl=us&amp;client=earth-client&amp;cv=7.3.3.7786&amp;useragent=GoogleEarth/7.3.3.7786(Macintosh;Mac OS X (10.15.0);en;kml:2.2;client:Pro;type:default)</value>
+			</Data>
+		</ExtendedData>
+		<MultiGeometry>
+			<Point>
+				<coordinates>3.3414103,6.527292900000001,0</coordinates>
+			</Point>
+			<LinearRing>
+				<coordinates>
+					3.306634202307329,6.501210826730498,0 3.306634202307329,6.553374973269501,0 3.37618639769267,6.553374973269501,0 3.37618639769267,6.501210826730498,0 3.306634202307329,6.501210826730498,0 
+				</coordinates>
+			</LinearRing>
+		</MultiGeometry>
+	</Placemark>
+	<Placemark id="1.2.9">
+		<name>Somolu</name>
+		<address>Lagos, Nigeria</address>
+		<snippet>Lagos, Nigeria</snippet>
+		<description><![CDATA[<!DOCTYPE html><html><head></head><body><script type="text/javascript">window.location.href="https://www.google.com/earth/rpc/entity?lat=6.537595949999999&lng=3.3857071000000003&fid=0x103b8d130ffafe3d:0xbd4373afc70538b2&hl=en&gl=us&client=earth-client&cv=7.3.3.7786&useragent=GoogleEarth/7.3.3.7786(Macintosh;Mac OS X (10.15.0);en;kml:2.2;client:Pro;type:default)";</script></body></html>]]></description>
+		<styleUrl>#geocode</styleUrl>
+		<ExtendedData>
+			<Data name="placepageUri">
+				<value>https://www.google.com/earth/rpc/entity?lat=6.537595949999999&amp;lng=3.3857071000000003&amp;fid=0x103b8d130ffafe3d:0xbd4373afc70538b2&amp;hl=en&amp;gl=us&amp;client=earth-client&amp;cv=7.3.3.7786&amp;useragent=GoogleEarth/7.3.3.7786(Macintosh;Mac OS X (10.15.0);en;kml:2.2;client:Pro;type:default)</value>
+			</Data>
+		</ExtendedData>
+		<MultiGeometry>
+			<Point>
+				<coordinates>3.3841676,6.539172999999999,0</coordinates>
+			</Point>
+			<LinearRing>
+				<coordinates>
+					3.349392193187883,6.513091444890912,0 3.349392193187883,6.565254555109088,0 3.418943006812118,6.565254555109088,0 3.418943006812118,6.513091444890912,0 3.349392193187883,6.513091444890912,0 
+				</coordinates>
+			</LinearRing>
+		</MultiGeometry>
+	</Placemark>
+</kml>

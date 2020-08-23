@@ -97,7 +97,7 @@ body.DARK {
   #content.map {
     margin-left: calc(2 * var(--bg-size));
     margin-right: calc(4 * var(--bg-size));
-    width: calc(25.3 * var(--bg-size));
+    width: calc(29 * var(--bg-size));
     margin-top: calc(1 * var(--bg-size));
   }
 

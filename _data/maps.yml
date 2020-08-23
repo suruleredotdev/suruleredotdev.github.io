@@ -1,0 +1,7 @@
+- name: Lagos Slums
+  url: /datasets/maps/lagos-slums.kml
+  type: kml
+
+- name: Nigeria States
+  url: /datasets/maps/Nigeria.kml
+  type: kml
