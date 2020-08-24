@@ -24,7 +24,7 @@
     line-height: 15px;
   }
 
-  .annotation-header, .annotation-body {
+  .annotation > h3, .annotation > div {
     position: relative;
     top: 10px;
   }
@@ -50,6 +50,8 @@
       padding-top: 10px;
     }
   }
+
+
 </style>
 
 <script src="/itty.js"></script>
@@ -78,4 +80,18 @@
   //   for (var i = 0; i < selRange.length; i++) {
   //   }
   // });
+
+  let currentSlideIndex = 1; /* 1-indexed */
+  let slideCount = document.querySelectorAll('.annotation-slide').length;
+  function advanceSlides(by) {
+    let currentSlide = document.getElementById(`annotation-slide-${currentSlideIndex}`)
+    let newSlideIndex = by <= slideCount ? currentSlideIndex+by : by % slideCount;
+    let newSlide = document.getElementById(`annotation-slide-${newSlideIndex}`)
+    console.log(currentSlide, newSlide, newSlideIndex, slideCount, currentSlideIndex, by, slideCount);
+    if (!!newSlide) {
+      currentSlide.classList.add = 'none';
+      newSlide.style.display = 'block';
+    }
+    currentSlideIndex = newSlideIndex;
+  }
 </script>

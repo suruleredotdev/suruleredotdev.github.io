@@ -29,6 +29,10 @@ layout: default
         100% { width: var(--bg-size); }
     }
 
+    #content.map {
+        height: fit-content;
+    }
+
     @media screen and (min-width: 600px) {
         #logo img {
             animation: scaleDown ease 500ms;
@@ -36,27 +40,33 @@ layout: default
             margin-left: calc(2 * var(--bg-size));
         }
     }
-
-    .MAP {
-        height: calc(12 * var(--bg-size));
-        width: calc(18 * var(--bg-size)) !important;
-    }
-    .MAP-container {
-        width: calc(18* var(--bg-size)) !important;
-    }
-
-    @media screen and (min-width: 1200px) {
+    @media screen and (max-width: 1200px) {
+        #tool-body {
+           flex-direction: column; 
+        }
         .MAP {
-            width: 100%;
+            height: calc(12 * var(--bg-size));
+            width: calc(12 * var(--bg-size)) !important;
+        }
+        .MAP-container {
+            width: 100% !important;
         }
     }
+    @media screen and (min-width: 1200px) {
+        #tool-body {
+           flex-direction: row; 
+        }
+         .MAP {
+            height: calc(12 * var(--bg-size));
+            width: calc(18 * var(--bg-size)) !important;
+        }
+        .MAP-container {
+            width: calc(18* var(--bg-size)) !important;
+        }
 
+    }
     input:focus                   { opacity: 1; outline: none;}
     input.title[value="Untitled"] { opacity: 0.5; }
-    /*
-    input.title                         { opacity: 1; }
-    input.title[value="Untitled"]       { opacity: 0.5; }
-    */
 
     input.setting {
         border-top-style: hidden;
@@ -101,6 +111,7 @@ if (window.location !== window.parent.location) {
     // DO NOT CHANGE
     // TODO: expand this to support trees of state
     function I(id, initVal = null, syncToUrl = true) {
+        this.id = id;
         this.el = document.getElementById(id); // the actual state is stored first in the DOM elements
         if (!!initVal) {
            this.el.value = initVal ;
@@ -111,11 +122,15 @@ if (window.location !== window.parent.location) {
         };
         //  attempt to get inital value from query params
         let query = (new URL(window.location)).searchParams;
-        let param = query.get(this.el.id.replace(new RegExp('-settings'), ''));
+        let param = query.get(this.el.id.replace(new RegExp('-setting$'), ''));
+        console.log('el: ', this.el.id);
         if (!!param) {
             this.el.value = param;
             let setting = this;
-            setTimeout(function() { setting.update(param); }, 500);
+            setTimeout(function() { 
+                console.log(`initializing ${id} from URL params`);
+                setting.update(param);
+            }, 100);
         }
     }
     I.prototype.get = function() {
@@ -138,23 +153,39 @@ if (window.location !== window.parent.location) {
         }
     }
 
+    function logError(msg) {
+        document.getElementById('settings-error').style.display = "block";
+        document.getElementById('settings-error-msg').innerHTML = msg + "</br>";
+    }
+
+    function hideError() {
+        document.getElementById('settings-error').style.display = "none";
+        document.getElementById('settings-error-msg').textContent = "";
+    }
+
     let mapTitle,
         attribution,
         tileLayerUrl,
         tileLayer,
         coord = [6.498820462853738, 3.3958632487106137],
         zoom = 5,
-        mapData,
+        mapData, mapDataLayers = [],
         map;
 
     window.addEventListener('DOMContentLoaded', function (event) {
+        hideError();
+
         // DEFAULT VALUES
         mapTitle = new I("map-title");
-        attribution = new I("attribution-setting")
+        attribution = new I("attribution-setting");
         tileLayerUrl = new I("tile-layer-setting");
         zoom = new I("zoom-setting");
         coord = [new I("coord-lon-setting"), new I("coord-lat-setting")];
         mapData = new I("import-data-setting");
+        
+        let settings =  [
+            mapTitle, attribution, tileLayerUrl, zoom, coord, mapData,
+        ]
 
         map = L.map('map').setView([coord[0].get(), coord[1].get()], 9);
         map.on('moveend', function(e) {
@@ -186,27 +217,27 @@ if (window.location !== window.parent.location) {
         }
         mapData.update = function (val) {
             let datasets = val.split(',');
+            for (var i = 0; i < mapDataLayers.length; i++) {
+                map.removeLayer(mapDataLayers[i]);
+            }
+            mapDataLayers = [];
             for (var i = 0; i < datasets.length; i++) {
                 let ext = datasets[i].split('.').pop();
-                omnivore[ext](datasets[i]).addTo(map);
+                if(!!omnivore[ext]) {
+                    let layer = omnivore[ext](datasets[i]);
+                    mapDataLayers.push(layer);
+                    layer.addTo(map);
+                    hideError();
+                } else {
+                    logError(`bad data url: ${datasets[i]}`);
+                }
             }
         }
-
-        /*
-        * synchronize map settings with query params
-        */ 
-        let settingsFields = document.querySelectorAll(".setting");
-        for (var i = 0; i < settingsFields.length; i++) {
-            let el = settingsFields[i];
-            // initialize all settings fields from approriate query params, if present
-            el.addEventListener('load', function(e) {
-            })
-        };
     });
 </script>
 
 <div id="content" class="map post pa3 pa5-ns mt6-l mh7-l f5">
-    <div class="flex flex-row ma0 pb2 b">
+    <div id="tool-header" class="flex flex-row ma0 pb2 b">
         <div class="b f7 o-40 flex flex-column fw5 ba pa1 dib" style="width: fit-content">
             <span class="dib" style="width: fit-content">MAP </span>
             <span class="dib" style="width: fit-content">EDITOR</span>
@@ -222,7 +253,7 @@ if (window.location !== window.parent.location) {
             placeholder="Untitled"/>
     </div>
 
-    <div class="flex flex-row-l flex-column">
+    <div id="tool-body" class="flex">
         <div class="MAP-container flex flex-row">
             <div id="map" class="MAP"></div>
             
@@ -242,7 +273,7 @@ if (window.location !== window.parent.location) {
                     placeholder= "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
                     onmousedown="if (!event.target.value) tileLayerUrl.set(event.target.placeholder)"
                     onmouseup="event.target.select()"
-                    oninput="tileLayerUrl.set(event.target.value)"
+                    onchange="tileLayerUrl.set(event.target.value)"
                     type="text"
                     class="setting bg-transparent w-70 pa0 dib"/>
                 <br/>
@@ -257,7 +288,7 @@ if (window.location !== window.parent.location) {
                         placeholder="&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
                         onmousedown="if (!event.target.value) attribution.set(event.target.placeholder)"
                         onmouseup="event.target.select()"
-                        oninput="attribution.set(event.target.value)"
+                        onchange="attribution.set(event.target.value)"
                         class="setting bg-transparent w-70 pa0 dib"/>
                 </div>
             </div>
@@ -270,7 +301,7 @@ if (window.location !== window.parent.location) {
                         placeholder="LON"
                         value="6.498820462853738"
                         onmouseup="event.target.select()"
-                        oninput="coord[0].set(event.target.value)"
+                        onchange="coord[0].set(event.target.value)"
                         class="setting bg-transparent w-20 pa0 mr1 db"/>
                     <span class="pt3">,</span>
                     <input 
@@ -279,7 +310,7 @@ if (window.location !== window.parent.location) {
                         placeholder="LAT"
                         value="3.3958632487106137"
                         onmouseup="event.target.select()"
-                        oninput="coord[1].set(event.target.value)"
+                        onchange="coord[1].set(event.target.value)"
                         class="setting bg-transparent w-20 ml2 pa0 db"/>
                     <br/>
                 </div>
@@ -291,7 +322,7 @@ if (window.location !== window.parent.location) {
                         placeholder="5"
                         onmousedown="if (!event.target.value) zoom.set(event.target.placeholder)"
                         onmouseup="event.target.select()"
-                        oninput="zoom.set(event.target.value)"
+                        onchange="zoom.set(event.target.value)"
                         class="setting bg-transparent w-20 pa0 mr1 db"/>
                 </div>
             </div>
@@ -304,7 +335,7 @@ if (window.location !== window.parent.location) {
                     onmouseup="event.target.select()"
                     type="text"
                     class="setting bg-transparent w-70 pa0 dib"
-                    oninput="mapData.set(event.target.value)"/>
+                    onchange="mapData.set(event.target.value)"/>
                 <!--<datalist id="map-datasets">
                     {% for map in site.data.maps %}
                         <option value="{{ map.url }}">{{ map.name }} </option>
@@ -312,19 +343,14 @@ if (window.location !== window.parent.location) {
                 </datalist>-->
             </div>
 
+            <div id="settings-error" class="red f7 o-40 fw5 pa1 pt2 flex flex-row" style="width: fit-content">
+                <span class="b" style="width: fit-content">ERROR: </span> 
+                <br/>
+                <div id="settings-error-msg"> 
+                </div> 
+                <br/>
+                <a class="black pointer" onclick="hideError()"><small>CLEAR</small></a>
+            </div>
         </div>
     </div>
 </div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/codemirror.min.js" integrity="sha512-H5RyE1jRbGn8d0dsSstZi0SSs23X6Hkkf5hLneEIFyCfP/cBwJ/jFJESBuFBiUyzbGZGa06tnrvw1SboRKdwcA==" crossorigin="anonymous"></script>
-<!--- CODEMIRROR imports -->
-    <!-- lib -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/codemirror.min.css" integrity="sha512-/BlxZbYLtYGExexketXsTi47eHp+r2kTeq2OHecQPZlfbc7WFXVrwbVW9HOYjI6c9Ti+P60ASmVLxittZ0EBGw==" crossorigin="anonymous" />
-    <!-- javascript mode -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/mode/javascript/javascript.min.js" integrity="sha512-9miXlEjnHTF+nVGdc2IGOLGTFW2wWkWbd1/7Ltlre+dM53ZSCUQ/PNN+jtsmYqr3ndiD5RW6XQJUm/Hz8JvyOQ==" crossorigin="anonymous"></script>
-    <!-- dark theme -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/material.min.css" integrity="sha512-t93jzyjNejvKJ0LbK+VuLVp89Y8olz3sMmGPhKXYsTjSLuu3a3dVaZljCK6g04ShmsANEM8xe/OB+IaBE2LRBA==" crossorigin="anonymous" />
-    <!-- light theme -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/neo.min.css" integrity="sha512-n6DpN0Uo6L9yIU4MeX5hhnCX6NejvEBxXQ2GNmBl8febWyt1Fdh7C4EiDQvBeGtFOaOIBxZAf/VQZjjUvs04ng==" crossorigin="anonymous" />
-    <!-- light theme (alternate) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/paraiso-light.min.css" integrity="sha512-xb7HM7Q7s3Lm0LSzMGAOkUYJR/7tDmIYf3nEpJ85LECOEehenge0dbpIJqW8mrxMLCcQzwU7N6y/R7TzGCu7iA==" crossorigin="anonymous" />
