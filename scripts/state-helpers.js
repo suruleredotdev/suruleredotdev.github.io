@@ -3,7 +3,7 @@ function valueOrDefault(input) {
 }
 
 class S {
-    constructor(getFn, setFn, toString=function() { return "#"; }) {
+    constructor(getFn, setFn, toString = function() { return "#"; }) {
         this.getFn = getFn;
         this.setFn = setFn;
         this.toString = toString;
@@ -17,16 +17,25 @@ var sources = {
         function(key)      { return document.currentScript.getAttribute(key); }, 
 
         /* treated as no-op, since this behavior isn't needed when getting attrs from script tag */
-        function(key, val) { return document.currentScript.setAttribute(key, val); },
+        function(key, val) { document.currentScript.setAttribute(key, val); },
     ),
     URL: new S(
         /* gets keyed value from source: URL Query parameters */
-        function(key)      { return (new URL(window.location)).searchParams.get(key); }, 
+        function(key)      { return (new URLSearchParams(window.location.search)).get(key); }, 
 
-            /* modifies URL (w/o reloading) */
-        function(key, val) { return (new URL(window.location)).searchParams.set(key, val); }, /* treated as no-op */
+        /* modifies URL (w/o reloading) */
+        function(key, val) {
+            let query = (new URLSearchParams(window.location.search));
+            query.set(key, val);
 
-        function() { return (new URL(window.location)).toString(); }
+            // update URL query params without reloading page
+            if (history.pushState) {
+                var newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + query.toString();
+                window.history.pushState({ path: newUrl }, '', newUrl);
+            }
+        },
+
+        function() { return (new URLSearchParams(window.location.search)).toString(); }
     ),
 }
 
@@ -79,13 +88,5 @@ class I {
             this.update(this.el.value);
         }
         this.query.set(this.el.id.replace(new RegExp('-setting$'), ''), this.el.value);
-
-
-        // !! this code specific to when source is URL
-        if (history.pushState && Object.is(this.query, sources.URL)) {
-            // update URL query params without reloading page
-            var newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + this.query.toString();
-            window.history.pushState({ path: newUrl }, '', newUrl);
-        }
     }
 }

@@ -74,7 +74,7 @@ layout: default
         border-left-style: hidden;
     }
     .LIGHT input.setting  { border-bottom: 1px dashed var(--txt-color-dark); }
-    .DARK  input.setting  {border-bottom: 1px dashed var(--title-color);  }  
+    .DARK  input.setting  { border-bottom: 1px dashed var(--title-color);  }  
 
     #map-settings {
         width: calc(9 * var(--bg-size)) !important;
@@ -93,66 +93,9 @@ layout: default
     }
 </style>
 
-<script iframe-script>
-if (window.location !== window.parent.location) {	  
-    // The page is in an iframe	
-    // TODO: only show map frame and controls if 
-}
-</script>
+<script src="/scripts/state-helpers.js"></script>
 
 <script map-script>
-    function valueOrDefault(input) {
-        return (!!input.value) ? input.value : input.placeholder;
-    }
-
-    // proxy for reactive values from <input>s in DOM 
-    // state is stored in the elements themselves (this.el), with get and set hooks and an change listener
-
-    // DO NOT CHANGE
-    // TODO: expand this to support trees of state
-    function I(id, initVal = null, syncToUrl = true) {
-        this.id = id;
-        this.el = document.getElementById(id); // the actual state is stored first in the DOM elements
-        if (!!initVal) {
-           this.el.value = initVal ;
-        }
-        // default event handlers
-        this.update = function(val) {
-            console.log(`I.onchange: ${id} changed to '${val}' – onchange unset`);
-        };
-        //  attempt to get inital value from query params
-        let query = (new URL(window.location)).searchParams;
-        let param = query.get(this.el.id.replace(new RegExp('-setting$'), ''));
-        console.log('el: ', this.el.id);
-        if (!!param) {
-            this.el.value = param;
-            let setting = this;
-            setTimeout(function() { 
-                console.log(`initializing ${id} from URL params`);
-                setting.update(param);
-            }, 100);
-        }
-    }
-    I.prototype.get = function() {
-        return valueOrDefault(this.el);
-    }
-    I.prototype.set = function(valOrFn, update = true /* trigger change update */) {
-        this.el.value = 
-            (valOrFn && {}.toString.call(valOrFn) === '[object Function]') 
-            ? valOrFn(this.el.value) 
-            : valOrFn;
-        if (update) {
-            this.update(this.el.value);
-        }
-        let query = (new URL(window.location)).searchParams;
-        query.set(this.el.id.replace(new RegExp('-setting$'), ''), this.el.value);
-        // update URL query params without reloading page
-        if (history.pushState) {
-            var newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + query.toString();
-            window.history.pushState({ path: newUrl }, '', newUrl);
-        }
-    }
-
     function logError(msg) {
         document.getElementById('settings-error').style.display = "block";
         document.getElementById('settings-error-msg').innerHTML = msg + "</br>";
@@ -183,9 +126,9 @@ if (window.location !== window.parent.location) {
         coord = [new I("coord-lon-setting"), new I("coord-lat-setting")];
         mapData = new I("import-data-setting");
         
-        let settings =  [
+        let allSettings =  {
             mapTitle, attribution, tileLayerUrl, zoom, coord, mapData,
-        ]
+        };
 
         map = L.map('map').setView([coord[0].get(), coord[1].get()], 9);
         map.on('moveend', function(e) {
@@ -351,6 +294,12 @@ if (window.location !== window.parent.location) {
                 <br/>
                 <a class="black pointer" onclick="hideError()"><small>CLEAR</small></a>
             </div>
+
+            <p class="f7 gray pa2">
+                <a href="">KML</a> files can be created on Google Earth 
+                and <a href="https://en.wikipedia.org/wiki/GeoJSON">GeoJSON</a> files can be created 
+                on tools like <a href="https://geojson.io">geojson.io</a>
+            </p>
         </div>
     </div>
 </div>
