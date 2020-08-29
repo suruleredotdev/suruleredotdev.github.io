@@ -37,6 +37,11 @@ var sources = {
 
         function() { return (new URLSearchParams(window.location.search)).toString(); }
     ),
+    LOCAL_STORAGE: new S(
+        function(key) { return window.localStorage.getItem(key); },
+
+        function(key, val) { return window.localStorage.setItem(key, val); },
+    ),
 }
 
 // proxy for reactive values from <input>s in DOM 
