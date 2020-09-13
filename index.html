@@ -12,20 +12,16 @@ layout: default
 
 <div id="content" class="pa3 pa5-ns mt6-l mh7-l f4 h-100">
 
-<!--
-<div id="about-more" style="display: none;">
-  <p>
+<div id="about">
+  <p class="f1 b title ma0">Serious writing about </p>
+  <p class="f1 b title mt0">Africa's future.</p>
+
+  <!--
+  <p class="f7">
     This project takes shape through essays, visualizations, and basic tools that help folks think critically about our ever-changing reality in 2020, through the materialities of economics, geopolitics and computing.
   </p>
-  <p>
-    So far, this project is very loosely defined -- that is, outside of clean aesthetic. But it's essence is in speculatively combining many disciplines and expressing them through one-another.
-  </p>
+  -->
 </div>
-
-<p>
-  <a onclick="toggle_section(event, 'about-more', '&uarr;')" class="dim pa0 b--transparent ma0 gray f6 cursor">&darr;</a>
-</p>
--->
 
 <b class="title">
   ESSAYS
@@ -34,7 +30,7 @@ layout: default
   {% for post in site.posts %}
     {% if post.draft != true %}
     <p>
-      <a class="link dim" href="{{ post.url }}">{{ post.title }}</a>
+      <a class="link dim" href="{{ post.url | remove_first: '/' }}">{{ post.title }}</a>
       <small class="f7">&mdash; {{ post.date | date_to_string }}</small>
       <!--
         {% if post.tags %}
