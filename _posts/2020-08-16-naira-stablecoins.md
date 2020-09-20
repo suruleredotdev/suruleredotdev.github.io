@@ -1,9 +1,11 @@
 ---
 layout: post
 title: "Naira Stablecoins: ABCD and NGNT"
-author: Kolade Aderele
-draft: true
-author_link: https://twitter.com/kolade_ka
+authors: 
+- name: Kolade Aderele
+  link: https://twitter.com/kolade_ka
+- name: Korede Aderele
+  link: https://agbero.dev
 ---
 
 A “Stablecoin” is a digital currency that can be reliably and stably exchanged for its equivalent value in a regular (fiat) currency.
@@ -52,14 +54,9 @@ There’s something a little counterintuitive about the logic of establishing a 
 As mentioned, The Naira has been notoriously volatile in response to global oil prices.
 Amongst other factors, as a member of OPEC, Nigeria is subject to agreements about how much it can sell it’s crude for, regardless of its production capacity.
 
-<!--
-<div id="ngn_usd_exchange" class="CHART ph6" data-file="/datasets/ngn_usd_exchange.csv"></div>
-<p class="tc f7 o-50">Naira to Dollar (USD) exchange rate</p>
--->
-
 In response to crude price fluctuations in 2016, Nigerians rushed to convert their rapidly devaluing Naira into USD so they could preserve their savings and make crucial overseas transactions.
 The CBN reacted to this increased demand by setting significant restrictions on it’s forex reserves, stating that it would give priority to only the most essential requests, such as tuition payments and manufacturing equipment purchases.
-This process was unsurprisingly very disorganized and corrupt, with preferential treatment given to people with government connections.
+This process was generally considered to be very disorganized and corrupt, with preferential treatment given to people with government connections.
 It was at this point that some Nigerians started to look into converting their liquidity into cryptocurrencies, because they provided a higher value, albeit more volatile alternative to the Naira.
 
 
@@ -160,20 +157,24 @@ One should also be cautious of increased regulation by corrupt politicians as we
 Would it be better to tie the value of a stablecoin to that of the Naira as well as a well trusted commodity such as Gold?  
 
 
-### Sources:
+<div class="horizontal-divide bb mh4 mv4 o-30"></div>
+<div class="f7">
+<b>Sources</b> <br/>
 
-1. https://abcd.africa
+1. https://abcd.africa <br/>
 
-2. https://diutocoinnews.com.ng/is-abcd-the-first-stablecoin-in-africa-that-will-go-mainstream/13/28/
+2. https://diutocoinnews.com.ng/is-abcd-the-first-stablecoin-in-africa-that-will-go-mainstream/13/28/ <br/>
 
-3. https://www.abcd.africa/whitepaper.pdf
+3. https://www.abcd.africa/whitepaper.pdf <br/>
 
-4. https://www.reuters.com/article/us-nigeria-currency/nigerian-naira-tumbles-30-percent-after-peg-removed-idUSKCN0Z61F7
+4. https://www.reuters.com/article/us-nigeria-currency/nigerian-naira-tumbles-30-percent-after-peg-removed-idUSKCN0Z61F7 <br/>
 
-5. https://www.researchgate.net/publication/255979414_Import_Bans_in_Nigeria_Increase_Poverty
+5. https://www.researchgate.net/publication/255979414_Import_Bans_in_Nigeria_Increase_Poverty <br/>
 
-6. https://www.bbc.com/news/world-africa-49367968
+6. https://www.bbc.com/news/world-africa-49367968 <br/>
 
-7. https://oec.world/en/profile/country/nga/
+7. https://oec.world/en/profile/country/nga/ <br/>
 
-8. https://www.stearsng.com/article/explainer-what-is-inflation
+8. https://www.stearsng.com/article/explainer-what-is-inflation <br/>
+ <br/> <br/>
+</div>

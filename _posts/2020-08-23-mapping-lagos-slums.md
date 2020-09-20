@@ -35,6 +35,8 @@ The map below highlights these settlements within the urban matrix of Lagos.
 <div class="MAP-container flex flex-column-m flex-column-l flex-row">
   <div id="lagos-slums-map" class="MAP"></div>
 
+  <iframe src="/tools/map-editor?zoom=12&coord-lon=6.505333616241333&coord-lat=3.380355834960938&import-data=%2Fdatasets%2Fmaps%2Flagos-slums.kml&map-title=lagos+slums"></iframe>
+
   <div class="map-annotation f6 pb0 flex flex-column">
     <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
     <div class="annotation-slide" id="annotation-slide-1">

@@ -1,81 +1,101 @@
 ---
-layout: default
+title: Map Tool
+layout: tool 
+tool_name: MAP EDITOR
 ---
 
-{% include map.html %}
+<!-- import leaflet and the other map libraries we'll use -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet' />
+<script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'></script>
+<script src="https://unpkg.com/mapbox-gl-leaflet/leaflet-mapbox-gl.js"></script>
 
+<script>
+  /* not even mine */
+  const mapboxAccessToken = 'pk.eyJ1Ijoia29yZWRlc21hcHMiLCJhIjoiY2tkbmhpdTBiMGMwZTJ6cHlpN2ppbG5jMyJ9.d7dW9A4fq2_qz0EKv3ofqA';
+</script>
+
+<!-- custom styles for different leaflet things like controls and popups (still WIP) -->
 <style>
-    /* special animations on page load */
-    @-webkit-keyframes moveLeft {
-        0% {
-            margin-left: calc(4 * var(--bg-size));
-        }
-        100% {
-            margin-left: calc(2 * var(--bg-size));
-        }
+    .MAP .tool-container {
+        display: flex;
+        flex-direction: row;
+        width: fit-content;
+        left: calc(-5 * var(--bg-size));
     }
 
-    @-webkit-keyframes growToFillFrame {
-        0% {
-            margin-left: calc(4 * var(--bg-size));
-        }
-        100% {
-            margin-left: calc(2 * var(--bg-size));
-        }
+    .MAP {
+        height: calc(12 * var(--bg-size));
+        width: 70%;
     }
 
-    @-webkit-keyframes scaleDown {
-        0% { width: calc(2 * var(--bg-size)); }
-        100% { width: var(--bg-size); }
+    .LIGHT .MAP {
+        background-color: var(--bg-color-light);
+        color: var(--txt-color-light);
+        border: 1px solid var(--border-color-light); 
+    }
+    .DARK .MAP {
+        background-color: var(--bg-color-dark);
+        color: rgba(var(--txt-color-dark), 0.8);
+        border: 0.5px solid var(--border-color);
     }
 
-    #content.map {
-        height: fit-content;
+    /* leaflet.css tweaks */
+    .leaflet-control-zoom-in, .leaflet-control-zoom-out {
+        border-radius: 0 !important;
+        border: 1px solid var(--border-color-light); 
+        box-shadow: 0;
     }
 
-    @media screen and (min-width: 600px) {
-        #logo img {
-            animation: scaleDown ease 500ms;
-            width: var(--bg-size);
-            margin-left: calc(2 * var(--bg-size));
-        }
+    .map-annotation {
+        border-width: 0.5px;
+        width: 30%;
+        border-width: 0.5px; border-left-width: 0px;
+        border-style: solid; 
+        height: calc(12 * var(--bg-size));
+        overflow-y: scroll;
     }
-    @media screen and (max-width: 1200px) {
-        #tool-body {
-           flex-direction: column; 
-        }
-        .MAP {
-            height: calc(12 * var(--bg-size));
-            width: calc(12 * var(--bg-size)) !important;
-        }
-        .MAP-container {
-            width: 100% !important;
-        }
+
+    .DARK .map-annotation {
+        background-color: var(--bg-color-dark);
+        color: var(--txt-color-annotation-dark);
+        border-color: var(--border-color);
     }
+
+    .DARK .map-annotation > .annotation-body {
+        background-color: var(--bg-color-dark);
+    }
+
+    .LIGHT .map-annotation {
+        background-color: var(--bg-color-light);
+        color: var(--txt-color-light);
+        border-color: var(--border-color-light);
+    }
+    .LIGHT .map-annotation > .annotation-body {
+        background-color: var(--bg-color-light);
+    }
+
     @media screen and (min-width: 1200px) {
-        #tool-body {
-           flex-direction: row; 
+        .map-annotation {
+        position: relative;
+        width: calc(7.3 * var(--bg-size));
+        left: calc(0 * var(--bg-size)) !important;
         }
-         .MAP {
-            height: calc(12 * var(--bg-size));
-            width: calc(18 * var(--bg-size)) !important;
-        }
-        .MAP-container {
-            width: calc(18* var(--bg-size)) !important;
-        }
-
     }
-    input:focus                   { opacity: 1; outline: none;}
-    input.title[value="Untitled"] { opacity: 0.5; }
 
-    input.setting {
-        border-top-style: hidden;
-        border-right-style: hidden;
-        border-left-style: hidden;
+    /* inline on smaller screens */
+    @media screen and (max-width: 1200px) {
+        .map-annotation {
+            position: relative;
+            width: 100% !important;
+            left: 0 !important;
+            height: 100% !important;
+            padding-bottom: 20px;
+            padding-top: 10px;
+        }
     }
-    .LIGHT input.setting  { border-bottom: 1px dashed var(--txt-color-dark); }
-    .DARK  input.setting  { border-bottom: 1px dashed var(--title-color);  }  
-
     #map-settings {
         width: calc(9 * var(--bg-size)) !important;
     }
@@ -93,41 +113,33 @@ layout: default
     }
 </style>
 
-<script src="/scripts/state-helpers.js"></script>
-
 <script map-script>
-    function logError(msg) {
-        document.getElementById('settings-error').style.display = "block";
-        document.getElementById('settings-error-msg').innerHTML = msg + "</br>";
-    }
-
-    function hideError() {
-        document.getElementById('settings-error').style.display = "none";
-        document.getElementById('settings-error-msg').textContent = "";
-    }
-
-    let mapTitle,
+    // declare these up here so they're in global scope
+    let title,
         attribution,
         tileLayerUrl,
         tileLayer,
-        coord = [6.498820462853738, 3.3958632487106137],
-        zoom = 5,
-        mapData, mapDataLayers = [],
+        coord,
+        zoom,
+        mapData,
+        mapDataLayers = [],
         map;
 
     window.addEventListener('DOMContentLoaded', function (event) {
         hideError();
 
         // DEFAULT VALUES
-        mapTitle = new I("map-title");
-        attribution = new I("attribution-setting");
-        tileLayerUrl = new I("tile-layer-setting");
-        zoom = new I("zoom-setting");
-        coord = [new I("coord-lon-setting"), new I("coord-lat-setting")];
-        mapData = new I("import-data-setting");
+        title = new I('title');
+        attribution = new I('attribution-setting');
+        tileLayerUrl = new I('tile-layer-setting');
+        zoom = new I('zoom-setting', 5);
+        coord = [new I('coord-lon-setting', 6.498820462853738), new I('coord-lat-setting', 3.3958632487106137)];
+        mapData = new I('import-data-setting');
         
+        if(pageIsEmbed()) renderAsEmbed("map");
+
         let allSettings =  {
-            mapTitle, attribution, tileLayerUrl, zoom, coord, mapData,
+            title, attribution, tileLayerUrl, zoom, coord, mapData,
         };
 
         map = L.map('map').setView([coord[0].get(), coord[1].get()], 9);
@@ -145,9 +157,9 @@ layout: default
             attribution: attribution.get()
         }).addTo(map);
         
-        zoom.update = function(val) { map.setView([coord[0].get(), coord[1].get()], val); }
-        coord[0].update = function(val) { map.setView([val, coord[1].get()], zoom.get()); }
-        coord[1].update = function(val) { map.setView([coord[0].get(), val], zoom.get()); }
+        zoom.update     = function(val) { map.setView([coord[0].get(), coord[1].get()], val); }
+        coord[0].update = function(val) { map.setView([val,            coord[1].get()], zoom.get()); }
+        coord[1].update = function(val) { map.setView([coord[0].get(), val],            zoom.get()); }
         tileLayerUrl.update = function(val) { 
             // TODO: make this multi-select and track multiple layers
             map.removeLayer(tileLayer);
@@ -179,127 +191,106 @@ layout: default
     });
 </script>
 
-<div id="content" class="map post pa3 pa5-ns mt6-l mh7-l f5">
-    <div id="tool-header" class="flex flex-row ma0 pb2 b">
-        <div class="b f7 o-40 flex flex-column fw5 ba pa1 dib" style="width: fit-content">
-            <span class="dib" style="width: fit-content">MAP </span>
-            <span class="dib" style="width: fit-content">EDITOR</span>
-        </div>
+<div class="MAP tool-container flex flex-row">
+    <div id="map" class="MAP"></div>
+</div>
 
+<div id="map-settings" class="map-settings flex flex-column pa3 ma1 pt0 f7">
+    <div class="f7 o-40 fw5 bb pa1 pt2" style="width: fit-content">
+        <span style="width: fit-content">SETTINGS</span>
+    </div>
+    <br/>
+
+    <div class="map-setting flex flex-row h1 ma1">
+        <label for="tile-layer-setting" class="fw5 w-30 dib">TILE LAYER:</label> 
         <input 
-            id="map-title"
-            name="map-title"
-            class="title ph3 ma0 f2 bg-transparent b--transparent"
-            oninput="mapTitle.set(event.target.value)" 
-            onmousedown="event.target.value = 'Untitled'"
+            id="tile-layer-setting"
+            name="tile-layer"
+            placeholder= "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+            onmousedown="if (!event.target.value) tileLayerUrl.set(event.target.placeholder)"
             onmouseup="event.target.select()"
-            placeholder="Untitled"/>
+            onchange="tileLayerUrl.set(event.target.value)"
+            type="text"
+            class="setting bg-transparent w-70 pa0 dib"/>
+        <br/>
+
     </div>
-
-    <div id="tool-body" class="flex">
-        <div class="MAP-container flex flex-row">
-            <div id="map" class="MAP"></div>
-            
+    <div class="map-settings-subgroup ml2">
+        <div class="map-setting flex flex-row h1 ma1">
+            <label for="attribution-setting" class="fw5 w-30 dib">ATTRIBUTION:</label> 
+            <input 
+                id="attribution-setting"
+                name="attribution"
+                placeholder="&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
+                onmousedown="if (!event.target.value) attribution.set(event.target.placeholder)"
+                onmouseup="event.target.select()"
+                onchange="attribution.set(event.target.value)"
+                class="setting bg-transparent w-70 pa0 dib"/>
         </div>
-
-        <div id="map-settings" class="map-settings flex flex-column pa3 ma1 pt0 f7">
-            <div class="f7 o-40 fw5 bb pa1 pt2" style="width: fit-content">
-                <span style="width: fit-content">SETTINGS</span>
-            </div>
+    </div>
+    <div class="map-setting-group flex flex-row flex-nowrap">
+        <div class="map-setting flex flex-row h1 ma1 mr4 w-60 dib">
+            <label for="coord-setting" class="fw5 w-50 dib">COORDS:</label> 
+            <input 
+                id="coord-lon-setting" 
+                name="coord-lon"
+                placeholder="LON"
+                value="6.498820462853738"
+                onmouseup="event.target.select()"
+                onchange="coord[0].set(event.target.value)"
+                class="setting bg-transparent w-20 pa0 mr1 db"/>
+            <span class="pt3">,</span>
+            <input 
+                id="coord-lat-setting" 
+                name="coord-lat"
+                placeholder="LAT"
+                value="3.3958632487106137"
+                onmouseup="event.target.select()"
+                onchange="coord[1].set(event.target.value)"
+                class="setting bg-transparent w-20 ml2 pa0 db"/>
             <br/>
-
-            <div class="map-setting flex flex-row h1 ma1">
-                <label for="tile-layer-setting" class="fw5 w-30 dib">TILE LAYER:</label> 
-                <input 
-                    id="tile-layer-setting"
-                    name="tile-layer"
-                    placeholder= "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
-                    onmousedown="if (!event.target.value) tileLayerUrl.set(event.target.placeholder)"
-                    onmouseup="event.target.select()"
-                    onchange="tileLayerUrl.set(event.target.value)"
-                    type="text"
-                    class="setting bg-transparent w-70 pa0 dib"/>
-                <br/>
-
-            </div>
-            <div class="map-settings-subgroup ml2">
-                <div class="map-setting flex flex-row h1 ma1">
-                    <label for="attribution-setting" class="fw5 w-30 dib">ATTRIBUTION:</label> 
-                    <input 
-                        id="attribution-setting"
-                        name="attribution"
-                        placeholder="&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
-                        onmousedown="if (!event.target.value) attribution.set(event.target.placeholder)"
-                        onmouseup="event.target.select()"
-                        onchange="attribution.set(event.target.value)"
-                        class="setting bg-transparent w-70 pa0 dib"/>
-                </div>
-            </div>
-            <div class="map-setting-group flex flex-row flex-nowrap">
-                <div class="map-setting flex flex-row h1 ma1 mr4 w-60 dib">
-                    <label for="coord-setting" class="fw5 w-50 dib">COORDS:</label> 
-                    <input 
-                        id="coord-lon-setting" 
-                        name="coord-lon"
-                        placeholder="LON"
-                        value="6.498820462853738"
-                        onmouseup="event.target.select()"
-                        onchange="coord[0].set(event.target.value)"
-                        class="setting bg-transparent w-20 pa0 mr1 db"/>
-                    <span class="pt3">,</span>
-                    <input 
-                        id="coord-lat-setting" 
-                        name="coord-lat"
-                        placeholder="LAT"
-                        value="3.3958632487106137"
-                        onmouseup="event.target.select()"
-                        onchange="coord[1].set(event.target.value)"
-                        class="setting bg-transparent w-20 ml2 pa0 db"/>
-                    <br/>
-                </div>
-                <div class="map-setting flex flex-row h1 ma1 w-40 dib">
-                    <label for="zoom-setting" class="fw5 w-50 dib">ZOOM:</label> 
-                    <input 
-                        id="zoom-setting" 
-                        name="zoom"
-                        placeholder="5"
-                        onmousedown="if (!event.target.value) zoom.set(event.target.placeholder)"
-                        onmouseup="event.target.select()"
-                        onchange="zoom.set(event.target.value)"
-                        class="setting bg-transparent w-20 pa0 mr1 db"/>
-                </div>
-            </div>
-            <div class="map-setting flex flex-row h1 ma1">
-                <label for="import-data-setting" class="fw5 w-30 dib">IMPORT DATA:</label> 
-                <input 
-                    id="import-data-setting"
-                    name="import-data"
-                    placeholder= "comma separated list of KML or GeoJSON files"
-                    onmouseup="event.target.select()"
-                    type="text"
-                    class="setting bg-transparent w-70 pa0 dib"
-                    onchange="mapData.set(event.target.value)"/>
-                <!--<datalist id="map-datasets">
-                    {% for map in site.data.maps %}
-                        <option value="{{ map.url }}">{{ map.name }} </option>
-                    {% endfor %}
-                </datalist>-->
-            </div>
-
-            <div id="settings-error" class="red f7 o-40 fw5 pa1 pt2 flex flex-row" style="width: fit-content">
-                <span class="b" style="width: fit-content">ERROR: </span> 
-                <br/>
-                <div id="settings-error-msg"> 
-                </div> 
-                <br/>
-                <a class="black pointer" onclick="hideError()"><small>CLEAR</small></a>
-            </div>
-
-            <p class="f7 gray pa2">
-                <a href="https://en.wikipedia.org/wiki/Kml">KML</a> files can be created on Google Earth 
-                and <a href="https://en.wikipedia.org/wiki/GeoJSON">GeoJSON</a> files can be created 
-                on tools like <a href="https://geojson.io">geojson.io</a>
-            </p>
+        </div>
+        <div class="map-setting flex flex-row h1 ma1 w-40 dib">
+            <label for="zoom-setting" class="fw5 w-50 dib">ZOOM:</label> 
+            <input 
+                id="zoom-setting" 
+                name="zoom"
+                placeholder="5"
+                onmousedown="if (!event.target.value) zoom.set(event.target.placeholder)"
+                onmouseup="event.target.select()"
+                onchange="zoom.set(event.target.value)"
+                class="setting bg-transparent w-20 pa0 mr1 db"/>
         </div>
     </div>
+    <div class="map-setting flex flex-row h1 ma1">
+        <label for="import-data-setting" class="fw5 w-30 dib">IMPORT DATA:</label> 
+        <input 
+            id="import-data-setting"
+            name="import-data"
+            placeholder= "comma separated list of KML or GeoJSON files"
+            onmouseup="event.target.select()"
+            type="text"
+            class="setting bg-transparent w-70 pa0 dib"
+            onchange="mapData.set(event.target.value)"/>
+        <!--<datalist id="map-datasets">
+            {% for map in site.data.maps %}
+                <option value="{{ map.url }}">{{ map.name }} </option>
+            {% endfor %}
+        </datalist>-->
+    </div>
+
+    <div id="settings-error" class="red f7 o-40 fw5 pa1 pt2 flex flex-row" style="width: fit-content">
+        <span class="b" style="width: fit-content">ERROR: </span> 
+        <br/>
+        <div id="settings-error-msg"> 
+        </div> 
+        <br/>
+        <a class="black pointer" onclick="hideError()"><small>CLEAR</small></a>
+    </div>
+
+    <p class="f7 gray pa2">
+        <a href="https://en.wikipedia.org/wiki/Kml">KML</a> files can be created on Google Earth 
+        and <a href="https://en.wikipedia.org/wiki/GeoJSON">GeoJSON</a> files can be created 
+        on tools like <a href="https://geojson.io">geojson.io</a>
+    </p>
 </div>

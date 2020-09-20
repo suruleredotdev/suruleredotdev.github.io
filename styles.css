@@ -56,7 +56,7 @@ body {
 }
 
 body.animate-bg {
-  animation: bg-slide 500ms linear;
+  animation: bg-slide 640ms linear;
 }
 
 /* DARK MODE */
