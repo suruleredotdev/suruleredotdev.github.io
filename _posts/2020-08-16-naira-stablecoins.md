@@ -16,23 +16,27 @@ In December 2019 BuyCoins Africa (YC S '18), a peer-to-peer cryptocurrency excha
 This was an exciting announcement within the fintech-saturated Nigerian startup ecosystem, which has already [made major strides in building reliable payments and financial services, and also attracted a lot of investment](https://techcrunch.com/2019/12/01/africa-roundup-nigerian-fintech-gets-360m-mints-unicorn-draws-chinese-vc/).
 
 <div class="annotation f6 pb0">
-  <p class="annotation-header b mt0 pl3">What's the difference between Fiat & Cryptocurrencies?</p>
   <div class="annotation-body pl3">
+  <b> What's the difference between Fiat & Cryptocurrencies?</b>
+  <br/> <br/>
+
   A fiat currency is any legal tender backed by a government.
-  That is their intrinsic value and flow of these currencies are determined by monetary policies by Central Banks.
+  Their intrinsic value and flow are determined by monetary policies set by Central Banks.
   The interest rate and money supply of currencies often target the inflation rate to ensure price stability is determined by the government.
   Commercial banks and other financial institutions insured by the FDIC use these rates set by the Central Banks as placeholders to determine the interest they charge on loans and the interest they give for savings.
+  <br/> <br/>
 
-  As transactions (loans used to fund investments) occur between the middlemen (banks and other financial institutions) value is created through the money multiplier.
-  The basis for all the interest rates is pegged to the rate issued by the central/ national bank in that country.
+  As transactions occur between these middlemen, value is created through the money multiplier.
+  The basis for all the interest rates is pegged to the rate issued by the national bank in that country.
   Hence the true/intrinsic value of any country is determined by a centralised authority.
-  Governments sell loans to the public (individuals & companies) and the rate on those loans are ‘risk-free’.
+  Governments sell loans to the public and the rate on those loans are ‘risk-free’.
   The more people trust the government's ability to pay the loans, the lower the interest and vice versa.
   To summarize, the value of a fiat-currency is determined solely by the public's trust and belief in the ability of the government.
-  With the level of corruption, the trust in the government is not high.
+  And with the level of corruption in Nigeria, the trust in the government is not high.
+  <br/> <br/>
 
-  Unfortunately for many African countries these commercial financial institutions also charge fees for the other services they provide for instance credit card charges, online banking fees, overdraft fees and so on.
-  The more the middle men are involved in the transaction or business process the more the higher the fee charged.
+  Unfortunately for many African countries these commercial financial institutions also charge fees for the the services they provide e.g. credit card charges, online banking fees, overdraft fees and so on.
+  The more the middle men are involved in the transaction or business process the higher the fee charged.
   Cryptocurrencies like Bitcoin and Ethereum, were created to address some of these problems with fiat currencies.
   However, the values of these currencies are almost purely determined  by their demand, and the lack of any hard mediations of their value means that their value can change rapidly and by huge amounts.
   </div>
