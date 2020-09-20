@@ -1,17 +1,20 @@
 ---
-title: Slides Tool
 layout: tool
+title: Slides Tool
 tool_name: SLIDE EDITOR
 ---
 
 <script slides-script>
-    let title, iframe;
+    let iframe;
 
     window.addEventListener('DOMContentLoaded', function (event) {
         hideError();
         
-        title = new I('title');
-        iframe = new I('iframe');
+        iframe = new I('iframe-setting');
+
+        iframe.update = function(val) { 
+          document.getElementById('slides-embed').src = val;
+        }
 
         if(pageIsEmbed()) renderAsEmbed("slides");
     });

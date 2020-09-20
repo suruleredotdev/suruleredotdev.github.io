@@ -1,6 +1,6 @@
 ---
+layout: tool
 title: Map Tool
-layout: tool 
 tool_name: MAP EDITOR
 ---
 
@@ -115,8 +115,7 @@ tool_name: MAP EDITOR
 
 <script map-script>
     // declare these up here so they're in global scope
-    let title,
-        attribution,
+    let attribution,
         tileLayerUrl,
         tileLayer,
         coord,
@@ -129,7 +128,6 @@ tool_name: MAP EDITOR
         hideError();
 
         // DEFAULT VALUES
-        title = new I('title');
         attribution = new I('attribution-setting');
         tileLayerUrl = new I('tile-layer-setting');
         zoom = new I('zoom-setting', 5);
@@ -139,7 +137,7 @@ tool_name: MAP EDITOR
         if(pageIsEmbed()) renderAsEmbed("map");
 
         let allSettings =  {
-            title, attribution, tileLayerUrl, zoom, coord, mapData,
+            attribution, tileLayerUrl, zoom, coord, mapData,
         };
 
         map = L.map('map').setView([coord[0].get(), coord[1].get()], 9);

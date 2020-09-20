@@ -63,7 +63,7 @@ class I {
         this.query = source;
         // default event handlers
         this.update = function(val) {
-            console.log(`I.onchange: ${id} changed to '${val}' – onchange unset`);
+            console.log(`I.update: ${id} changed to '${val}' – update unset`);
         };
         // attempt to get inital value from query params
         if (Object.is(this.query, sources.URL)) {
