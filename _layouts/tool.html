@@ -1,0 +1,155 @@
+---
+layout: default
+---
+
+<style>
+    /* special animations on page load */
+    @-webkit-keyframes moveLeft {
+        0% { margin-left: calc(4 * var(--bg-size)); }
+        100% { margin-left: calc(2 * var(--bg-size)); }
+    }
+
+    @-webkit-keyframes growToFillFrame {
+        0% { margin-left: calc(4 * var(--bg-size)); }
+        100% { margin-left: calc(2 * var(--bg-size)); }
+    }
+
+    @-webkit-keyframes scaleDown {
+        0% { width: calc(2 * var(--bg-size)); }
+        100% { width: var(--bg-size); }
+    }
+
+    #content {
+        height: fit-content;
+    }
+
+    /* anywhere but small screens */
+    @media screen and (min-width: 600px) {
+        #logo img {
+            animation: scaleDown ease 500ms;
+            width: var(--bg-size);
+            margin-left: calc(2 * var(--bg-size));
+        }
+    }
+    /* small screens */
+    @media screen and (max-width: 1200px) {
+        #content {
+            padding: 10px !important;
+        }
+        #tool-body {
+           flex-direction: column; 
+        }
+        .MAP {
+            height: calc(12 * var(--bg-size));
+            width: calc(12 * var(--bg-size)) !important;
+        }
+        .tool-container {
+            width: 100% !important;
+        }
+    }
+    /*  medium screens */
+  @media screen and (min-width: 600px) and (max-width: 1200px) {
+        #content {
+            padding: 10px !important;
+        }
+        #tool-body {
+           flex-direction: column; 
+        }
+        .tool-container {
+            width: 100% !important;
+        }
+        .tool-container > div {
+            height: calc(12 * var(--bg-size));
+            width: calc(12 * var(--bg-size)) !important;
+        }
+    }
+    /* large screens */
+    @media screen and (min-width: 1200px) {
+        #tool-body {
+           flex-direction: row; 
+        }
+        .tool-container {
+            width: calc(18* var(--bg-size)) !important;
+        }
+        .tool-container > div {
+            height: calc(12 * var(--bg-size));
+            width: calc(18 * var(--bg-size)) !important;
+        }
+    }
+    input:focus                   { opacity: 1; outline: none;}
+    input.title[value="Untitled"] { opacity: 0.5; }
+
+    input.setting {
+        border-top-style: hidden;
+        border-right-style: hidden;
+        border-left-style: hidden;
+    }
+    .LIGHT input.setting  { 
+        border-bottom: 1px dashed var(--txt-color-dark); 
+    }
+    .DARK  input.setting  {
+        border-bottom: 1px dashed gray;
+        color: var(--txt-color-dark);
+    }  
+
+    #settings {
+        width: calc(9 * var(--bg-size)) !important;
+    }
+    .setting {
+        height: calc(0.75 * var(--bg-size));
+    }
+    .setting > label, .setting > input {
+        min-height: calc(0.75 * var(--bg-size));
+    }
+    .setting > label { padding-top: calc(0.2 * var(--bg-size)); }
+
+    .settings-subgroup {
+        border-left: 1px solid #AAAAAA;
+        padding-left: 10px;
+    }
+</style>
+
+<script src="/scripts/state-helpers.js" type="text/javascript"></script>
+<script src="/scripts/page-embed.js" type="text/javascript"></script>
+
+<script>
+    function logError(msg) {
+        document.getElementById('settings-error').style.display = "block";
+        document.getElementById('settings-error-msg').innerHTML = msg + "</br>";
+    }
+
+    function hideError() {
+        document.getElementById('settings-error').style.display = "none";
+        document.getElementById('settings-error-msg').textContent = "";
+    }
+
+    let title;
+
+    window.addEventListener('DOMContentLoaded', function (event) {
+      title = new I('title-setting');
+    });
+</script>
+
+<div id="content" class="map post pa3 pa5-ns mt6-l mh7-l f5">
+    <div id="tool-header" class="flex flex-row ma0 pb2 b">
+        <div class="b f7 o-40 flex flex-column fw5 ba pa1 dib" style="width: fit-content; word-wrap: normal;">
+            <span class="dib" style="width: 48px;">
+                {{ page.tool_name | uppercase }}
+            </span>
+            <!-- <span class="dib" style="width: fit-content">EDITOR</span> -->
+        </div>
+
+        <input 
+            id="title-setting"
+            name="title"
+            class="title ph3 ma0 f2 bg-transparent b--transparent"
+            oninput="title.set(event.target.value)" 
+            onmousedown="event.target.value = 'Untitled'"
+            onmouseup="event.target.select()"
+            placeholder="Untitled"/>
+    </div>
+
+    <div id="tool-body" class="flex">
+        {{ content }}
+    </div>
+</div>
