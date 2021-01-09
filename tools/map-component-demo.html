@@ -1,0 +1,65 @@
+---
+layout: tool
+title: Map Tool
+tool_name: MAP EDITOR
+---
+
+<script type="module" src="/tools/components/map-tool.js"></script>
+
+<map-tool
+  class="w-100" 
+  tile-layer-url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+  show-settings>
+    <div id="map-settings-slot" class="map-settings flex flex-column pa3 ma1 pt0 f7">
+      <div class="f7 o-40 fw5 bb pa1 pt2" style="width: fit-content">
+        <span style="width: fit-content">SETTINGS</span>
+      </div>
+
+      <br/>
+
+      <tool-control
+        id="tile-layer"
+        label="TILE LAYER"
+        value="${this.tileLayerUrl}"
+        placeholder="https://tile.openstreetmap.org/{z}/{x}/{y}.png" placeholderAsDefault>
+      </tool-control>
+
+      <tool-control-subgroup>
+        <tool-control
+          id="attribution"
+          label="ATTRIBUTION"
+          value="${this.attribution}"
+          placeholder="&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors" placeholderAsDefault>
+        </tool-control>
+      </tool-control-subgroup>
+
+      <tool-control-group>
+        <tool-control
+          id="coord-lat"
+          label="LAT"
+          placeholder="LAT"
+          value="${this.coord[0]}">
+        </tool-control>
+
+        <tool-control
+          id="coord-lon"
+          label="LON"
+          placeholder="LON"
+          value="${this.coord[1]}">
+        </tool-control>
+
+        <tool-control
+          id="zoom"
+          label="ZOOM"
+          placeholder="5"
+          value="${this.zoom}">
+        </tool-control>
+      </tool-control-group>
+
+      <p class="f7 gray pa2">
+          <a href="https://en.wikipedia.org/wiki/Kml">KML</a> files can be created on Google Earth 
+          and <a href="https://en.wikipedia.org/wiki/GeoJSON">GeoJSON</a> files can be created 
+          on tools like <a href="https://geojson.io">geojson.io</a>
+      </p>
+    </div>
+</map-tool>

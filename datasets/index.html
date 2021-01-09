@@ -1,0 +1,43 @@
+---
+title: DATASETS - surulere.dev
+layout: default
+---
+
+{% assign folders = site.static_files | where_exp:"item", "item.path contains 'datasets'" %}
+{% assign wikifolders = "" | split:"" %}
+
+{% for folder in folders %}
+  {% assign tempvar = folder.path | split:"/" %}
+  {% assign wikifolders = wikifolders | push:tempvar[2] %}
+{% endfor %}
+
+{% assign wikifolders = wikifolders | uniq | sort %}
+
+<div id="content" class="pa3 pa5-ns mt6-l mh7-l f4 h-100">
+  <h3>DATASETS</h3>
+
+  <div class="w-100 cf">
+  {% for folder in wikifolders %}
+    {% unless folder contains '.' or folder contains 'html' %}
+      <div class="fl w-third-l w-100 mb1 mt1 pr4-l">
+        <a class="link black" href="/datasets/{{folder}}/">
+          <div class="content-border pa3 dim">
+            {{folder}}
+          </div>
+        </a>
+      </div>
+    {% endunless %}
+  {% endfor %}
+  </div>
+  <br>
+
+  {% assign folder1 = site.static_files | where_exp: "item" , "item.path contains 'datasets'" | sort:"path" %}
+  {% for item in folder1 %}
+    {% assign tempvar = item.path | split:"/" %}
+    {% if tempvar.size < 4 %}
+    <div class="w-100 pv2">
+      <a href="{{ item.url }}">{{item.path}}</a>
+    </div>
+    {% endif %}
+  {% endfor %}
+</div>

@@ -108,6 +108,17 @@ body.DARK {
   border: 0.5px solid var(--border-color);
 }
 
+
+.LIGHT .content-border {
+  color: var(--txt-color-light);
+  border: 0.5px solid var(--border-color-light);
+}
+
+.DARK .content-border {
+  color: var(--txt-color-dark);
+  border: 0.5px solid var(--border-color);
+}
+
 /* large screens */
 @media screen and (min-width: 1200px) {
   #content {
@@ -251,4 +262,13 @@ a.title {
 
 #settings-block:hover > .hide, #share-block:active > .hide  {
   display: block;
+}
+
+.list-item {
+  padding-left: 16px;
+}
+
+.list-item:before {
+  content: "–";
+  padding-right: 8px;
 }

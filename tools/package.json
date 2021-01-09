@@ -1,0 +1,22 @@
+{
+   "author": "Korede Aderele",
+   "license": "Apache-2.0",
+   "scripts": {
+       "clean": "rm -rf .cache build out",
+       "build": "yarn clean && parcel build index.html -d out --no-source-maps --no-cache --experimental-scope-hoisting --detailed-report --public-url ./",
+       "start": "parcel index.html -p 8080 --open"
+   },
+   "devDependencies": {
+       "parcel-bundler": "^1.12.4",
+       "terser": "^4.8.0",
+       "typescript": "^3.9.5"
+   },
+   "dependencies": {
+       "@thi.ng/atom": "^4.1.15",
+       "@thi.ng/geom-accel": "^2.1.14",
+       "@thi.ng/hdom": "^8.2.4",
+       "@thi.ng/hdom-canvas": "^3.0.9",
+       "@thi.ng/rstream": "^4.6.5",
+       "@thi.ng/transducers-hdom": "^2.0.64"
+   }
+}
