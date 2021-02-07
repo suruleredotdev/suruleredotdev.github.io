@@ -6,3 +6,4 @@ defaults:
       path: "assets/img"
     values:
       image: true
+relative_permalinks: false
