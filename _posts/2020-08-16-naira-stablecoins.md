@@ -64,7 +64,7 @@ This process was generally considered to be very disorganized and corrupt, with 
 It was at this point that some Nigerians started to look into converting their liquidity into cryptocurrencies, because they provided a higher value, albeit more volatile alternative to the Naira.
 
 
-Central Governments decentralize the value of their currencies in order to make their exports more competitive in the foreign market.
+Central Governments devalue their currencies in order to make their exports more competitive in the foreign market.
 Hence stimulating demand for their goods exports over substitute exports produced by other countries.
 The devaluation also makes imports much more expensive.
 In 2019, the government in an attempt to strengthen production in the country not only devalued the currency but also banned the importation of some goods.
