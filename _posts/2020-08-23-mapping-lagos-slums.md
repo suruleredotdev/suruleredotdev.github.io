@@ -2,7 +2,6 @@
 layout: post
 author: Korede Aderele
 author_link: https://agbero.dev
-draft: true
 tags: [cities, maps]
 ---
 
