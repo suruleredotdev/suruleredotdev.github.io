@@ -74,7 +74,7 @@ layout: default
         border-left-style: hidden;
     }
     .LIGHT input.setting  { border-bottom: 1px dashed var(--txt-color-dark); }
-    .DARK  input.setting  {border-bottom: 1px dashed var(--title-color);  }  
+    .DARK  input.setting  { border-bottom: 1px dashed var(--title-color);  }  
 
     #map-settings {
         width: calc(9 * var(--bg-size)) !important;
@@ -93,66 +93,9 @@ layout: default
     }
 </style>
 
-<script iframe-script>
-if (window.location !== window.parent.location) {	  
-    // The page is in an iframe	
-    // TODO: only show map frame and controls if 
-}
-</script>
+<script src="/scripts/state-helpers.js"></script>
 
 <script map-script>
-    function valueOrDefault(input) {
-        return (!!input.value) ? input.value : input.placeholder;
-    }
-
-    // proxy for reactive values from <input>s in DOM 
-    // state is stored in the elements themselves (this.el), with get and set hooks and an change listener
-
-    // DO NOT CHANGE
-    // TODO: expand this to support trees of state
-    function I(id, initVal = null, syncToUrl = true) {
-        this.id = id;
-        this.el = document.getElementById(id); // the actual state is stored first in the DOM elements
-        if (!!initVal) {
-           this.el.value = initVal ;
-        }
-        // default event handlers
-        this.update = function(val) {
-            console.log(`I.onchange: ${id} changed to '${val}' – onchange unset`);
-        };
-        //  attempt to get inital value from query params
-        let query = (new URL(window.location)).searchParams;
-        let param = query.get(this.el.id.replace(new RegExp('-setting$'), ''));
-        console.log('el: ', this.el.id);
-        if (!!param) {
-            this.el.value = param;
-            let setting = this;
-            setTimeout(function() { 
-                console.log(`initializing ${id} from URL params`);
-                setting.update(param);
-            }, 100);
-        }
-    }
-    I.prototype.get = function() {
-        return valueOrDefault(this.el);
-    }
-    I.prototype.set = function(valOrFn, update = true /* trigger change update */) {
-        this.el.value = 
-            (valOrFn && {}.toString.call(valOrFn) === '[object Function]') 
-            ? valOrFn(this.el.value) 
-            : valOrFn;
-        if (update) {
-            this.update(this.el.value);
-        }
-        let query = (new URL(window.location)).searchParams;
-        query.set(this.el.id.replace(new RegExp('-setting$'), ''), this.el.value);
-        // update URL query params without reloading page
-        if (history.pushState) {
-            var newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + query.toString();
-            window.history.pushState({ path: newUrl }, '', newUrl);
-        }
-    }
-
     function logError(msg) {
         document.getElementById('settings-error').style.display = "block";
         document.getElementById('settings-error-msg').innerHTML = msg + "</br>";
@@ -183,9 +126,9 @@ if (window.location !== window.parent.location) {
         coord = [new I("coord-lon-setting"), new I("coord-lat-setting")];
         mapData = new I("import-data-setting");
         
-        let settings =  [
+        let allSettings =  {
             mapTitle, attribution, tileLayerUrl, zoom, coord, mapData,
-        ]
+        };
 
         map = L.map('map').setView([coord[0].get(), coord[1].get()], 9);
         map.on('moveend', function(e) {
@@ -221,409 +164,142 @@ if (window.location !== window.parent.location) {
                 map.removeLayer(mapDataLayers[i]);
             }
             mapDataLayers = [];
-            let MAP_TYPE = mapType.get();
-            console.log("MAP_TYPE", MAP_TYPE);
-
-            if (MAP_TYPE === "regular") {
-              for (var i = 0; i < datasets.length; i++) {
-                  let ext = datasets[i].split('.').pop();
-                  if(!!omnivore[ext]) {
-                      let layer = omnivore[ext](datasets[i]);
-                      mapDataLayers.push(layer);
-                      layer.addTo(map);
-                      hideError();
-                  } else {
-                      logError(`bad data url: ${datasets[i]}`);
-                  }
-              }
-            } else if (MAP_TYPE === "timeseries") {
-              // courtesy: https://cartographicperspectives.org/index.php/journal/article/view/cp76-donohue-et-al/1307
-              function processData(data) {
-                var timestamps = [];
-                var min = Infinity;
-                var max = -Infinity;
-                var selectorLabels = [];
-
-                for (var feature in data.features) {
-                  var properties = data.features[feature].properties;
-                  // timestamps = properties.map()
-                  for (var attribute in properties) {
-                    if (attribute != 'id' &&
-                      attribute != 'name' &&
-                      attribute != 'ItemLabels' &&
-                      attribute != 'lat' &&
-                      attribute != 'lon') {
-                      // console.log("adding prop: ", attribute, properties[attribute]);
-                      if (!timestamps.includes(attribute)) {
-                        timestamps.push(attribute);
-                      }
-                      if (properties[attribute] < min) {
-                        min = properties[attribute];
-                      }
-                      if (properties[attribute] > max) {
-                        max = properties[attribute];
-                      }
-                    } else if (attribute === "ItemLabels" && !selectorLabels.includes(properties[attribute])) {
-                      selectorLabels.push(properties[attribute]);
-                    }
-                  }
+            for (var i = 0; i < datasets.length; i++) {
+                let ext = datasets[i].split('.').pop();
+                if(!!omnivore[ext]) {
+                    let layer = omnivore[ext](datasets[i]);
+                    mapDataLayers.push(layer);
+                    layer.addTo(map);
+                    hideError();
+                } else {
+                    logError(`bad data url: ${datasets[i]}`);
                 }
-
-                return {
-                  timestamps, min, max, selectorLabels
-                }
-              }
-
-              function getColor(d) {
-                return d > 1000 ? '#800026' :
-                      d > 500  ? '#BD0026' :
-                      d > 200  ? '#E31A1C' :
-                      d > 100  ? '#FC4E2A' :
-                      d > 50   ? '#FD8D3C' :
-                      d > 20   ? '#FEB24C' :
-                      d > 10   ? '#FED976' :
-                                  '#FFEDA0';
-              }
-
-              function calcPropRadius(attributeValue) {
-                var scaleFactor = 0.3;
-                var area = attributeValue * scaleFactor;
-                return Math.sqrt(area/Math.PI)*2;			
-              }
-
-              function createPropSymbols(timestamps, data, selectorLabels) {
-                console.log("TIMESTAMPS", timestamps);
-                // let layer = omnivore.geojson(datasets[0]);
-                let layer = L.geoJson(data, {
-                  pointToLayer: function(feature, latlng) {
-                    return L.circleMarker(latlng, { 
-                      fillColor: "#708598",
-                      color: "#537898",
-                      weight: 1, 
-                      fillOpacity: 0.6 
-                    }).on({
-                      mouseover: function(e) {
-                        this.openPopup();
-                        this.setStyle({color: "yellow"});
-                      },
-                      mouseout: function(e) {
-                        this.closePopup();
-                        this.setStyle({color: "#537898"});
-                      }
-                    });
-                  },
-                });
-                mapDataLayers.push(layer);
-                layer.addTo(map);
-                hideError();
-                updatePropSymbols(timestamps[0], selectorLabels[0]);
-              }
-
-              function updatePropSymbols(timestamp, selectorLabel) {
-                mapDataLayers[0].eachLayer(function(layer) {
-                  // map.removeLayer(layer);
-                  var props = layer.feature.properties;
-                  if (!isNumeric(props[timestamp])) { return; }
-                  if (props["ItemLabels"] !== selectorLabel) {
-                    map.removeLayer(layer);
-                    return;
-                  }
-                  console.log("layer feature props", timestamp, props[timestamp], selectorLabel);
-                  var radius = calcPropRadius(props[timestamp]);
-                  var color = getColor(props[timestamp]);
-                  var popupContent = "<b> ₦" + String(props[timestamp]) + 
-                      " </b><br>" +
-                      "<i>" + selectorLabel +
-                      "</i> in </i>" +
-                      formatDate(timestamp, false) + "</i>";
-                  console.log("r: ", radius);
-                  layer.setRadius(radius);
-                  // layer.setColor(color);
-                  layer.bindPopup(popupContent, { offset: new L.Point(0,-radius) });
-                });
-              }
-
-              /*
-              var geojsonTimeseriesLayer = L.geojson(null, {
-                filter: function(feature) {
-                  var properties = feature.properties; 
-                  // timestamps = properties.map()
-                  for (var attribute in properties) {
-                    console.log("adding prop: ", attribute, properties[attribute]);
-                    if (attribute != 'id' &&
-                      attribute != 'name' &&
-                      attribute != 'ItemLabels' &&
-                      attribute != 'lat' &&
-                      attribute != 'lon') {
-                      if (!timestamps.includes(attribute)) {
-                        timestamps.push(attribute);		
-                      }
-                      if (properties[attribute] < min) {	
-                        min = properties[attribute];
-                      }
-                      if (properties[attribute] > max) { 
-                        max = properties[attribute]; 
-                      }
-                      return true;
-                    }
-                    return false;
-                  }
-                },
-                pointToLayer: function(feature, latlng) {
-                  return L.circleMarker(latlng, { 
-                    fillColor: "#708598",
-                    color: "#537898",
-                    weight: 1, 
-                    fillOpacity: 0.6 
-                  }).on({
-                    mouseover: function(e) {
-                      this.openPopup();
-                      this.setStyle({color: "yellow"});
-                    },
-                    mouseout: function(e) {
-                      this.closePopup();
-                      this.setStyle({color: "#537898"});
-                    }
-                  });
-                },
-                onEachFeature: function(feature, layer) {
-                  var props = layer.feature.properties;
-                  var radius = calcPropRadius(props[timestamp]);
-                  var popupContent = "<b>" + String(props[timestamp]) + 
-                      " units</b><br>" +
-                      "<i>" + props.name +
-                      "</i> in </i>" + 
-                      timestamp + "</i>";
-              
-                  layer.setRadius(radius);
-                  layer.bindPopup(popupContent, { offset: new L.Point(0,-radius) });
-                }
-              });
-              */
-
-              function createSliderUI(timestamps) {
-                var sliderControl = L.control({ position: 'bottomleft'} );
-
-                sliderControl.onAdd = function(map) {
-                  var slider = L.DomUtil.create("input", "range-slider");
-                  L.DomEvent.addListener(slider, 'mousedown', function(e) {
-                    L.DomEvent.stopPropagation(e);
-                  });
-
-                  slider.setAttribute("type", "range");
-                  slider.setAttribute("max", (new Date(timestamps[timestamps.length-1])).getTime());
-                  slider.setAttribute("min", (new Date(timestamps[0])).getTime());
-                  let date2 = new Date(timestamps[1]); let date1 = new Date(timestamps[0]); let oneDayDiff = date2.getTime() - date1.getTime();
-                  slider.setAttribute("step", oneDayDiff);
-                  slider.setAttribute("value", (new Date(String(timestamps[0]))).getTime());
-                  var handler = function(e) {
-                    let selectorLabel = document.querySelector(".selector-label-input").value;
-                    let selectedDate = formatDate(new Date(parseInt(e.target.value)), false);
-                    updatePropSymbols(selectedDate, selectorLabel);
-                    document.querySelector(".temporal-legend").innerText = selectedDate;
-                  }
-                  slider.addEventListener("input", handler);
-                  slider.addEventListener("change", handler);
-                  return slider;
-                }
-
-                sliderControl.addTo(map);
-                createTemporalLegend(timestamps[0]); 
-              }
-
-              function createTemporalLegend(startTimestamp) {
-                var temporalLegend = L.control({ position: 'bottomleft' }); 
-
-                temporalLegend.onAdd = function(map) { 
-                  var output = L.DomUtil.create("output", "temporal-legend");
-                  output.innerText = formatDate(new Date(startTimestamp), false);
-                  return output; 
-                }
-
-                temporalLegend.addTo(map); 
-              }
-                
-              function createSelectorUI(selectorLabels) {
-                var selectorControl = L.control({ position: 'bottomright'} );
-
-                selectorControl.onAdd = function(map) {
-                  var selector = L.DomUtil.create("select", "selector-label-input");
-                  L.DomEvent.addListener(selector, 'mousedown', function(e) {
-                    L.DomEvent.stopPropagation(e);
-                  });
-
-                  console.log("selectorLabels", selectorLabels);
-                  for (var i = 0; i < selectorLabels.length; i++) {
-                    selector.innerHTML += `<option value="${selectorLabels[i]}">${selectorLabels[i]}</option>`
-                  }
-                  var handler = function(e) {
-                    let rangeSliderValue = document.querySelector(".range-slider").value;
-                    let selectedDate = formatDate(new Date(parseInt(rangeSliderValue)), false);
-                    updatePropSymbols(selectedDate, e.target.value);
-                    // updatePropSymbols(e.target.value.toString());
-                  }
-                  selector.addEventListener("input", handler);
-                  selector.addEventListener("change", handler);
-                  return selector;
-                }
-
-                selectorControl.addTo(map);
-              }
-
-              // let layer = omnivore.geojson(datasets[0] /* only handling the first GeoJSON dataset here */);
-
-              // layer.on('ready', function() {
-              //   console.log("timeseries layer: ", layer);
-              //   var { timestamps, min, max} = processData(layer);
-              //   createPropSymbols(timestamps, layer);
-              //   createLegend(min, max);
-              //   createSliderUI(timestamps);
-              // });
-
-              fetch(datasets[0])
-                .then(response => response.json())
-                .then(data => {
-                  console.log(data);
-                  var {timestamps, selectorLabels, min, max} = processData(data);
-                  // sort timestamps
-                  timestamps = timestamps.map((t) => (new Date(t)).getTime()).sort().map((d) => formatDate(new Date(d), false))
-                  createPropSymbols(
-                    timestamps,
-                    data,
-                    selectorLabels.sort()
-                  );
-                  // createLegend(min, max);
-                  createSelectorUI(selectorLabels);
-                  createSliderUI(timestamps);
-                });
-
-              // mapDataLayers.push(layer);
-              // layer.addTo(map);
-
-              hideError();
-          }
+            }
         }
     });
 </script>
 
-<div class="MAP tool-container flex flex-row">
-    <div id="map" class="MAP"></div>
-</div>
-
-<div id="map-settings" class="map-settings flex flex-column pa3 ma1 pt0 f7">
-    <div class="f7 o-40 fw5 bb pa1 pt2" style="width: fit-content">
-        <span style="width: fit-content">SETTINGS</span>
-    </div>
-    <br/>
-
-    <div class="map-setting flex flex-row h1 ma1">
-        <label for="tile-layer-setting" class="fw5 w-30 dib">TILE LAYER:</label> 
-        <input 
-            id="tile-layer-setting"
-            name="tile-layer"
-            placeholder= "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
-            onmousedown="if (!event.target.value) tileLayerUrl.set(event.target.placeholder)"
-            onmouseup="event.target.select()"
-            onchange="tileLayerUrl.set(event.target.value)"
-            type="text"
-            class="setting bg-transparent w-70 pa0 dib"/>
-        <br/>
-    </div>
-    <div class="map-settings-subgroup ml2">
-        <div class="map-setting flex flex-row h1 ma1">
-            <label for="attribution-setting" class="fw5 w-30 dib">ATTRIBUTION:</label> 
-            <input 
-                id="attribution-setting"
-                name="attribution"
-                placeholder="&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
-                onmousedown="if (!event.target.value) attribution.set(event.target.placeholder)"
-                onmouseup="event.target.select()"
-                onchange="attribution.set(event.target.value)"
-                class="setting bg-transparent w-70 pa0 dib"/>
+<div id="content" class="map post pa3 pa5-ns mt6-l mh7-l f5">
+    <div id="tool-header" class="flex flex-row ma0 pb2 b">
+        <div class="b f7 o-40 flex flex-column fw5 ba pa1 dib" style="width: fit-content">
+            <span class="dib" style="width: fit-content">MAP </span>
+            <span class="dib" style="width: fit-content">EDITOR</span>
         </div>
+
+        <input 
+            id="map-title"
+            name="map-title"
+            class="title ph3 ma0 f2 bg-transparent b--transparent"
+            oninput="mapTitle.set(event.target.value)" 
+            onmousedown="event.target.value = 'Untitled'"
+            onmouseup="event.target.select()"
+            placeholder="Untitled"/>
     </div>
-    <div class="map-setting-group flex flex-row flex-nowrap">
-        <div class="map-setting flex flex-row h1 ma1 mr4 w-60 dib">
-            <label for="coord-setting" class="fw5 w-50 dib">COORDS:</label> 
-            <input 
-                id="coord-lon-setting" 
-                name="coord-lon"
-                placeholder="LON"
-                value="6.498820462853738"
-                onmouseup="event.target.select()"
-                onchange="coord[0].set(event.target.value)"
-                class="setting bg-transparent w-20 pa0 mr1 db"/>
-            <span class="pt3">,</span>
-            <input 
-                id="coord-lat-setting" 
-                name="coord-lat"
-                placeholder="LAT"
-                value="3.3958632487106137"
-                onmouseup="event.target.select()"
-                onchange="coord[1].set(event.target.value)"
-                class="setting bg-transparent w-20 ml2 pa0 db"/>
+
+    <div id="tool-body" class="flex">
+        <div class="MAP-container flex flex-row">
+            <div id="map" class="MAP"></div>
+            
+        </div>
+
+        <div id="map-settings" class="map-settings flex flex-column pa3 ma1 pt0 f7">
+            <div class="f7 o-40 fw5 bb pa1 pt2" style="width: fit-content">
+                <span style="width: fit-content">SETTINGS</span>
+            </div>
             <br/>
+
+            <div class="map-setting flex flex-row h1 ma1">
+                <label for="tile-layer-setting" class="fw5 w-30 dib">TILE LAYER:</label> 
+                <input 
+                    id="tile-layer-setting"
+                    name="tile-layer"
+                    placeholder= "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    onmousedown="if (!event.target.value) tileLayerUrl.set(event.target.placeholder)"
+                    onmouseup="event.target.select()"
+                    onchange="tileLayerUrl.set(event.target.value)"
+                    type="text"
+                    class="setting bg-transparent w-70 pa0 dib"/>
+                <br/>
+
+            </div>
+            <div class="map-settings-subgroup ml2">
+                <div class="map-setting flex flex-row h1 ma1">
+                    <label for="attribution-setting" class="fw5 w-30 dib">ATTRIBUTION:</label> 
+                    <input 
+                        id="attribution-setting"
+                        name="attribution"
+                        placeholder="&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
+                        onmousedown="if (!event.target.value) attribution.set(event.target.placeholder)"
+                        onmouseup="event.target.select()"
+                        onchange="attribution.set(event.target.value)"
+                        class="setting bg-transparent w-70 pa0 dib"/>
+                </div>
+            </div>
+            <div class="map-setting-group flex flex-row flex-nowrap">
+                <div class="map-setting flex flex-row h1 ma1 mr4 w-60 dib">
+                    <label for="coord-setting" class="fw5 w-50 dib">COORDS:</label> 
+                    <input 
+                        id="coord-lon-setting" 
+                        name="coord-lon"
+                        placeholder="LON"
+                        value="6.498820462853738"
+                        onmouseup="event.target.select()"
+                        onchange="coord[0].set(event.target.value)"
+                        class="setting bg-transparent w-20 pa0 mr1 db"/>
+                    <span class="pt3">,</span>
+                    <input 
+                        id="coord-lat-setting" 
+                        name="coord-lat"
+                        placeholder="LAT"
+                        value="3.3958632487106137"
+                        onmouseup="event.target.select()"
+                        onchange="coord[1].set(event.target.value)"
+                        class="setting bg-transparent w-20 ml2 pa0 db"/>
+                    <br/>
+                </div>
+                <div class="map-setting flex flex-row h1 ma1 w-40 dib">
+                    <label for="zoom-setting" class="fw5 w-50 dib">ZOOM:</label> 
+                    <input 
+                        id="zoom-setting" 
+                        name="zoom"
+                        placeholder="5"
+                        onmousedown="if (!event.target.value) zoom.set(event.target.placeholder)"
+                        onmouseup="event.target.select()"
+                        onchange="zoom.set(event.target.value)"
+                        class="setting bg-transparent w-20 pa0 mr1 db"/>
+                </div>
+            </div>
+            <div class="map-setting flex flex-row h1 ma1">
+                <label for="import-data-setting" class="fw5 w-30 dib">IMPORT DATA:</label> 
+                <input 
+                    id="import-data-setting"
+                    name="import-data"
+                    placeholder= "comma separated list of KML or GeoJSON files"
+                    onmouseup="event.target.select()"
+                    type="text"
+                    class="setting bg-transparent w-70 pa0 dib"
+                    onchange="mapData.set(event.target.value)"/>
+                <!--<datalist id="map-datasets">
+                    {% for map in site.data.maps %}
+                        <option value="{{ map.url }}">{{ map.name }} </option>
+                    {% endfor %}
+                </datalist>-->
+            </div>
+
+            <div id="settings-error" class="red f7 o-40 fw5 pa1 pt2 flex flex-row" style="width: fit-content">
+                <span class="b" style="width: fit-content">ERROR: </span> 
+                <br/>
+                <div id="settings-error-msg"> 
+                </div> 
+                <br/>
+                <a class="black pointer" onclick="hideError()"><small>CLEAR</small></a>
+            </div>
+
+            <p class="f7 gray pa2">
+                <a href="https://en.wikipedia.org/wiki/Kml">KML</a> files can be created on Google Earth 
+                and <a href="https://en.wikipedia.org/wiki/GeoJSON">GeoJSON</a> files can be created 
+                on tools like <a href="https://geojson.io">geojson.io</a>
+            </p>
         </div>
-        <div class="map-setting flex flex-row h1 ma1 w-40 dib">
-            <label for="zoom-setting" class="fw5 w-50 dib">ZOOM:</label> 
-            <input 
-                id="zoom-setting" 
-                name="zoom"
-                placeholder="5"
-                onmousedown="if (!event.target.value) zoom.set(event.target.placeholder)"
-                onmouseup="event.target.select()"
-                onchange="zoom.set(event.target.value)"
-                class="setting bg-transparent w-20 pa0 mr1 db"/>
-        </div>
     </div>
-    <div class="map-setting flex flex-row h1 ma1">
-        <label for="map-type-setting" class="fw5 w-30 dib">MAP TYPE:</label> 
-        <select
-            id="map-type-setting"
-            name="map-type"
-            class="setting bg-transparent w-70 pa0 dib"
-            onchange="mapType.set(event.target.value)">
-
-            <option value="normal">
-              Normal
-            </option>
-
-            <option value="timeseries">
-              Time Series  
-            </option>
-
-        </select>
-    </div>
-
-    <div class="map-setting flex flex-row h1 ma1">
-        <label for="import-data-setting" class="fw5 w-30 dib">IMPORT DATA:</label> 
-        <input 
-            id="import-data-setting"
-            name="import-data"
-            placeholder= "comma separated list of KML or GeoJSON files"
-            onmouseup="event.target.select()"
-            type="text"
-            class="setting bg-transparent w-70 pa0 dib"
-            onchange="mapData.set(event.target.value)"/>
-        <!--<datalist id="map-datasets">
-            {% for map in site.data.maps %}
-                <option value="{{ map.url }}">{{ map.name }} </option>
-            {% endfor %}
-        </datalist>-->
-    </div>
-
-    <div id="settings-error" class="red f7 o-40 fw5 pa1 pt2 flex flex-row" style="width: fit-content">
-        <span class="b" style="width: fit-content">ERROR: </span> 
-        <br/>
-        <div id="settings-error-msg"> 
-        </div> 
-        <br/>
-        <a class="black pointer" onclick="hideError()"><small>CLEAR</small></a>
-    </div>
-
-    <p class="f7 gray pa2">
-        <a href="https://en.wikipedia.org/wiki/Kml">KML</a> files can be created on Google Earth 
-        and <a href="https://en.wikipedia.org/wiki/GeoJSON">GeoJSON</a> files can be created 
-        on tools like <a href="https://geojson.io">geojson.io</a>
-    </p>
 </div>
