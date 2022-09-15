@@ -1,101 +1,81 @@
 ---
-layout: tool
-title: Map Tool
-tool_name: MAP EDITOR
+layout: default
 ---
 
-<!-- import leaflet and the other map libraries we'll use -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
-<script src='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js'></script>
-<link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet' />
-<script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'></script>
-<script src="https://unpkg.com/mapbox-gl-leaflet/leaflet-mapbox-gl.js"></script>
+{% include map.html %}
 
-<script>
-  /* not even mine */
-  const mapboxAccessToken = 'pk.eyJ1Ijoia29yZWRlc21hcHMiLCJhIjoiY2tkbmhpdTBiMGMwZTJ6cHlpN2ppbG5jMyJ9.d7dW9A4fq2_qz0EKv3ofqA';
-</script>
-
-<!-- custom styles for different leaflet things like controls and popups (still WIP) -->
 <style>
-    .MAP .tool-container {
-        display: flex;
-        flex-direction: row;
-        width: fit-content;
-        left: calc(-5 * var(--bg-size));
-    }
-
-    .MAP {
-        height: calc(12 * var(--bg-size));
-        width: 70%;
-    }
-
-    .LIGHT .MAP {
-        background-color: var(--bg-color-light);
-        color: var(--txt-color-light);
-        border: 1px solid var(--border-color-light); 
-    }
-    .DARK .MAP {
-        background-color: var(--bg-color-dark);
-        color: rgba(var(--txt-color-dark), 0.8);
-        border: 0.5px solid var(--border-color);
-    }
-
-    /* leaflet.css tweaks */
-    .leaflet-control-zoom-in, .leaflet-control-zoom-out {
-        border-radius: 0 !important;
-        border: 1px solid var(--border-color-light); 
-        box-shadow: 0;
-    }
-
-    .map-annotation {
-        border-width: 0.5px;
-        width: 30%;
-        border-width: 0.5px; border-left-width: 0px;
-        border-style: solid; 
-        height: calc(12 * var(--bg-size));
-        overflow-y: scroll;
-    }
-
-    .DARK .map-annotation {
-        background-color: var(--bg-color-dark);
-        color: var(--txt-color-annotation-dark);
-        border-color: var(--border-color);
-    }
-
-    .DARK .map-annotation > .annotation-body {
-        background-color: var(--bg-color-dark);
-    }
-
-    .LIGHT .map-annotation {
-        background-color: var(--bg-color-light);
-        color: var(--txt-color-light);
-        border-color: var(--border-color-light);
-    }
-    .LIGHT .map-annotation > .annotation-body {
-        background-color: var(--bg-color-light);
-    }
-
-    @media screen and (min-width: 1200px) {
-        .map-annotation {
-        position: relative;
-        width: calc(7.3 * var(--bg-size));
-        left: calc(0 * var(--bg-size)) !important;
+    /* special animations on page load */
+    @-webkit-keyframes moveLeft {
+        0% {
+            margin-left: calc(4 * var(--bg-size));
+        }
+        100% {
+            margin-left: calc(2 * var(--bg-size));
         }
     }
 
-    /* inline on smaller screens */
+    @-webkit-keyframes growToFillFrame {
+        0% {
+            margin-left: calc(4 * var(--bg-size));
+        }
+        100% {
+            margin-left: calc(2 * var(--bg-size));
+        }
+    }
+
+    @-webkit-keyframes scaleDown {
+        0% { width: calc(2 * var(--bg-size)); }
+        100% { width: var(--bg-size); }
+    }
+
+    #content.map {
+        height: fit-content;
+    }
+
+    @media screen and (min-width: 600px) {
+        #logo img {
+            animation: scaleDown ease 500ms;
+            width: var(--bg-size);
+            margin-left: calc(2 * var(--bg-size));
+        }
+    }
     @media screen and (max-width: 1200px) {
-        .map-annotation {
-            position: relative;
+        #tool-body {
+           flex-direction: column; 
+        }
+        .MAP {
+            height: calc(12 * var(--bg-size));
+            width: calc(12 * var(--bg-size)) !important;
+        }
+        .MAP-container {
             width: 100% !important;
-            left: 0 !important;
-            height: 100% !important;
-            padding-bottom: 20px;
-            padding-top: 10px;
         }
     }
+    @media screen and (min-width: 1200px) {
+        #tool-body {
+           flex-direction: row; 
+        }
+         .MAP {
+            height: calc(12 * var(--bg-size));
+            width: calc(18 * var(--bg-size)) !important;
+        }
+        .MAP-container {
+            width: calc(18* var(--bg-size)) !important;
+        }
+
+    }
+    input:focus                   { opacity: 1; outline: none;}
+    input.title[value="Untitled"] { opacity: 0.5; }
+
+    input.setting {
+        border-top-style: hidden;
+        border-right-style: hidden;
+        border-left-style: hidden;
+    }
+    .LIGHT input.setting  { border-bottom: 1px dashed var(--txt-color-dark); }
+    .DARK  input.setting  {border-bottom: 1px dashed var(--title-color);  }  
+
     #map-settings {
         width: calc(9 * var(--bg-size)) !important;
     }
@@ -113,32 +93,99 @@ tool_name: MAP EDITOR
     }
 </style>
 
+<script iframe-script>
+if (window.location !== window.parent.location) {	  
+    // The page is in an iframe	
+    // TODO: only show map frame and controls if 
+}
+</script>
+
 <script map-script>
-    // declare these up here so they're in global scope
-    let attribution,
+    function valueOrDefault(input) {
+        return (!!input.value) ? input.value : input.placeholder;
+    }
+
+    // proxy for reactive values from <input>s in DOM 
+    // state is stored in the elements themselves (this.el), with get and set hooks and an change listener
+
+    // DO NOT CHANGE
+    // TODO: expand this to support trees of state
+    function I(id, initVal = null, syncToUrl = true) {
+        this.id = id;
+        this.el = document.getElementById(id); // the actual state is stored first in the DOM elements
+        if (!!initVal) {
+           this.el.value = initVal ;
+        }
+        // default event handlers
+        this.update = function(val) {
+            console.log(`I.onchange: ${id} changed to '${val}' – onchange unset`);
+        };
+        //  attempt to get inital value from query params
+        let query = (new URL(window.location)).searchParams;
+        let param = query.get(this.el.id.replace(new RegExp('-setting$'), ''));
+        console.log('el: ', this.el.id);
+        if (!!param) {
+            this.el.value = param;
+            let setting = this;
+            setTimeout(function() { 
+                console.log(`initializing ${id} from URL params`);
+                setting.update(param);
+            }, 100);
+        }
+    }
+    I.prototype.get = function() {
+        return valueOrDefault(this.el);
+    }
+    I.prototype.set = function(valOrFn, update = true /* trigger change update */) {
+        this.el.value = 
+            (valOrFn && {}.toString.call(valOrFn) === '[object Function]') 
+            ? valOrFn(this.el.value) 
+            : valOrFn;
+        if (update) {
+            this.update(this.el.value);
+        }
+        let query = (new URL(window.location)).searchParams;
+        query.set(this.el.id.replace(new RegExp('-setting$'), ''), this.el.value);
+        // update URL query params without reloading page
+        if (history.pushState) {
+            var newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + query.toString();
+            window.history.pushState({ path: newUrl }, '', newUrl);
+        }
+    }
+
+    function logError(msg) {
+        document.getElementById('settings-error').style.display = "block";
+        document.getElementById('settings-error-msg').innerHTML = msg + "</br>";
+    }
+
+    function hideError() {
+        document.getElementById('settings-error').style.display = "none";
+        document.getElementById('settings-error-msg').textContent = "";
+    }
+
+    let mapTitle,
+        attribution,
         tileLayerUrl,
         tileLayer,
-        coord,
-        zoom,
-        mapData,
-        mapDataLayers = [],
+        coord = [6.498820462853738, 3.3958632487106137],
+        zoom = 5,
+        mapData, mapDataLayers = [],
         map;
 
     window.addEventListener('DOMContentLoaded', function (event) {
         hideError();
 
         // DEFAULT VALUES
-        attribution = new I('attribution-setting');
-        tileLayerUrl = new I('tile-layer-setting');
-        zoom = new I('zoom-setting', 5);
-        coord = [new I('coord-lon-setting', 6.498820462853738), new I('coord-lat-setting', 3.3958632487106137)];
-        mapData = new I('import-data-setting');
+        mapTitle = new I("map-title");
+        attribution = new I("attribution-setting");
+        tileLayerUrl = new I("tile-layer-setting");
+        zoom = new I("zoom-setting");
+        coord = [new I("coord-lon-setting"), new I("coord-lat-setting")];
+        mapData = new I("import-data-setting");
         
-        if(pageIsEmbed()) renderAsEmbed("map");
-
-        let allSettings =  {
-            attribution, tileLayerUrl, zoom, coord, mapData,
-        };
+        let settings =  [
+            mapTitle, attribution, tileLayerUrl, zoom, coord, mapData,
+        ]
 
         map = L.map('map').setView([coord[0].get(), coord[1].get()], 9);
         map.on('moveend', function(e) {
@@ -155,9 +202,9 @@ tool_name: MAP EDITOR
             attribution: attribution.get()
         }).addTo(map);
         
-        zoom.update     = function(val) { map.setView([coord[0].get(), coord[1].get()], val); }
-        coord[0].update = function(val) { map.setView([val,            coord[1].get()], zoom.get()); }
-        coord[1].update = function(val) { map.setView([coord[0].get(), val],            zoom.get()); }
+        zoom.update = function(val) { map.setView([coord[0].get(), coord[1].get()], val); }
+        coord[0].update = function(val) { map.setView([val, coord[1].get()], zoom.get()); }
+        coord[1].update = function(val) { map.setView([coord[0].get(), val], zoom.get()); }
         tileLayerUrl.update = function(val) { 
             // TODO: make this multi-select and track multiple layers
             map.removeLayer(tileLayer);
@@ -174,17 +221,287 @@ tool_name: MAP EDITOR
                 map.removeLayer(mapDataLayers[i]);
             }
             mapDataLayers = [];
-            for (var i = 0; i < datasets.length; i++) {
-                let ext = datasets[i].split('.').pop();
-                if(!!omnivore[ext]) {
-                    let layer = omnivore[ext](datasets[i]);
-                    mapDataLayers.push(layer);
-                    layer.addTo(map);
-                    hideError();
-                } else {
-                    logError(`bad data url: ${datasets[i]}`);
+            let MAP_TYPE = mapType.get();
+            console.log("MAP_TYPE", MAP_TYPE);
+
+            if (MAP_TYPE === "regular") {
+              for (var i = 0; i < datasets.length; i++) {
+                  let ext = datasets[i].split('.').pop();
+                  if(!!omnivore[ext]) {
+                      let layer = omnivore[ext](datasets[i]);
+                      mapDataLayers.push(layer);
+                      layer.addTo(map);
+                      hideError();
+                  } else {
+                      logError(`bad data url: ${datasets[i]}`);
+                  }
+              }
+            } else if (MAP_TYPE === "timeseries") {
+              // courtesy: https://cartographicperspectives.org/index.php/journal/article/view/cp76-donohue-et-al/1307
+              function processData(data) {
+                var timestamps = [];
+                var min = Infinity;
+                var max = -Infinity;
+                var selectorLabels = [];
+
+                for (var feature in data.features) {
+                  var properties = data.features[feature].properties;
+                  // timestamps = properties.map()
+                  for (var attribute in properties) {
+                    if (attribute != 'id' &&
+                      attribute != 'name' &&
+                      attribute != 'ItemLabels' &&
+                      attribute != 'lat' &&
+                      attribute != 'lon') {
+                      // console.log("adding prop: ", attribute, properties[attribute]);
+                      if (!timestamps.includes(attribute)) {
+                        timestamps.push(attribute);
+                      }
+                      if (properties[attribute] < min) {
+                        min = properties[attribute];
+                      }
+                      if (properties[attribute] > max) {
+                        max = properties[attribute];
+                      }
+                    } else if (attribute === "ItemLabels" && !selectorLabels.includes(properties[attribute])) {
+                      selectorLabels.push(properties[attribute]);
+                    }
+                  }
                 }
-            }
+
+                return {
+                  timestamps, min, max, selectorLabels
+                }
+              }
+
+              function getColor(d) {
+                return d > 1000 ? '#800026' :
+                      d > 500  ? '#BD0026' :
+                      d > 200  ? '#E31A1C' :
+                      d > 100  ? '#FC4E2A' :
+                      d > 50   ? '#FD8D3C' :
+                      d > 20   ? '#FEB24C' :
+                      d > 10   ? '#FED976' :
+                                  '#FFEDA0';
+              }
+
+              function calcPropRadius(attributeValue) {
+                var scaleFactor = 0.3;
+                var area = attributeValue * scaleFactor;
+                return Math.sqrt(area/Math.PI)*2;			
+              }
+
+              function createPropSymbols(timestamps, data, selectorLabels) {
+                console.log("TIMESTAMPS", timestamps);
+                // let layer = omnivore.geojson(datasets[0]);
+                let layer = L.geoJson(data, {
+                  pointToLayer: function(feature, latlng) {
+                    return L.circleMarker(latlng, { 
+                      fillColor: "#708598",
+                      color: "#537898",
+                      weight: 1, 
+                      fillOpacity: 0.6 
+                    }).on({
+                      mouseover: function(e) {
+                        this.openPopup();
+                        this.setStyle({color: "yellow"});
+                      },
+                      mouseout: function(e) {
+                        this.closePopup();
+                        this.setStyle({color: "#537898"});
+                      }
+                    });
+                  },
+                });
+                mapDataLayers.push(layer);
+                layer.addTo(map);
+                hideError();
+                updatePropSymbols(timestamps[0], selectorLabels[0]);
+              }
+
+              function updatePropSymbols(timestamp, selectorLabel) {
+                mapDataLayers[0].eachLayer(function(layer) {
+                  // map.removeLayer(layer);
+                  var props = layer.feature.properties;
+                  if (!isNumeric(props[timestamp])) { return; }
+                  if (props["ItemLabels"] !== selectorLabel) {
+                    map.removeLayer(layer);
+                    return;
+                  }
+                  console.log("layer feature props", timestamp, props[timestamp], selectorLabel);
+                  var radius = calcPropRadius(props[timestamp]);
+                  var color = getColor(props[timestamp]);
+                  var popupContent = "<b> ₦" + String(props[timestamp]) + 
+                      " </b><br>" +
+                      "<i>" + selectorLabel +
+                      "</i> in </i>" +
+                      formatDate(timestamp, false) + "</i>";
+                  console.log("r: ", radius);
+                  layer.setRadius(radius);
+                  // layer.setColor(color);
+                  layer.bindPopup(popupContent, { offset: new L.Point(0,-radius) });
+                });
+              }
+
+              /*
+              var geojsonTimeseriesLayer = L.geojson(null, {
+                filter: function(feature) {
+                  var properties = feature.properties; 
+                  // timestamps = properties.map()
+                  for (var attribute in properties) {
+                    console.log("adding prop: ", attribute, properties[attribute]);
+                    if (attribute != 'id' &&
+                      attribute != 'name' &&
+                      attribute != 'ItemLabels' &&
+                      attribute != 'lat' &&
+                      attribute != 'lon') {
+                      if (!timestamps.includes(attribute)) {
+                        timestamps.push(attribute);		
+                      }
+                      if (properties[attribute] < min) {	
+                        min = properties[attribute];
+                      }
+                      if (properties[attribute] > max) { 
+                        max = properties[attribute]; 
+                      }
+                      return true;
+                    }
+                    return false;
+                  }
+                },
+                pointToLayer: function(feature, latlng) {
+                  return L.circleMarker(latlng, { 
+                    fillColor: "#708598",
+                    color: "#537898",
+                    weight: 1, 
+                    fillOpacity: 0.6 
+                  }).on({
+                    mouseover: function(e) {
+                      this.openPopup();
+                      this.setStyle({color: "yellow"});
+                    },
+                    mouseout: function(e) {
+                      this.closePopup();
+                      this.setStyle({color: "#537898"});
+                    }
+                  });
+                },
+                onEachFeature: function(feature, layer) {
+                  var props = layer.feature.properties;
+                  var radius = calcPropRadius(props[timestamp]);
+                  var popupContent = "<b>" + String(props[timestamp]) + 
+                      " units</b><br>" +
+                      "<i>" + props.name +
+                      "</i> in </i>" + 
+                      timestamp + "</i>";
+              
+                  layer.setRadius(radius);
+                  layer.bindPopup(popupContent, { offset: new L.Point(0,-radius) });
+                }
+              });
+              */
+
+              function createSliderUI(timestamps) {
+                var sliderControl = L.control({ position: 'bottomleft'} );
+
+                sliderControl.onAdd = function(map) {
+                  var slider = L.DomUtil.create("input", "range-slider");
+                  L.DomEvent.addListener(slider, 'mousedown', function(e) {
+                    L.DomEvent.stopPropagation(e);
+                  });
+
+                  slider.setAttribute("type", "range");
+                  slider.setAttribute("max", (new Date(timestamps[timestamps.length-1])).getTime());
+                  slider.setAttribute("min", (new Date(timestamps[0])).getTime());
+                  let date2 = new Date(timestamps[1]); let date1 = new Date(timestamps[0]); let oneDayDiff = date2.getTime() - date1.getTime();
+                  slider.setAttribute("step", oneDayDiff);
+                  slider.setAttribute("value", (new Date(String(timestamps[0]))).getTime());
+                  var handler = function(e) {
+                    let selectorLabel = document.querySelector(".selector-label-input").value;
+                    let selectedDate = formatDate(new Date(parseInt(e.target.value)), false);
+                    updatePropSymbols(selectedDate, selectorLabel);
+                    document.querySelector(".temporal-legend").innerText = selectedDate;
+                  }
+                  slider.addEventListener("input", handler);
+                  slider.addEventListener("change", handler);
+                  return slider;
+                }
+
+                sliderControl.addTo(map);
+                createTemporalLegend(timestamps[0]); 
+              }
+
+              function createTemporalLegend(startTimestamp) {
+                var temporalLegend = L.control({ position: 'bottomleft' }); 
+
+                temporalLegend.onAdd = function(map) { 
+                  var output = L.DomUtil.create("output", "temporal-legend");
+                  output.innerText = formatDate(new Date(startTimestamp), false);
+                  return output; 
+                }
+
+                temporalLegend.addTo(map); 
+              }
+                
+              function createSelectorUI(selectorLabels) {
+                var selectorControl = L.control({ position: 'bottomright'} );
+
+                selectorControl.onAdd = function(map) {
+                  var selector = L.DomUtil.create("select", "selector-label-input");
+                  L.DomEvent.addListener(selector, 'mousedown', function(e) {
+                    L.DomEvent.stopPropagation(e);
+                  });
+
+                  console.log("selectorLabels", selectorLabels);
+                  for (var i = 0; i < selectorLabels.length; i++) {
+                    selector.innerHTML += `<option value="${selectorLabels[i]}">${selectorLabels[i]}</option>`
+                  }
+                  var handler = function(e) {
+                    let rangeSliderValue = document.querySelector(".range-slider").value;
+                    let selectedDate = formatDate(new Date(parseInt(rangeSliderValue)), false);
+                    updatePropSymbols(selectedDate, e.target.value);
+                    // updatePropSymbols(e.target.value.toString());
+                  }
+                  selector.addEventListener("input", handler);
+                  selector.addEventListener("change", handler);
+                  return selector;
+                }
+
+                selectorControl.addTo(map);
+              }
+
+              // let layer = omnivore.geojson(datasets[0] /* only handling the first GeoJSON dataset here */);
+
+              // layer.on('ready', function() {
+              //   console.log("timeseries layer: ", layer);
+              //   var { timestamps, min, max} = processData(layer);
+              //   createPropSymbols(timestamps, layer);
+              //   createLegend(min, max);
+              //   createSliderUI(timestamps);
+              // });
+
+              fetch(datasets[0])
+                .then(response => response.json())
+                .then(data => {
+                  console.log(data);
+                  var {timestamps, selectorLabels, min, max} = processData(data);
+                  // sort timestamps
+                  timestamps = timestamps.map((t) => (new Date(t)).getTime()).sort().map((d) => formatDate(new Date(d), false))
+                  createPropSymbols(
+                    timestamps,
+                    data,
+                    selectorLabels.sort()
+                  );
+                  // createLegend(min, max);
+                  createSelectorUI(selectorLabels);
+                  createSliderUI(timestamps);
+                });
+
+              // mapDataLayers.push(layer);
+              // layer.addTo(map);
+
+              hideError();
+          }
         }
     });
 </script>
@@ -211,7 +528,6 @@ tool_name: MAP EDITOR
             type="text"
             class="setting bg-transparent w-70 pa0 dib"/>
         <br/>
-
     </div>
     <div class="map-settings-subgroup ml2">
         <div class="map-setting flex flex-row h1 ma1">
@@ -260,6 +576,25 @@ tool_name: MAP EDITOR
                 class="setting bg-transparent w-20 pa0 mr1 db"/>
         </div>
     </div>
+    <div class="map-setting flex flex-row h1 ma1">
+        <label for="map-type-setting" class="fw5 w-30 dib">MAP TYPE:</label> 
+        <select
+            id="map-type-setting"
+            name="map-type"
+            class="setting bg-transparent w-70 pa0 dib"
+            onchange="mapType.set(event.target.value)">
+
+            <option value="normal">
+              Normal
+            </option>
+
+            <option value="timeseries">
+              Time Series  
+            </option>
+
+        </select>
+    </div>
+
     <div class="map-setting flex flex-row h1 ma1">
         <label for="import-data-setting" class="fw5 w-30 dib">IMPORT DATA:</label> 
         <input 
