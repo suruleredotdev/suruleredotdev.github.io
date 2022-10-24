@@ -5,7 +5,7 @@ author_link: https://agbero.dev
 tags: [cities, maps]
 ---
 
-66% percent of Lagos's population lives in slums. This map visualizes where these populations are located, as a way to make visible these communities and the issues facing them. Some of these issues include displacement and disbursement by state authorities, as well as fires, sanitation concerns, electrification and flooding.
+66% percent of Lagos's population lives in "slums". This map visualizes where these populations are located, as a way to make visible these communities and the issues facing them. Some of these issues include displacement and disbursement by state authorities, as well as fires, sanitation concerns, electrification and flooding.
 
 Lagos slums include, Makoko – the infamous floating slum and Otodo Gbame - which was illegally cleared by local authorities leaving it's inhabitats displaced.
 
@@ -28,13 +28,28 @@ Lagos slums include, Makoko – the infamous floating slum and Otodo Gbame - whi
 
 The map below highlights these settlements within the urban matrix of Lagos.
 
+![Lagos Slums Map](/assets/img/lagos_slums.png)
+
+1. [Ajegunle](https://www.google.com/maps/@6.4439163,3.3575764,4225m/data=!3m1!1e3), Lagos, Nigeria 
+2. [Amukoko](https://www.google.com/maps/place/Amukoko,+Lagos,+Nigeria/@6.4696749,3.3415817,8168m/data=!3m1!1e3!4m5!3m4!1s0x103b8957fd1865b9:0x593efb85d2c21a42!8m2!3d6.4700539!4d3.3426708), Apapa, Lagos, Nigeria
+3. [Badia](https://www.google.com/maps/@6.4615718,3.3574323,4225m/data=!3m1!1e3), Ajeromi-Ifelodun, Lagos, Nigeria
+4. [Bariga](https://www.google.com/maps/place/Bariga+102216,+Oworonshoki,+Nigeria/@6.5393336,3.3778371,4224m/data=!3m2!1e3!4b1!4m5!3m4!1s0x103b8d066ea84e95:0xce26bf31be062ccb!8m2!3d6.5391037!4d3.3849441), [Oworonshoki](https://www.google.com/maps/place/105102,+Oworonshoki,+Nigeria/@6.5486872,3.3934527,4224m/data=!3m2!1e3!4b1!4m13!1m7!3m6!1s0x103b8bcc76eaf46b:0xe296700d8fa9e6f2!2sAjegunle+102272,+Ikeja,+Nigeria!3b1!8m2!3d6.4433673!4d3.3552665!3m4!1s0x103b8d43ca19ada9:0xdde8c88fb84eab11!8m2!3d6.5536413!4d3.4006119), Nigeria 
+5. [Makoko](https://www.google.com/maps/place/Makoko+101245,+Lagos,+Nigeria/@6.4986939,3.3857776,2410m/data=!3m1!1e3!4m5!3m4!1s0x103b8c8da642e481:0x42d33769d3ebadba!8m2!3d6.4990277!4d3.3880288), Lagos Mainland, Lagos, Nigeria 
+6. [Ijeshatedo](https://www.google.com/maps/@6.4941029,3.3275593,4225m/data=!3m1!1e3), Surulere, Lagos, Nigeria  
+7. [Iwaya](https://www.google.com/maps/@6.5056575,3.391810599,4225m/data=!3m1!1e3), Lagos Mainland, Oworonshoki, Nigeria
+8. [Mushin](https://www.google.com/maps/@6.527292900000001,3.3414103,4225m/data=!3m1!1e3), Surulere, Lagos, Nigeria
+9. [Somolu](https://www.google.com/maps/@6.537595949999999,3.3857071000000003,4225m/data=!3m1!1e3), Lagos, Nigeria
+
+
 <!--
   This block of code below contains the map and the text carousel beside it. Scrolling to each new section of the carousel 
---->
 <div class="MAP-container flex flex-column-m flex-column-l flex-row">
-  <div id="lagos-slums-map" class="MAP"></div>
-
-  <iframe src="/tools/map-editor?zoom=12&coord-lon=6.505333616241333&coord-lat=3.380355834960938&import-data=%2Fdatasets%2Fmaps%2Flagos-slums.kml&map-title=lagos+slums"></iframe>
+  <script type="module" src="/tools/components/map-tool.js"></script>
+  <map-tool
+    zoom=9
+    coord="[6.498820462853738, 3.3958632487106137]"
+    class="w-70">
+  </map-tool>
 
   <div class="map-annotation f6 pb0 flex flex-column">
     <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
@@ -78,6 +93,7 @@ The map below highlights these settlements within the urban matrix of Lagos.
     </div>
   </div>
 </div>
+--->
 
 ## Why Slums are Important
 Slums in some form or the other are common to urban areas all around the world. 
@@ -113,7 +129,7 @@ transporation and cultural infrastructure.
 </blockquote>
 <script note="" src="https://cdn.jsdelivr.net/gh/Blogger-Peer-Review/quotebacks@1/quoteback.js"></script>
 
-More recently, the Lagos State Urban Renewal Agency (LASURA) announced plans ot identify slums in the state 
+More recently, the Lagos State Urban Renewal Agency (LASURA) announced plans to identify slums in the state 
 and the Federal Ministry of Housing, headed by ex-Lagos State governor Babatunde Fashola
 
 <div class="horizontal-divide bb mh4 mv4 o-30"></div>
