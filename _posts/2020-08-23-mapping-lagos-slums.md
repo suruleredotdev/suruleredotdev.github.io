@@ -30,15 +30,15 @@ The map below highlights these settlements within the urban matrix of Lagos.
 
 ![Lagos Slums Map](/assets/img/lagos_slums.png)
 
-1. [Ajegunle](https://www.google.com/maps/@6.4439163,3.3575764,4225m/data=!3m1!1e3), Lagos, Nigeria 
-2. [Amukoko](https://www.google.com/maps/place/Amukoko,+Lagos,+Nigeria/@6.4696749,3.3415817,8168m/data=!3m1!1e3!4m5!3m4!1s0x103b8957fd1865b9:0x593efb85d2c21a42!8m2!3d6.4700539!4d3.3426708), Apapa, Lagos, Nigeria
-3. [Badia](https://www.google.com/maps/@6.4615718,3.3574323,4225m/data=!3m1!1e3), Ajeromi-Ifelodun, Lagos, Nigeria
-4. [Bariga](https://www.google.com/maps/place/Bariga+102216,+Oworonshoki,+Nigeria/@6.5393336,3.3778371,4224m/data=!3m2!1e3!4b1!4m5!3m4!1s0x103b8d066ea84e95:0xce26bf31be062ccb!8m2!3d6.5391037!4d3.3849441), [Oworonshoki](https://www.google.com/maps/place/105102,+Oworonshoki,+Nigeria/@6.5486872,3.3934527,4224m/data=!3m2!1e3!4b1!4m13!1m7!3m6!1s0x103b8bcc76eaf46b:0xe296700d8fa9e6f2!2sAjegunle+102272,+Ikeja,+Nigeria!3b1!8m2!3d6.4433673!4d3.3552665!3m4!1s0x103b8d43ca19ada9:0xdde8c88fb84eab11!8m2!3d6.5536413!4d3.4006119), Nigeria 
-5. [Makoko](https://www.google.com/maps/place/Makoko+101245,+Lagos,+Nigeria/@6.4986939,3.3857776,2410m/data=!3m1!1e3!4m5!3m4!1s0x103b8c8da642e481:0x42d33769d3ebadba!8m2!3d6.4990277!4d3.3880288), Lagos Mainland, Lagos, Nigeria 
-6. [Ijeshatedo](https://www.google.com/maps/@6.4941029,3.3275593,4225m/data=!3m1!1e3), Surulere, Lagos, Nigeria  
-7. [Iwaya](https://www.google.com/maps/@6.5056575,3.391810599,4225m/data=!3m1!1e3), Lagos Mainland, Oworonshoki, Nigeria
-8. [Mushin](https://www.google.com/maps/@6.527292900000001,3.3414103,4225m/data=!3m1!1e3), Surulere, Lagos, Nigeria
-9. [Somolu](https://www.google.com/maps/@6.537595949999999,3.3857071000000003,4225m/data=!3m1!1e3), Lagos, Nigeria
+1. <a href="https://www.google.com/maps/@6.4439163,3.3575764,4225m/data=!3m1!1e3" target="_blank">Ajegunle</a>, Lagos, Nigeria 
+2. <a href="https://www.google.com/maps/place/Amukoko,+Lagos,+Nigeria/@6.4696749,3.3415817,8168m/data=!3m1!1e3!4m5!3m4!1s0x103b8957fd1865b9:0x593efb85d2c21a42!8m2!3d6.4700539!4d3.3426708" target="_blank">Amukoko</a>, Apapa, Lagos, Nigeria
+3. <a href="https://www.google.com/maps/@6.4615718,3.3574323,4225m/data=!3m1!1e3" target="_blank">Badia</a>, Ajeromi-Ifelodun, Lagos, Nigeria
+4. <a href="https://www.google.com/maps/place/Bariga+102216,+Oworonshoki,+Nigeria/@6.5393336,3.3778371,4224m/data=!3m2!1e3!4b1!4m5!3m4!1s0x103b8d066ea84e95:0xce26bf31be062ccb!8m2!3d6.5391037!4d3.3849441" target="_blank">Bariga</a>, <a href="https://www.google.com/maps/place/105102,+Oworonshoki,+Nigeria/@6.5486872,3.3934527,4224m/data=!3m2!1e3!4b1!4m13!1m7!3m6!1s0x103b8bcc76eaf46b:0xe296700d8fa9e6f2!2sAjegunle+102272,+Ikeja,+Nigeria!3b1!8m2!3d6.4433673!4d3.3552665!3m4!1s0x103b8d43ca19ada9:0xdde8c88fb84eab11!8m2!3d6.5536413!4d3.4006119" target="_blank">Oworonshoki</a>, Nigeria 
+5. <a href="https://www.google.com/maps/place/Makoko+101245,+Lagos,+Nigeria/@6.4986939,3.3857776,2410m/data=!3m1!1e3!4m5!3m4!1s0x103b8c8da642e481:0x42d33769d3ebadba!8m2!3d6.4990277!4d3.3880288" target="_blank">Makoko</a>, Lagos Mainland, Lagos, Nigeria 
+6. <a href="https://www.google.com/maps/@6.4941029,3.3275593,4225m/data=!3m1!1e3" target="_blank">Ijeshatedo</a>, Surulere, Lagos, Nigeria  
+7. <a href="https://www.google.com/maps/@6.5056575,3.391810599,4225m/data=!3m1!1e3" target="_blank">Iwaya</a>, Lagos Mainland, Oworonshoki, Nigeria
+8. <a href="https://www.google.com/maps/@6.527292900000001,3.3414103,4225m/data=!3m1!1e3" target="_blank">Mushin</a>, Surulere, Lagos, Nigeria
+9. <a href="https://www.google.com/maps/@6.537595949999999,3.3857071000000003,4225m/data=!3m1!1e3" target="_blank">Somolu</a>, Lagos, Nigeria
 
 
 <!--
