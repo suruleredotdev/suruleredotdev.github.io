@@ -5,8 +5,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="icon" href="/assets/img/suruleredotdev_white_bg.svg">
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" href="{{ basepath }}/assets/img/suruleredotdev_white_bg.svg">
+  <link rel="stylesheet" href="{{ basepath }}/styles.css">
 
   <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
 
@@ -45,9 +45,9 @@
 
 <body class="sans-serif DARK animate-bg">
   <a name="top"></a>
-  <a id="logo" href="/"> 
-    <img id="logo-dark" src="/assets/img/suruleredotdev_green_bg_bold.svg"/>
-    <img id="logo-light" src="/assets/img/suruleredotdev_transparent_bg.svg" style="display: none;"/>
+  <a id="logo" href="{{ basepath }}/"> 
+    <img id="logo-dark" src="{{ basepath }}/assets/img/suruleredotdev_green_bg_bold.svg"/>
+    <img id="logo-light" src="{{ basepath }}/assets/img/suruleredotdev_transparent_bg.svg" style="display: none;"/>
   </a>
 
   {{ content }}

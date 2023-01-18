@@ -6,4 +6,9 @@ defaults:
       path: "assets/img"
     values:
       image: true
+  - scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "default"
+      basepath: "/dotdev1"
 relative_permalinks: false
