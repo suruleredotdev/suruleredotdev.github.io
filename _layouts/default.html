@@ -2,22 +2,15 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta property="og:image" content="/assets/img/suruleredotdev_dark_bg.svg">
-  <meta property="twitter:image" content="/assets/img/suruleredotdev_dark_bg.svg">
-
-  <link rel="icon" href="/assets/img/suruleredotdev_white_bg.svg">
+	<link rel="icon" href="/assets/img/suruleredotdev_white_bg.svg">
   <link rel="stylesheet" href="/styles.css">
 
   <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
 
-  <script async defer data-domain="surulere.dev" src="https://plausible.io/js/plausible.js"></script>
-
-  <!-- <script src="/scripts/custom-element.js" type="text/javascript"></script> -->
-  
-  <title>suruleredotdev</title>
+	<title>suruleredotdev</title>
 
   <script>
     function setMode(mode) {
@@ -91,29 +84,29 @@
         CLEAR LOCAL STORAGE
       </span>
       <span id="dark-mode-toggle" class="link dim ph3 pv2 hide">
-        TOGGLE DARK MODE
-      </span>
-      <script>
-        document.getElementById("clear-local-storage").addEventListener("click", function (e) {
-          window.localStorage.clear();
-          console.log("[suruleredotdev]: local storage cleared!");
-        });
-        function toggleVisibility(el) {
-          if (el.style.display === "none") {
-            el.style.display = "block";
-          } else {
-            el.style.display = "none";
-          }
-        }
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        document.getElementById("dark-mode-toggle").addEventListener("click", function (e) {
-          setMode((getMode() === 'dark') ? 'light' : 'dark');
-        });
-      </script>
+  <meta property="og:image" content="/assets/img/suruleredotdev_dark_bg.svg">
+  <meta property="twitter:image" content="/assets/img/suruleredotdev_dark_bg.svg">
 
-      <span class="link ph3 pv2 underline">
-        <a href="#" class="no-ul">SETTINGS</a>
-      </span>
-    </div>
-  </footer>
-</body>
+  <link rel="icon" href="/assets/img/suruleredotdev_white_bg.svg">
+  <link rel="stylesheet" href="/styles.css">
+
+  <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
+
+  <script async defer data-domain="surulere.dev" src="https://plausible.io/js/plausible.js"></script>
+
+  <!-- <script src="/scripts/custom-element.js" type="text/javascript"></script> -->
+  
+  <title>suruleredotdev</title>
+
+  <script>
+    function setMode(mode) {
+      window.localStorage.setItem('mode', mode)
+      if(mode === 'dark') {
+        if (!document.querySelector('body').classList.contains('DARK')) document.querySelector('body').classList.add('DARK');
+        document.getElementById("logo-dark").style.display = "block";
+        document.getElementById("logo-light").style.display = "none";
+        document.querySelector('body').classList.remove('LIGHT');
