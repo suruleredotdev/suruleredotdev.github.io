@@ -1,4 +1,6 @@
-url: https://surulere.dev/dotdev1/
+domain: surulere.dev
+url: https://surulere.dev
+baseurl: /dotdev1/
 future: true
 frame_class: "frame mw6 pa2 h-100"
 defaults:
